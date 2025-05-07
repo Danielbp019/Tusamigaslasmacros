@@ -116,3 +116,8 @@ glow::after {
 .glow:hover::before {
   opacity: 100;
 }
+
+/* Ajuste del boton al mismo ancho del input */
+.input-group button {
+  height: 100%;
+}

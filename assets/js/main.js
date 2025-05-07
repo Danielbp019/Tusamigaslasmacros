@@ -20,6 +20,12 @@ function filtrarIndice() {
   } else {
     mensaje.style.display = "none";
   }
+
+  /* Limpieza del input al pulsar el boton */
+  document.getElementById("clearButton").addEventListener("click", function () {
+    document.getElementById("search").value = "";
+    filtrarIndice(); // Llamar a la función para que actualice la lista
+  });
 }
 
 // Cambio dia y noche script
