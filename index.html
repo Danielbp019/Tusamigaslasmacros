@@ -39,149 +39,143 @@
 </head>
 
 <body>
-    <div class="px-4 py-5 my-5 text-center">
-        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
-            class="bi bi-wrench-adjustable-circle" viewBox="0 0 16 16">
-            <path d="M12.496 8a4.5 4.5 0 0 1-1.703 3.526L9.497 8.5l2.959-1.11q.04.3.04.61" />
-            <path
-                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-1 0a7 7 0 1 0-13.202 3.249l1.988-1.657a4.5 4.5 0 0 1 7.537-4.623L7.497 6.5l1 2.5 1.333 3.11c-.56.251-1.18.39-1.833.39a4.5 4.5 0 0 1-1.592-.29L4.747 14.2A7 7 0 0 0 15 8m-8.295.139a.25.25 0 0 0-.288-.376l-1.5.5.159.474.808-.27-.595.894a.25.25 0 0 0 .287.376l.808-.27-.595.894a.25.25 0 0 0 .287.376l1.5-.5-.159-.474-.808.27.596-.894a.25.25 0 0 0-.288-.376l-.808.27z" />
-        </svg>
-        <h1 class="display-5 fw-bold text-body-emphasis">Centered hero</h1>
-        <div class="col-lg-6 mx-auto">
-            <p class="lead mb-4">Quickly design and customize responsive mobile-first sites with Bootstrap, the
-                world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive
-                grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+    <section id="portada">
+        <div class="text-center">
+            <img src="assets/img/portada.png" alt="">
         </div>
-    </div>
+    </section>
     <div id="fall-divider"></div>
-    <div class="px-4 py-5">
-        <div class="py-5">
-            <h1 class="display-5 fw-bold text-center">Índice de la guía</h1>
-            <div class="col-lg-6 mx-auto">
 
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" id="search" placeholder="Buscar en el índice..."
-                        aria-label="Cuadro de texto para buscar en la guía" onkeyup="filtrarIndice()">
-                    <button class="btn btn-outline-info" type="reset" id="clearButton">Limpiar</button>
+    <section id="indice">
+        <div class="px-4 py-5">
+            <div class="py-5">
+                <h1 class="display-5 fw-bold text-center">Índice de la guía</h1>
+                <div class="col-lg-6 mx-auto">
+
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" id="search" placeholder="Buscar en el índice..."
+                            aria-label="Cuadro de texto para buscar en la guía" onkeyup="filtrarIndice()">
+                        <button class="btn btn-outline-warning" type="reset" id="clearButton">Limpiar</button>
+                    </div>
+                    <p id="mensaje" style="display: none; color: red;"></p>
+
+                    <ol id="indice">
+                        <li><a href="macro1234.html#1">¿Qué es una macro?</a></li>
+                        <li><a href="macro1234.html#2">¿Qué se puede hacer con una macro? ¿Y qué no se puede?</a>
+                        </li>
+                        <li><a href="macro1234.html#3">¿Dónde se guardan las macros?</a></li>
+                        <li><a href="macro1234.html#4">¿Cómo hacer una macro?</a></li>
+                        <li>Tipos y Estructura de macros
+                            <ol>
+                                <li><a href="enlace_texto.html">Macros tipo texto</a></li>
+                                <li><a href="enlace_habilidades.html">Macros de habilidades</a></li>
+                                <li><a href="enlace_equipo.html">Macros de equipo</a></li>
+                            </ol>
+                        </li>
+                        <li>Macros tipo texto
+                            <ol>
+                                <li><a href="enlace_accion.html">Acción</a></li>
+                                <li><a href="enlace_t.html">%t</a></li>
+                                <li><a href="enlace_f.html">%f</a></li>
+                                <li>Canales
+                                    <ol>
+                                        <li><a href="enlace_utilizacion.html">Utilización</a></li>
+                                        <li><a href="enlace_lista_canales.html">Lista de canales</a></li>
+                                    </ol>
+                                </li>
+                            </ol>
+                        </li>
+                        <li>Macros de habilidades
+                            <ol>
+                                <li>Acciones de combate
+                                    <ol>
+                                        <li><a href="enlace_cast.html">CAST</a></li>
+                                        <li><a href="enlace_castsequence.html">CASTSEQUENCE</a></li>
+                                    </ol>
+                                </li>
+                                <li>Acciones sueltas
+                                    <ol>
+                                        <li><a href="enlace_stopcasting.html">STOPCASTING</a></li>
+                                        <li><a href="enlace_cleartarget.html">CLEARTARGET</a></li>
+                                        <li><a href="enlace_focus.html">FOCUS</a></li>
+                                        <li><a href="enlace_clearfocus.html">CLEARFOCUS</a></li>
+                                        <li><a href="enlace_stopmacro.html">STOPMACRO</a></li>
+                                        <li><a href="enlace_cancel_aura.html">CANCELAURA</a></li>
+                                        <li><a href="enlace_cancel_form.html">CANCELFORM</a></li>
+                                        <li><a href="enlace_startattack.html">STARTATTACK</a></li>
+                                        <li><a href="enlace_stopattack.html">STOPATTACK</a></li>
+                                    </ol>
+                                </li>
+                                <li>Acciones de mascotas
+                                    <ol>
+                                        <li><a href="enlace_pet_aggressive.html">PETAGGRESSIVE</a></li>
+                                        <li><a href="enlace_pet_attack.html">PETATTACK</a></li>
+                                        <li><a href="enlace_pet_defensive.html">PETDEFENSIVE</a></li>
+                                        <li><a href="enlace_pet_follow.html">PETFOLLOW</a></li>
+                                        <li><a href="enlace_pet_passive.html">PETPASSIVE</a></li>
+                                        <li><a href="enlace_pet_stay.html">PETSTAY</a></li>
+                                    </ol>
+                                </li>
+                                <li>Acciones generales
+                                    <ol>
+                                        <li><a href="enlace_show.html">#SHOW</a></li>
+                                        <li><a href="enlace_show_cooldown.html">#SHOWCOOLDOWN</a></li>
+                                        <li><a href="enlace_show_tooltip.html">#SHOWTOOLTIP</a></li>
+                                    </ol>
+                                </li>
+                            </ol>
+                        </li>
+                        <li>Condiciones
+                            <ol>
+                                <li>Condiciones de botón
+                                    <ol>
+                                        <li><a href="enlace_button.html">BUTTON</a></li>
+                                        <li><a href="enlace_modifier.html">MODIFIER</a></li>
+                                    </ol>
+                                </li>
+                                <li>Condiciones de estado
+                                    <ol>
+                                        <li><a href="enlace_combat.html">COMBAT</a></li>
+                                        <li><a href="enlace_dead.html">DEAD</a></li>
+                                        <li><a href="enlace_exists.html">EXISTS</a></li>
+                                        <li><a href="enlace_stealth.html">STEALTH</a></li>
+                                        <li><a href="enlace_stance.html">STANCE o FORM</a></li>
+                                    </ol>
+                                </li>
+                                <li>Condiciones de objetivo
+                                    <ol>
+                                        <li><a href="enlace_harm.html">HARM</a></li>
+                                        <li><a href="enlace_help.html">HELP</a></li>
+                                        <li><a href="enlace_target.html">@TARGET</a></li>
+                                        <li><a href="enlace_target_target.html">@TARGETTARGET</a></li>
+                                        <li><a href="enlace_focus.html">@FOCUS</a></li>
+                                        <li><a href="enlace_focus_target.html">@FOCUSTARGET</a></li>
+                                    </ol>
+                                </li>
+                            </ol>
+                        </li>
+                        <li>Macros de equipo
+                            <ol>
+                                <li><a href="enlace_use.html">USE</a></li>
+                                <li><a href="enlace_equip.html">EQUIP</a></li>
+                                <li><a href="enlace_equip_slot.html">EQUIPSLOT</a></li>
+                                <li><a href="enlace_equip_set.html">EQUIPSET</a></li>
+                            </ol>
+                        </li>
+                        <li>Macros de mascotas mansas
+                            <ol>
+                                <li><a href="enlace_summon_pet.html">SUMMONPET</a></li>
+                                <li><a href="enlace_random_favorite_pet.html">RANDOMFAVORITEPET</a></li>
+                            </ol>
+                        </li>
+                        <li><a href="enlace_agradecimientos.html">Agradecimientos</a></li>
+                    </ol>
                 </div>
-                <p id="mensaje" style="display: none; color: red;"></p>
-
-                <ol id="indice">
-                    <li><a href="enlace_macro.html">¿Qué es una macro?</a></li>
-                    <li><a href="enlace_que_puede_hacer.html">¿Qué se puede hacer con una macro? ¿Y qué no se puede?</a>
-                    </li>
-                    <li><a href="enlace_donde_guardar.html">¿Dónde se guardan las macros?</a></li>
-                    <li><a href="enlace_como_hacer.html">¿Cómo hacer una macro?</a></li>
-                    <li>Tipos y Estructura de macros
-                        <ol>
-                            <li><a href="enlace_texto.html">Macros tipo texto</a></li>
-                            <li><a href="enlace_habilidades.html">Macros de habilidades</a></li>
-                            <li><a href="enlace_equipo.html">Macros de equipo</a></li>
-                        </ol>
-                    </li>
-                    <li>Macros tipo texto
-                        <ol>
-                            <li><a href="enlace_accion.html">Acción</a></li>
-                            <li><a href="enlace_t.html">%t</a></li>
-                            <li><a href="enlace_f.html">%f</a></li>
-                            <li>Canales
-                                <ol>
-                                    <li><a href="enlace_utilizacion.html">Utilización</a></li>
-                                    <li><a href="enlace_lista_canales.html">Lista de canales</a></li>
-                                </ol>
-                            </li>
-                        </ol>
-                    </li>
-                    <li>Macros de habilidades
-                        <ol>
-                            <li>Acciones de combate
-                                <ol>
-                                    <li><a href="enlace_cast.html">CAST</a></li>
-                                    <li><a href="enlace_castsequence.html">CASTSEQUENCE</a></li>
-                                </ol>
-                            </li>
-                            <li>Acciones sueltas
-                                <ol>
-                                    <li><a href="enlace_stopcasting.html">STOPCASTING</a></li>
-                                    <li><a href="enlace_cleartarget.html">CLEARTARGET</a></li>
-                                    <li><a href="enlace_focus.html">FOCUS</a></li>
-                                    <li><a href="enlace_clearfocus.html">CLEARFOCUS</a></li>
-                                    <li><a href="enlace_stopmacro.html">STOPMACRO</a></li>
-                                    <li><a href="enlace_cancel_aura.html">CANCELAURA</a></li>
-                                    <li><a href="enlace_cancel_form.html">CANCELFORM</a></li>
-                                    <li><a href="enlace_startattack.html">STARTATTACK</a></li>
-                                    <li><a href="enlace_stopattack.html">STOPATTACK</a></li>
-                                </ol>
-                            </li>
-                            <li>Acciones de mascotas
-                                <ol>
-                                    <li><a href="enlace_pet_aggressive.html">PETAGGRESSIVE</a></li>
-                                    <li><a href="enlace_pet_attack.html">PETATTACK</a></li>
-                                    <li><a href="enlace_pet_defensive.html">PETDEFENSIVE</a></li>
-                                    <li><a href="enlace_pet_follow.html">PETFOLLOW</a></li>
-                                    <li><a href="enlace_pet_passive.html">PETPASSIVE</a></li>
-                                    <li><a href="enlace_pet_stay.html">PETSTAY</a></li>
-                                </ol>
-                            </li>
-                            <li>Acciones generales
-                                <ol>
-                                    <li><a href="enlace_show.html">#SHOW</a></li>
-                                    <li><a href="enlace_show_cooldown.html">#SHOWCOOLDOWN</a></li>
-                                    <li><a href="enlace_show_tooltip.html">#SHOWTOOLTIP</a></li>
-                                </ol>
-                            </li>
-                        </ol>
-                    </li>
-                    <li>Condiciones
-                        <ol>
-                            <li>Condiciones de botón
-                                <ol>
-                                    <li><a href="enlace_button.html">BUTTON</a></li>
-                                    <li><a href="enlace_modifier.html">MODIFIER</a></li>
-                                </ol>
-                            </li>
-                            <li>Condiciones de estado
-                                <ol>
-                                    <li><a href="enlace_combat.html">COMBAT</a></li>
-                                    <li><a href="enlace_dead.html">DEAD</a></li>
-                                    <li><a href="enlace_exists.html">EXISTS</a></li>
-                                    <li><a href="enlace_stealth.html">STEALTH</a></li>
-                                    <li><a href="enlace_stance.html">STANCE o FORM</a></li>
-                                </ol>
-                            </li>
-                            <li>Condiciones de objetivo
-                                <ol>
-                                    <li><a href="enlace_harm.html">HARM</a></li>
-                                    <li><a href="enlace_help.html">HELP</a></li>
-                                    <li><a href="enlace_target.html">@TARGET</a></li>
-                                    <li><a href="enlace_target_target.html">@TARGETTARGET</a></li>
-                                    <li><a href="enlace_focus.html">@FOCUS</a></li>
-                                    <li><a href="enlace_focus_target.html">@FOCUSTARGET</a></li>
-                                </ol>
-                            </li>
-                        </ol>
-                    </li>
-                    <li>Macros de equipo
-                        <ol>
-                            <li><a href="enlace_use.html">USE</a></li>
-                            <li><a href="enlace_equip.html">EQUIP</a></li>
-                            <li><a href="enlace_equip_slot.html">EQUIPSLOT</a></li>
-                            <li><a href="enlace_equip_set.html">EQUIPSET</a></li>
-                        </ol>
-                    </li>
-                    <li>Macros de mascotas mansas
-                        <ol>
-                            <li><a href="enlace_summon_pet.html">SUMMONPET</a></li>
-                            <li><a href="enlace_random_favorite_pet.html">RANDOMFAVORITEPET</a></li>
-                        </ol>
-                    </li>
-                    <li><a href="enlace_agradecimientos.html">Agradecimientos</a></li>
-                </ol>
             </div>
         </div>
-    </div>
-    <div id="fall-divider"></div>
+    </section>
 
+    <div id="fall-divider"></div>
     <div id="footer"></div>
 
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
