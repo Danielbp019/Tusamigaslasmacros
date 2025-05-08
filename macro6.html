@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Daniel M. Bautista P." />
+    <title>Tus amigas, las macros!</title>
+
+    <script defer>
+        // Cargar Header
+        fetch('header.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Error ${response.status}: No se pudo cargar el header`);
+                }
+                return response.text();
+            })
+            .then(data => document.head.innerHTML += data)
+            .catch(error => console.error('Error al cargar el header:', error));
+
+        // Cargar Footer
+        fetch('footer.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Error ${response.status}: No se pudo cargar el footer`);
+                }
+                return response.text();
+            })
+            .then(data => document.getElementById('footer').innerHTML = data)
+            .catch(error => console.error('Error al cargar el footer:', error));
+    </script>
+
+    <!-- JS principal -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"
+        defer></script>
+    <script defer src="assets/js/main.js"></script>
+</head>
+
+<body>
+
+    <nav class="navbar bg-body-tertiary py-3">
+        <div class="container d-flex justify-content-center">
+            <a href="index.html" class="btn btn-outline-secondary d-flex align-items-center gap-2"
+                aria-label="Menú de aplicación">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-house"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z" />
+                </svg>
+                Ir al índice
+            </a>
+        </div>
+    </nav>
+
+    <div id="fall-divider"></div>
+
+    <section id="contenido">
+        <div class="container py-5">
+
+            <h1 class="text-body-emphasis" id="6">6. Macros tipo texto</h1>
+            <h2 class="text-body-emphasis" id="6.1">6.1 Acción:</h2>
+
+            <!-- Sección 6.1.1 -->
+            <h3 class="text-body-emphasis" id="6.1.1">6.1.1. %t</h3>
+            <div class="btn-group controls mb-2" role="group">
+                <button class="btn btn-sm btn-outline-info" onclick="leer('texto6.1.1')">Leer</button>
+                <button class="btn btn-sm btn-outline-warning" onclick="pausar()">Pausar</button>
+                <button class="btn btn-sm btn-outline-danger" onclick="parar()">Parar</button>
+            </div>
+            <div id="texto6.1.1" class="fs-5 col-md-10">
+                <p>El comando "%t" no es en sí un comando, sino una opción que cabe destacar para las macros de chat (o
+                    incluso para el chat en sí mismo).</p>
+                <p>Al poner %t el juego escribirá el nombre de tu objetivo.</p>
+                <p>En caso de no tener objetivo pondrá "sin objetivo".</p>
+                <div class="card p-2 mb-3">
+                    <code>/p ¡Mi objetivo se llama %t!</code>
+                </div>
+            </div>
+            <br>
+
+            <!-- Sección 6.1.2 -->
+            <h3 class="text-body-emphasis" id="6.1.2">6.1.2. %f</h3>
+            <div class="btn-group controls mb-2" role="group">
+                <button class="btn btn-sm btn-outline-info" onclick="leer('texto6.1.2')">Leer</button>
+                <button class="btn btn-sm btn-outline-warning" onclick="pausar()">Pausar</button>
+                <button class="btn btn-sm btn-outline-danger" onclick="parar()">Parar</button>
+            </div>
+            <div id="texto6.1.2" class="fs-5 col-md-10">
+                <p>El comando "%f" funciona igual que el "%t" pero en vez del nombre del objetivo dirá el nombre de tu
+                    focus.</p>
+                <div class="card p-2 mb-3">
+                    <code>/p ¡Mi focus se llama %f!</code>
+                </div>
+            </div>
+            <br>
+
+            <h2 class="text-body-emphasis" id="6.2">6.2 Canales:</h2>
+
+            <!-- Sección 6.2.1 -->
+            <h3 class="text-body-emphasis" id="6.2.1">6.2.1. Utilización</h3>
+            <div class="btn-group controls mb-2" role="group">
+                <button class="btn btn-sm btn-outline-info" onclick="leer('texto6.2.1')">Leer</button>
+                <button class="btn btn-sm btn-outline-warning" onclick="pausar()">Pausar</button>
+                <button class="btn btn-sm btn-outline-danger" onclick="parar()">Parar</button>
+            </div>
+            <div id="texto6.2.1" class="fs-5 col-md-10">
+                <p>A la hora de poner un canal se pondrá delante del texto.</p>
+                <p>En el ejemplo siguiente donde pone CANAL es lo que deberás sustituir por el apartado siguiente:</p>
+                <div class="card p-2 mb-3">
+                    <code>/CANAL ¡Hola, esto es un texto!</code>
+                </div>
+            </div>
+            <br>
+
+            <!-- Sección 6.2.2 -->
+            <h3 class="text-body-emphasis" id="6.2.2">6.2.2. Lista de canales</h3>
+            <div class="btn-group controls mb-2" role="group">
+                <button class="btn btn-sm btn-outline-info" onclick="leer('texto6.2.2')">Leer</button>
+                <button class="btn btn-sm btn-outline-warning" onclick="pausar()">Pausar</button>
+                <button class="btn btn-sm btn-outline-danger" onclick="parar()">Parar</button>
+            </div>
+            <div id="texto6.2.2" class="fs-5 col-md-10">
+                <ol>
+                    <li>s: Decir</li>
+                    <li>g: Clan</li>
+                    <li>p: Grupo</li>
+                    <li>ra: Banda</li>
+                    <li>rw: Aviso de Banda</li>
+                    <li>bg: Campo de batalla</li>
+                </ol>
+            </div>
+            <br>
+
+        </div>
+    </section>
+
+    <div id="fall-divider"></div>
+    <div id="footer"></div>
+
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+        <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+            <path
+                d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z" />
+        </symbol>
+        <symbol id="sun-fill" viewBox="0 0 16 16">
+            <path
+                d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
+        </symbol>
+    </svg>
+    <div class="position-fixed bottom-0 end-0 custom-margin me-3 bd-mode-toggle">
+        <div class="form-check form-switch form-switch-lg">
+            <input class="form-check-input glow" type="checkbox" id="themeSwitch" aria-label="Toggle theme">
+            <label class="form-check-label d-flex align-items-center" for="themeSwitch">
+                <svg class="bi my-1 theme-icon-active ms-2" width="1.5em" height="1.5em">
+                    <use href="#"></use>
+                </svg>
+            </label>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Daniel M. Bautista P." />
+    <title>Tus amigas, las macros!</title>
+
+    <script defer>
+        // Cargar Header
+        fetch('header.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Error ${response.status}: No se pudo cargar el header`);
+                }
+                return response.text();
+            })
+            .then(data => document.head.innerHTML += data)
+            .catch(error => console.error('Error al cargar el header:', error));
+
+        // Cargar Footer
+        fetch('footer.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Error ${response.status}: No se pudo cargar el footer`);
+                }
+                return response.text();
+            })
+            .then(data => document.getElementById('footer').innerHTML = data)
+            .catch(error => console.error('Error al cargar el footer:', error));
+    </script>
+
+    <!-- JS principal -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"
+        defer></script>
+    <script defer src="assets/js/main.js"></script>
+</head>
+
+<body>
+
+    <nav class="navbar bg-body-tertiary py-3">
+        <div class="container d-flex justify-content-center">
+            <a href="index.html" class="btn btn-outline-secondary d-flex align-items-center gap-2"
+                aria-label="Menú de aplicación">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-house"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z" />
+                </svg>
+                Ir al índice
+            </a>
+        </div>
+    </nav>
+
+    <div id="fall-divider"></div>
+
+    <section id="contenido">
+        <div class="container py-5">
+
+            <!-- Sección 8 -->
+            <h2 class="text-body-emphasis" id="Condiciones">8. Condiciones</h2>
+            <div class="btn-group controls mb-2" role="group">
+                <button class="btn btn-sm btn-outline-info" onclick="leer('texto8')">Leer</button>
+                <button class="btn btn-sm btn-outline-warning" onclick="pausar()">Pausar</button>
+                <button class="btn btn-sm btn-outline-danger" onclick="parar()">Parar</button>
+            </div>
+            <div id="texto8" class="fs-5 col-md-10">
+                <p>Cuando hablamos de una condición nos referimos a un hecho que una macro puede comprobar y actuar en
+                    consecuencia. Éstas sirven para dar a una misma macro distintos usos dependiendo de dichas
+                    condiciones.</p>
+
+                <p>Por poner un ejemplo de la vida real, una condición sería si la luz está encendida o no. Si no lo
+                    está, nos levantaremos a encenderla. Y en caso de estar encendida, seguramente el siguiente paso sea
+                    sentarse.</p>
+
+                <p>Explicado en lenguaje de macros de WoW sería algo así:</p>
+                <div class="card p-2 mb-3">
+                    <code>/cast [luz apagada] Encender Luz; Sentarse;</code>
+                </div>
+
+                <p>Así pues, en esta sección se explicarán esas condiciones que podemos usar para que un comando actúe
+                    de una manera o de otra. Ten en cuenta que la mayoría de las opciones admiten un <code>no</code>
+                    delante para comprobar lo contrario. Por ejemplo:</p>
+
+                <div class="card p-2 mb-3">
+                    <code>/cast [combat] Esfumarse; Sigilo;</code>
+                </div>
+
+                <p>Esto haría que si estás en combate usarías Esfumarse y en cualquier otro caso usarías Sigilo.</p>
+
+                <div class="card p-2 mb-3">
+                    <code>/cast [nocombat] Sigilo; Esfumarse;</code>
+                </div>
+
+                <p>Esto haría que si no estás en combate usarías Sigilo y en cualquier otro caso usarías Esfumarse.</p>
+
+                <p>Como puedes ver, el resultado de este ejemplo es el mismo al final, pero puede que en ciertas
+                    circunstancias quieras hacer cosas distintas y tengas que comprobar cosas distintas. ¡Todo depende
+                    de tu imaginación!</p>
+            </div><br>
+
+            <!-- Sección 8.1 -->
+            <h3 class="text-body-emphasis" id="8.1">8.1. Condiciones de botón</h3>
+            <div class="btn-group controls mb-2" role="group">
+                <button class="btn btn-sm btn-outline-info" onclick="leer('texto8.1')">Leer</button>
+                <button class="btn btn-sm btn-outline-warning" onclick="pausar()">Pausar</button>
+                <button class="btn btn-sm btn-outline-danger" onclick="parar()">Parar</button>
+            </div>
+            <div id="texto8.1" class="fs-5 col-md-10">
+                <p>Estas condiciones pueden ponerse dentro de los mismos corchetes.</p>
+
+                <p id="BUTTON"><strong>BUTTON</strong><br>
+                    Comprueba si se activa la macro con algún botón en concreto del ratón: 1 es Click izquierdo, 2 click
+                    derecho, 3 Click central y a partir de ahí tantos como botones tenga tu ratón. Tendrás que probar a
+                    cuál corresponde cuál. Ten en cuenta que puedes cambiar <code>BUTTON</code> por <code>BTN</code>.
+                </p>
+                <div class="card p-2 mb-3">
+                    <code>/cast [btn:2] Sanación Superior; Sanación relámpago;</code>
+                </div><br>
+
+                <p id="MODIFIER"><strong>MODIFIER</strong><br>
+                    Comprueba si mientras se activa la macro estamos pulsando alguna de las siguientes teclas: Alt, Ctrl
+                    o Shift. Ten en cuenta que puedes cambiar <code>MODIFIER</code> por <code>MOD</code>.</p>
+                <div class="card p-2 mb-3">
+                    <code>/cast [mod:ctrl] Sanación Superior; Sanación relámpago</code>
+                </div><br>
+            </div>
+
+            <!-- Sección 8.2 -->
+            <h3 class="text-body-emphasis" id="8.2">8.2. Condiciones de estado</h3>
+            <div class="btn-group controls mb-2" role="group">
+                <button class="btn btn-sm btn-outline-info" onclick="leer('texto8.2')">Leer</button>
+                <button class="btn btn-sm btn-outline-warning" onclick="pausar()">Pausar</button>
+                <button class="btn btn-sm btn-outline-danger" onclick="parar()">Parar</button>
+            </div>
+            <div id="texto8.2" class="fs-5 col-md-10">
+                <p>Estas condiciones pueden ponerse dentro de los mismos corchetes.</p>
+
+                <p id="COMBAT"><strong>COMBAT</strong><br>
+                    Comprueba si estás con combate.</p>
+                <div class="card p-2 mb-3">
+                    <code>/cast [combat] Esfumarse; Sigilo;</code>
+                </div><br>
+
+                <p id="DEAD"><strong>DEAD</strong><br>
+                    Comprueba si el objetivo está muerto.</p>
+                <div class="card p-2 mb-3">
+                    <code>/cast [dead] Canibalismo; Punición;</code>
+                </div><br>
+
+                <p id="EXISTS"><strong>EXISTS</strong><br>
+                    Comprueba si el objetivo existe. (No se me ocurre ningún ejemplo simple realista, así que dejo lo
+                    básico).</p>
+                <div class="card p-2 mb-3">
+                    <code>/cast [exists] Sanación Relámpago;</code>
+                </div><br>
+
+                <p id="STEALTH"><strong>STEALTH</strong><br>
+                    Comprueba si estás en sigilo.</p>
+                <div class="card p-2 mb-3">
+                    <code>/cast [stealth] Emboscada; Puñalada;</code>
+                </div><br>
+
+                <p id="STANCEoFORM"><strong>STANCE o FORM</strong><br>
+                    Comprueba la estancia en la que estás. Por estancia hablamos de aquellos estados que activan barras
+                    distintas al usarlas (como las transformaciones de druida o las actitudes de guerrero). Las
+                    excepciones son el Ángel del Sacerdote, lobo del chamán y la forma de demonio del brujo.</p>
+                <div class="card p-2 mb-3">
+                    <code>/cast [Stance:1] Abrumar; [Stance:3] Torbellino; Golpe heroico;</code><br>
+                    <code>/cast [stance:1/3] Golpe heroico; [stance:2] Provocar;</code>
+                </div><br>
+            </div>
+
+            <!-- Sección 8.3 -->
+            <h3 class="text-body-emphasis" id="8.3">8.3. Condiciones de objetivo</h3>
+            <div class="btn-group controls mb-2" role="group">
+                <button class="btn btn-sm btn-outline-info" onclick="leer('texto8.3')">Leer</button>
+                <button class="btn btn-sm btn-outline-warning" onclick="pausar()">Pausar</button>
+                <button class="btn btn-sm btn-outline-danger" onclick="parar()">Parar</button>
+            </div>
+            <div id="texto8.3" class="fs-5 col-md-10">
+                <p>Puedes poner estas condiciones en los mismos corchetes, pero no tendría ninguna lógica ya que son
+                    antónimas entre sí:</p>
+
+                <p id="HARM"><strong>HARM</strong><br>
+                    Comprueba si tu objetivo actual es enemigo.</p>
+                <div class="card p-2 mb-3">
+                    <code>/cast [harm] Punición; Sanación relámpago;</code>
+                </div><br>
+
+                <p id="HELP"><strong>HELP</strong><br>
+                    Comprueba si tu objetivo actual es amigo.</p>
+                <div class="card p-2 mb-3">
+                    <code>/cast [help] Sanación relámpago; Punición;</code>
+                </div><br>
+            </div>
+
+            <!-- Sección 8.4 -->
+            <h3 class="text-body-emphasis" id="8.4">8.4. Condiciones de destino específico</h3>
+            <div class="btn-group controls mb-2" role="group">
+                <button class="btn btn-sm btn-outline-info" onclick="leer('texto8.4')">Leer</button>
+                <button class="btn btn-sm btn-outline-warning" onclick="pausar()">Pausar</button>
+                <button class="btn btn-sm btn-outline-danger" onclick="parar()">Parar</button>
+            </div>
+            <div id="texto8.4" class="fs-5 col-md-10">
+                <p>Estas condiciones son algo extrañas. Realmente no comprueban nada, simplemente es la aclaración de a
+                    quién va dirigido el hechizo resultante de la macro.</p>
+
+                <p id="TARGET"><strong>@TARGET</strong><br>
+                    El hechizo va dirigido a tu objetivo.</p>
+                <div class="card p-2 mb-3">
+                    <code>/cast [@target] Sanación relámpago;</code>
+                </div><br>
+
+                <p id="TARGETTARGET"><strong>@TARGETTARGET</strong><br>
+                    El hechizo va dirigido al objetivo de tu objetivo.</p>
+                <div class="card p-2 mb-3">
+                    <code>/cast [@targettarget] Sanación relámpago;</code>
+                </div><br>
+
+                <p id="FOCUS"><strong>@FOCUS</strong><br>
+                    El hechizo va dirigido a tu focus.</p>
+                <div class="card p-2 mb-3">
+                    <code>/cast [@focus] Sanación relámpago;</code>
+                </div><br>
+
+                <p id="FOCUSTARGET"><strong>@FOCUSTARGET</strong><br>
+                    El hechizo va dirigido al objetivo de tu focus.</p>
+                <div class="card p-2 mb-3">
+                    <code>/cast [@focustarget] Sanación relámpago;</code>
+                </div><br>
+
+                <p id="PLAYER"><strong>@PLAYER</strong><br>
+                    El hechizo va dirigido a ti mismo.</p>
+                <div class="card p-2 mb-3">
+                    <code>/cast [@player] Sanación relámpago;</code>
+                </div><br>
+
+                <p id="MOUSEOVER"><strong>@MOUSEOVER</strong><br>
+                    El hechizo va dirigido al personaje que esté debajo de tu puntero que no seas tú. Sirve con las
+                    interfaces de banda tanto del propio wow como el grid o similares.
+                    También sirve, por supuesto, a los personajes en pantalla directamente.</p>
+                <div class="card p-2 mb-3">
+                    <code>/cast [@mouseover] Sanación relámpago;</code>
+                </div><br>
+
+                <p id="MOUSEOVERTARGET"><strong>@MOUSEOVERTARGET</strong><br>
+                    El hechizo va dirigido al objetivo del personaje que esté debajo de tu puntero.</p>
+                <div class="card p-2 mb-3">
+                    <code>/cast [@mouseovertarget] Sanación relámpago;</code>
+                </div><br>
+
+                <p id="NOMBRE"><strong>@NOMBRE</strong><br>
+                    El hechizo irá dirigido al jugador o enemigo que pongas en NOMBRE. Dicho objetivo debe estar en tu
+                    grupo o banda.</p>
+                <div class="card p-2 mb-3">
+                    <code>/cast [@Menganito] Secretos del oficio;</code>
+                </div><br>
+            </div>
+
+            <!-- Sección 8.5 -->
+            <h3 class="text-body-emphasis" id="8.5">8.5. Condiciones de terreno</h3>
+            <div class="btn-group controls mb-2" role="group">
+                <button class="btn btn-sm btn-outline-info" onclick="leer('texto8.5')">Leer</button>
+                <button class="btn btn-sm btn-outline-warning" onclick="pausar()">Pausar</button>
+                <button class="btn btn-sm btn-outline-danger" onclick="parar()">Parar</button>
+            </div>
+            <div id="texto8.5" class="fs-5 col-md-10">
+                <p id="FLYABLE"><strong>FLYABLE</strong><br>
+                    Comprueba si el mapa donde estás permite volar.</p>
+                <div class="card p-2 mb-3">
+                    <code>/cast [flyable] Grifo dorado; Corcel blanco presto;</code>
+                </div><br>
+
+                <p id="FLYING"><strong>FLYING</strong><br>
+                    Comprueba si estás volando.</p>
+                <div class="card p-2 mb-3">
+                    <code>/cast [flying] Levitar; Grifo dorado;</code>
+                </div><br>
+
+                <p id="INDOORS"><strong>INDOORS</strong><br>
+                    Comprueba si estás en interiores.</p>
+                <div class="card p-2 mb-3">
+                    <code>/cast [indoors] Sprint; Corcel blanco presto;</code>
+                </div><br>
+
+                <p id="OUTDOORS"><strong>OUTDOORS</strong><br>
+                    Comprueba si estás en exteriores.</p>
+                <div class="card p-2 mb-3">
+                    <code>/cast [outdoors] Corcel blanco presto; Sprint;</code>
+                </div><br>
+
+                <p id="MOUNTED"><strong>MOUNTED</strong><br>
+                    Comprueba si estás montado.</p>
+                <div class="card p-2 mb-3">
+                    <code>/cast [mounted] Sigilo; Esfumarse</code>
+                </div><br>
+
+                <p id="SWIMMING"><strong>SWIMMING</strong><br>
+                    Comprueba si estás nadando.</p>
+                <div class="card p-2 mb-3">
+                    <code>/cast [swimming] forma acuática;</code>
+                </div><br>
+            </div>
+
+            <!-- Sección 8.6 -->
+            <h3 class="text-body-emphasis" id="8.6">8.6. Condiciones de hechizo</h3>
+            <div class="btn-group controls mb-2" role="group">
+                <button class="btn btn-sm btn-outline-info" onclick="leer('texto8.6')">Leer</button>
+                <button class="btn btn-sm btn-outline-warning" onclick="pausar()">Pausar</button>
+                <button class="btn btn-sm btn-outline-danger" onclick="parar()">Parar</button>
+            </div>
+            <div id="texto8.6" class="fs-5 col-md-10">
+                <p id="CHANNELING"><strong>CHANNELING</strong><br>
+                    Comprueba si estás canalizando un hechizo. Aquí un ejemplo usando la negación:</p>
+                <div class="card p-2 mb-3">
+                    <code>/cast [nochanneling:Tortura mental] Tortura mental;</code>
+                </div><br>
+            </div>
+
+        </div>
+    </section>
+
+    <div id="fall-divider"></div>
+    <div id="footer"></div>
+
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+        <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+            <path
+                d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z" />
+        </symbol>
+        <symbol id="sun-fill" viewBox="0 0 16 16">
+            <path
+                d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
+        </symbol>
+    </svg>
+    <div class="position-fixed bottom-0 end-0 custom-margin me-3 bd-mode-toggle">
+        <div class="form-check form-switch form-switch-lg">
+            <input class="form-check-input glow" type="checkbox" id="themeSwitch" aria-label="Toggle theme">
+            <label class="form-check-label d-flex align-items-center" for="themeSwitch">
+                <svg class="bi my-1 theme-icon-active ms-2" width="1.5em" height="1.5em">
+                    <use href="#"></use>
+                </svg>
+            </label>
+        </div>
+    </div>
+
+</body>
+
+</html>
