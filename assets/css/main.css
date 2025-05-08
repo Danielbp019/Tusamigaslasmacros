@@ -121,3 +121,13 @@ glow::after {
 .input-group button {
   height: 100%;
 }
+
+/* Lectura automatica */
+.controls {
+  margin-bottom: 1rem;
+}
+
+.leyendo {
+  border-left: 4px solid #ffc107;
+  padding-left: 8px;
+}

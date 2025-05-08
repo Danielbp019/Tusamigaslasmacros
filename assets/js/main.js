@@ -55,3 +55,65 @@ function updateThemeIcon(theme) {
 }
 // Llamar a la función para actualizar el icono al cargar la página
 updateThemeIcon(savedTheme);
+
+/* Lectura automatica por voz */
+const synth = window.speechSynthesis;
+let voz = null;
+let elementoLeyendo = null;
+
+function seleccionarVoz() {
+  const voces = synth.getVoices();
+  voz =
+    voces.find((v) => v.lang.startsWith("es") && v.name.toLowerCase().includes("natural")) ||
+    voces.find((v) => v.lang.startsWith("es")) ||
+    voces[0];
+}
+
+speechSynthesis.onvoiceschanged = seleccionarVoz;
+
+function leer(id) {
+  if (synth.speaking) synth.cancel();
+  if (elementoLeyendo) {
+    elementoLeyendo.classList.remove("leyendo");
+  }
+
+  const textoElemento = document.getElementById(id);
+  const texto = textoElemento.innerText;
+  const utterance = new SpeechSynthesisUtterance(texto);
+  utterance.voice = voz;
+
+  utterance.onstart = () => {
+    textoElemento.classList.add("leyendo");
+    elementoLeyendo = textoElemento;
+  };
+
+  utterance.onend = () => {
+    textoElemento.classList.remove("leyendo");
+    elementoLeyendo = null;
+  };
+
+  utterance.onerror = () => {
+    textoElemento.classList.remove("leyendo");
+    elementoLeyendo = null;
+  };
+
+  synth.speak(utterance);
+}
+
+function pausar() {
+  if (synth.speaking && !synth.paused) {
+    synth.pause();
+  } else if (synth.paused) {
+    synth.resume();
+  }
+}
+
+function parar() {
+  synth.cancel();
+  if (elementoLeyendo) {
+    elementoLeyendo.classList.remove("leyendo");
+    elementoLeyendo = null;
+  }
+}
+
+window.onload = () => setTimeout(seleccionarVoz, 100);
