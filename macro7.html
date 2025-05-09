@@ -40,9 +40,10 @@
 
 <body>
 
-    <nav class="navbar bg-body-tertiary py-3">
-        <div class="container d-flex justify-content-center">
-            <a href="index.html" class="btn btn-outline-secondary d-flex align-items-center gap-2"
+    <nav class="navbar navbar-custom">
+        <div class="container d-flex justify-content-center align-items-center gap-2">
+            <a href="macro6.html" class="btn btn-sm btn-outline-secondary" disabled>Página anterior</a>
+            <a href="index.html" class="btn btn-sm btn-outline-secondary d-flex align-items-center gap-2"
                 aria-label="Menú de aplicación">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-house"
                     viewBox="0 0 16 16">
@@ -51,10 +52,9 @@
                 </svg>
                 Ir al índice
             </a>
+            <a href="macro8.html" class="btn btn-sm btn-outline-info">Página siguiente</a>
         </div>
     </nav>
-
-    <div id="fall-divider"></div>
 
     <section id="contenido">
         <div class="container py-5">
@@ -71,18 +71,16 @@
                     hechizos o usar habilidades específicas.</p>
             </div><br>
 
-            <!-- Sección 7.1 -->
-            <h2 class="text-body-emphasis" id="7.1">7.1. Acciones:</h2>
 
-            <!-- Sección 7.1.1 -->
-            <h3 class="text-body-emphasis" id="7.1.1">7.1.1. Acciones de combate</h3>
+            <!-- Sección 7.1 -->
+            <h3 class="text-body-emphasis" id="7.1">7.1. Acciones de combate</h3>
             <div class="btn-group controls mb-2" role="group">
                 <button class="btn btn-sm btn-outline-info" onclick="leer('CAST')">Leer</button>
                 <button class="btn btn-sm btn-outline-warning" onclick="pausar()">Pausar</button>
                 <button class="btn btn-sm btn-outline-danger" onclick="parar()">Parar</button>
             </div>
             <div id="CAST" class="fs-5 col-md-10">
-                <p id="CAST"><strong>CAST</strong><br>
+                <p id="CAST"><strong>7.1.1 CAST</strong><br>
                     Esta es la macro principal, la que más usarás (se puede cambiar "cast" por "lanzar" si juegas en
                     castellano. Pero no se recomienda, ya que "cast" no falla y ocupa menos caracteres).<br>
                     Básicamente sigue la siguiente estructura:</p>
@@ -97,7 +95,7 @@
                 <button class="btn btn-sm btn-outline-danger" onclick="parar()">Parar</button>
             </div>
             <div id="CASTSEQUENCE" class="fs-5 col-md-10">
-                <p id="CASTSEQUENCE"><strong>CASTSEQUENCE</strong><br>
+                <p id="CASTSEQUENCE"><strong>7.1.2 CASTSEQUENCE</strong><br>
                     En esencia funciona igual que el CAST pero tiene otra finalidad. Su función no es la de lanzar un
                     hechizo, sino la de concatenar varios hechizos bajo las mismas condiciones.<br>
                     La diferencia es que la estructura es relativamente diferente y usa unas condiciones distintas.</p>
@@ -113,51 +111,51 @@
                 </p>
             </div><br>
 
-            <!-- Sección 7.2.1 -->
-            <h3 class="text-body-emphasis" id="7.2.1">7.2.1. Acciones sueltas</h3>
+            <!-- Sección 7.2 -->
+            <h3 class="text-body-emphasis" id="7.2">7.2. Acciones sueltas</h3>
             <div class="btn-group controls mb-2" role="group">
-                <button class="btn btn-sm btn-outline-info" onclick="leer('texto7.2.1')">Leer</button>
+                <button class="btn btn-sm btn-outline-info" onclick="leer('texto7.2')">Leer</button>
                 <button class="btn btn-sm btn-outline-warning" onclick="pausar()">Pausar</button>
                 <button class="btn btn-sm btn-outline-danger" onclick="parar()">Parar</button>
             </div>
-            <div id="texto7.2.1" class="fs-5 col-md-10">
-                <p id="STOPCASTING"><strong>STOPCASTING</strong><br>
+            <div id="texto7.2" class="fs-5 col-md-10">
+                <p id="STOPCASTING"><strong>7.2.1 STOPCASTING</strong><br>
                     Este comando corta cualquier hechizo que estés lanzando:</p>
                 <div class="card p-2 mb-3">
                     <code>/stopcast [condiciones]</code>
                 </div><br>
 
-                <p id="CLEARTARGET"><strong>CLEARTARGET</strong><br>
+                <p id="CLEARTARGET"><strong>7.2.2 CLEARTARGET</strong><br>
                     Permite limpiar el objetivo que tengamos:</p>
                 <div class="card p-2 mb-3">
                     <code>/cleartarget [condiciones]</code>
                 </div><br>
 
-                <p id="FOCUS"><strong>FOCUS</strong><br>
+                <p id="FOCUS"><strong>7.2.3 FOCUS</strong><br>
                     Permite crear un objetivo "focus":</p>
                 <div class="card p-2 mb-3">
                     <code>/focus [condiciones]</code>
                 </div><br>
 
-                <p id="CLEARFOCUS"><strong>CLEARFOCUS</strong><br>
+                <p id="CLEARFOCUS"><strong>7.2.4 CLEARFOCUS</strong><br>
                     Permite limpiar nuestro objetivo "focus":</p>
                 <div class="card p-2 mb-3">
                     <code>/clearfocus [condiciones]</code>
                 </div><br>
 
-                <p id="STOPMACRO"><strong>STOPMACRO</strong><br>
+                <p id="STOPMACRO"><strong>7.2.5 STOPMACRO</strong><br>
                     Permite detener una macro:</p>
                 <div class="card p-2 mb-3">
                     <code>/stopmacro [condiciones]</code>
                 </div><br>
 
-                <p id="CANCELAURA"><strong>CANCELAURA</strong><br>
+                <p id="CANCELAURA"><strong>7.2.6 CANCELAURA</strong><br>
                     Permite quitarse un beneficio:</p>
                 <div class="card p-2 mb-3">
                     <code>/cancelaura [condiciones] beneficio;</code>
                 </div><br>
 
-                <p id="CANCELFORM"><strong>CANCELFORM</strong><br>
+                <p id="CANCELFORM"><strong>7.2.7 CANCELFORM</strong><br>
                     Permite quitarse una forma. Las "formas" son aquellas habilidades que te habilitan una barra
                     alternativa (como la "Forma de las sombras" del sacerdote). La excepción a este tipo de formas son
                     los guerreros, ya que tienen que estar en una forma obligatoriamente.</p>
@@ -165,74 +163,74 @@
                     <code>/cancelform [condiciones]</code>
                 </div><br>
 
-                <p id="STARTATTACK"><strong>STARTATTACK</strong><br>
+                <p id="STARTATTACK"><strong>7.2.8 STARTATTACK</strong><br>
                     Permite empezar a atacar. La diferencia con "atacar" del libro de hechizos es que ese "atacar"
                     activa o desactiva el ataque según el estado actual. Con este comando atacas sí o sí:</p>
                 <div class="card p-2 mb-3">
                     <code>/startattack [condiciones]</code>
                 </div><br>
 
-                <p id="STOPATTACK"><strong>STOPATTACK</strong><br>
+                <p id="STOPATTACK"><strong>7.2.9 STOPATTACK</strong><br>
                     Mismo caso que el anterior, pero obliga a parar de atacar:</p>
                 <div class="card p-2 mb-3">
                     <code>/stopattack [condiciones]</code>
                 </div><br>
             </div>
 
-            <!-- Sección 7.3.1 -->
-            <h3 class="text-body-emphasis" id="7.3.1">7.3.1. Acciones de mascotas</h3>
+            <!-- Sección 7.3 -->
+            <h3 class="text-body-emphasis" id="7.3">7.3. Acciones de mascotas</h3>
             <div class="btn-group controls mb-2" role="group">
-                <button class="btn btn-sm btn-outline-info" onclick="leer('texto7.3.1')">Leer</button>
+                <button class="btn btn-sm btn-outline-info" onclick="leer('texto7.3')">Leer</button>
                 <button class="btn btn-sm btn-outline-warning" onclick="pausar()">Pausar</button>
                 <button class="btn btn-sm btn-outline-danger" onclick="parar()">Parar</button>
             </div>
-            <div id="texto7.3.1" class="fs-5 col-md-10">
-                <p id="PETAGGRESSIVE"><strong>PETAGGRESSIVE</strong><br>
+            <div id="texto7.3" class="fs-5 col-md-10">
+                <p id="PETAGGRESSIVE"><strong>7.3.1 PETAGGRESSIVE</strong><br>
                     Pone a tu mascota en agresivo:</p>
                 <div class="card p-2 mb-3">
                     <code>/petaggressive [condiciones]</code>
                 </div><br>
 
-                <p id="PETATTACK"><strong>PETATTACK</strong><br>
+                <p id="PETATTACK"><strong>7.3.2 PETATTACK</strong><br>
                     Envía a tu mascota a atacar:</p>
                 <div class="card p-2 mb-3">
                     <code>/petattack [condiciones]</code>
                 </div><br>
 
-                <p id="PETDEFENSIVE"><strong>PETDEFENSIVE</strong><br>
+                <p id="PETDEFENSIVE"><strong>7.3.3 PETDEFENSIVE</strong><br>
                     Pone a tu mascota en defensivo:</p>
                 <div class="card p-2 mb-3">
                     <code>/petdefensive [condiciones]</code>
                 </div><br>
 
-                <p id="PETFOLLOW"><strong>PETFOLLOW</strong><br>
+                <p id="PETFOLLOW"><strong>7.3.4 PETFOLLOW</strong><br>
                     Pone a tu mascota en seguirte, contrario a "Petstay":</p>
                 <div class="card p-2 mb-3">
                     <code>/petfollow [condiciones]</code>
                 </div><br>
 
-                <p id="PETPASSIVE"><strong>PETPASSIVE</strong><br>
+                <p id="PETPASSIVE"><strong>7.3.5 PETPASSIVE</strong><br>
                     Pone a tu mascota en pasivo:</p>
                 <div class="card p-2 mb-3">
                     <code>/petpassive [condiciones]</code>
                 </div><br>
 
-                <p id="PETSTAY"><strong>PETSTAY</strong><br>
+                <p id="PETSTAY"><strong>7.3.6 PETSTAY</strong><br>
                     Deja quieta a tu mascota en el sitio, contrario a "Petfollow":</p>
                 <div class="card p-2 mb-3">
                     <code>/petstay [condiciones]</code>
                 </div><br>
             </div>
 
-            <!-- Sección 7.4.1 -->
-            <h3 class="text-body-emphasis" id="7.4.1">7.4.1. Acciones generales</h3>
+            <!-- Sección 7.4 -->
+            <h3 class="text-body-emphasis" id="7.4">7.4. Acciones generales</h3>
             <div class="btn-group controls mb-2" role="group">
-                <button class="btn btn-sm btn-outline-info" onclick="leer('texto7.4.1')">Leer</button>
+                <button class="btn btn-sm btn-outline-info" onclick="leer('texto7.4')">Leer</button>
                 <button class="btn btn-sm btn-outline-warning" onclick="pausar()">Pausar</button>
                 <button class="btn btn-sm btn-outline-danger" onclick="parar()">Parar</button>
             </div>
-            <div id="texto7.4.1" class="fs-5 col-md-10">
-                <p id="SHOW"><strong>#SHOW</strong><br>
+            <div id="texto7.4" class="fs-5 col-md-10">
+                <p id="SHOW"><strong>7.4.1 #SHOW</strong><br>
                     Muestra el icono de la primera habilidad de la macro. Puedes añadirle después del "show" el nombre
                     de un hechizo, el nombre de un objeto, la "Bagid Slot" o la "InvSlot". En cualquiera de los casos
                     mostrará el icono que haya en esos lugares.<br>
@@ -243,7 +241,7 @@
                     <code>#show [condiciones] Habilidad/objeto</code>
                 </div><br>
 
-                <p id="SHOWCOOLDOWN"><strong>#SHOWCOOLDOWN</strong><br>
+                <p id="SHOWCOOLDOWN"><strong>7.4.2 #SHOWCOOLDOWN</strong><br>
                     Es igual que el "Show" pero además muestra el tiempo de reutilización de la primera habilidad
                     después del "showcooldown" o bien de la primera habilidad de la macro en caso de no tener nada el
                     "showcooldown":</p>
@@ -251,7 +249,7 @@
                     <code>#showcooldown [condiciones] Habilidad/objeto</code>
                 </div><br>
 
-                <p id="SHOWTOOLTIP"><strong>#SHOWTOOLTIP</strong><br>
+                <p id="SHOWTOOLTIP"><strong>7.4.3 #SHOWTOOLTIP</strong><br>
                     Es igual que el "Showcooldown" pero además muestra la descripción de la habilidad que muestra el
                     "showtooltip".<br>
                     NOTA: Para que te muestren los iconos debes escoger como icono el "?" rojo.</p>
@@ -259,7 +257,7 @@
                     <code>#showtooltip [condiciones] Habilidad/objeto</code>
                 </div><br>
 
-                <p id="EXCLAMACION"><strong>La <code>!</code> en los hechizos</strong><br>
+                <p id="EXCLAMACION"><strong>7.4.4 La <code>!</code> en los hechizos</strong><br>
                     Muchos hechizos del World of Warcraft funcionan de distinta manera al pulsarlos una vez o la
                     siguiente. Por ejemplo, las auras del paladín: la primera vez que pulses se activará, y la siguiente
                     se desactivará. Con esta acción podemos hacer que un hechizo siempre trate de activarse, en vez de
@@ -271,6 +269,12 @@
 
         </div>
     </section>
+
+    <!-- Páginas -->
+    <div class="d-flex justify-content-center mb-4">
+        <a href="macro6.html" class="btn btn-sm btn-secondary me-2" disabled>Página anterior</a>
+        <a href="macro8.html" class="btn btn-sm btn-info">Siguiente página</a>
+    </div>
 
     <div id="fall-divider"></div>
     <div id="footer"></div>

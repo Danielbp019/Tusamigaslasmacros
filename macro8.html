@@ -40,9 +40,10 @@
 
 <body>
 
-    <nav class="navbar bg-body-tertiary py-3">
-        <div class="container d-flex justify-content-center">
-            <a href="index.html" class="btn btn-outline-secondary d-flex align-items-center gap-2"
+    <nav class="navbar navbar-custom">
+        <div class="container d-flex justify-content-center align-items-center gap-2">
+            <a href="macro7.html" class="btn btn-sm btn-outline-secondary" disabled>Página anterior</a>
+            <a href="index.html" class="btn btn-sm btn-outline-secondary d-flex align-items-center gap-2"
                 aria-label="Menú de aplicación">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-house"
                     viewBox="0 0 16 16">
@@ -51,10 +52,9 @@
                 </svg>
                 Ir al índice
             </a>
+            <a href="macro910.html" class="btn btn-sm btn-outline-info">Página siguiente</a>
         </div>
     </nav>
-
-    <div id="fall-divider"></div>
 
     <section id="contenido">
         <div class="container py-5">
@@ -111,7 +111,7 @@
             <div id="texto8.1" class="fs-5 col-md-10">
                 <p>Estas condiciones pueden ponerse dentro de los mismos corchetes.</p>
 
-                <p id="BUTTON"><strong>BUTTON</strong><br>
+                <p id="BUTTON"><strong>8.1.1 BUTTON</strong><br>
                     Comprueba si se activa la macro con algún botón en concreto del ratón: 1 es Click izquierdo, 2 click
                     derecho, 3 Click central y a partir de ahí tantos como botones tenga tu ratón. Tendrás que probar a
                     cuál corresponde cuál. Ten en cuenta que puedes cambiar <code>BUTTON</code> por <code>BTN</code>.
@@ -120,7 +120,7 @@
                     <code>/cast [btn:2] Sanación Superior; Sanación relámpago;</code>
                 </div><br>
 
-                <p id="MODIFIER"><strong>MODIFIER</strong><br>
+                <p id="MODIFIER"><strong>8.1.2 MODIFIER</strong><br>
                     Comprueba si mientras se activa la macro estamos pulsando alguna de las siguientes teclas: Alt, Ctrl
                     o Shift. Ten en cuenta que puedes cambiar <code>MODIFIER</code> por <code>MOD</code>.</p>
                 <div class="card p-2 mb-3">
@@ -138,32 +138,32 @@
             <div id="texto8.2" class="fs-5 col-md-10">
                 <p>Estas condiciones pueden ponerse dentro de los mismos corchetes.</p>
 
-                <p id="COMBAT"><strong>COMBAT</strong><br>
+                <p id="COMBAT"><strong>8.2.1 COMBAT</strong><br>
                     Comprueba si estás con combate.</p>
                 <div class="card p-2 mb-3">
                     <code>/cast [combat] Esfumarse; Sigilo;</code>
                 </div><br>
 
-                <p id="DEAD"><strong>DEAD</strong><br>
+                <p id="DEAD"><strong>8.2.2 DEAD</strong><br>
                     Comprueba si el objetivo está muerto.</p>
                 <div class="card p-2 mb-3">
                     <code>/cast [dead] Canibalismo; Punición;</code>
                 </div><br>
 
-                <p id="EXISTS"><strong>EXISTS</strong><br>
+                <p id="EXISTS"><strong>8.2.3 EXISTS</strong><br>
                     Comprueba si el objetivo existe. (No se me ocurre ningún ejemplo simple realista, así que dejo lo
                     básico).</p>
                 <div class="card p-2 mb-3">
                     <code>/cast [exists] Sanación Relámpago;</code>
                 </div><br>
 
-                <p id="STEALTH"><strong>STEALTH</strong><br>
+                <p id="STEALTH"><strong>8.2.4 STEALTH</strong><br>
                     Comprueba si estás en sigilo.</p>
                 <div class="card p-2 mb-3">
                     <code>/cast [stealth] Emboscada; Puñalada;</code>
                 </div><br>
 
-                <p id="STANCEoFORM"><strong>STANCE o FORM</strong><br>
+                <p id="STANCEoFORM"><strong>8.2.5 STANCE o FORM</strong><br>
                     Comprueba la estancia en la que estás. Por estancia hablamos de aquellos estados que activan barras
                     distintas al usarlas (como las transformaciones de druida o las actitudes de guerrero). Las
                     excepciones son el Ángel del Sacerdote, lobo del chamán y la forma de demonio del brujo.</p>
@@ -184,13 +184,13 @@
                 <p>Puedes poner estas condiciones en los mismos corchetes, pero no tendría ninguna lógica ya que son
                     antónimas entre sí:</p>
 
-                <p id="HARM"><strong>HARM</strong><br>
+                <p id="HARM"><strong>8.3.1 HARM</strong><br>
                     Comprueba si tu objetivo actual es enemigo.</p>
                 <div class="card p-2 mb-3">
                     <code>/cast [harm] Punición; Sanación relámpago;</code>
                 </div><br>
 
-                <p id="HELP"><strong>HELP</strong><br>
+                <p id="HELP"><strong>8.3.2 HELP</strong><br>
                     Comprueba si tu objetivo actual es amigo.</p>
                 <div class="card p-2 mb-3">
                     <code>/cast [help] Sanación relámpago; Punición;</code>
@@ -208,37 +208,37 @@
                 <p>Estas condiciones son algo extrañas. Realmente no comprueban nada, simplemente es la aclaración de a
                     quién va dirigido el hechizo resultante de la macro.</p>
 
-                <p id="TARGET"><strong>@TARGET</strong><br>
+                <p id="TARGET"><strong>8.4.1 @TARGET</strong><br>
                     El hechizo va dirigido a tu objetivo.</p>
                 <div class="card p-2 mb-3">
                     <code>/cast [@target] Sanación relámpago;</code>
                 </div><br>
 
-                <p id="TARGETTARGET"><strong>@TARGETTARGET</strong><br>
+                <p id="TARGETTARGET"><strong>8.4.2 @TARGETTARGET</strong><br>
                     El hechizo va dirigido al objetivo de tu objetivo.</p>
                 <div class="card p-2 mb-3">
                     <code>/cast [@targettarget] Sanación relámpago;</code>
                 </div><br>
 
-                <p id="FOCUS"><strong>@FOCUS</strong><br>
+                <p id="FOCUS"><strong>8.4.3 @FOCUS</strong><br>
                     El hechizo va dirigido a tu focus.</p>
                 <div class="card p-2 mb-3">
                     <code>/cast [@focus] Sanación relámpago;</code>
                 </div><br>
 
-                <p id="FOCUSTARGET"><strong>@FOCUSTARGET</strong><br>
+                <p id="FOCUSTARGET"><strong>8.4.4 @FOCUSTARGET</strong><br>
                     El hechizo va dirigido al objetivo de tu focus.</p>
                 <div class="card p-2 mb-3">
                     <code>/cast [@focustarget] Sanación relámpago;</code>
                 </div><br>
 
-                <p id="PLAYER"><strong>@PLAYER</strong><br>
+                <p id="PLAYER"><strong>8.4.5 @PLAYER</strong><br>
                     El hechizo va dirigido a ti mismo.</p>
                 <div class="card p-2 mb-3">
                     <code>/cast [@player] Sanación relámpago;</code>
                 </div><br>
 
-                <p id="MOUSEOVER"><strong>@MOUSEOVER</strong><br>
+                <p id="MOUSEOVER"><strong>8.4.6 @MOUSEOVER</strong><br>
                     El hechizo va dirigido al personaje que esté debajo de tu puntero que no seas tú. Sirve con las
                     interfaces de banda tanto del propio wow como el grid o similares.
                     También sirve, por supuesto, a los personajes en pantalla directamente.</p>
@@ -246,13 +246,13 @@
                     <code>/cast [@mouseover] Sanación relámpago;</code>
                 </div><br>
 
-                <p id="MOUSEOVERTARGET"><strong>@MOUSEOVERTARGET</strong><br>
+                <p id="MOUSEOVERTARGET"><strong>8.4.7 @MOUSEOVERTARGET</strong><br>
                     El hechizo va dirigido al objetivo del personaje que esté debajo de tu puntero.</p>
                 <div class="card p-2 mb-3">
                     <code>/cast [@mouseovertarget] Sanación relámpago;</code>
                 </div><br>
 
-                <p id="NOMBRE"><strong>@NOMBRE</strong><br>
+                <p id="NOMBRE"><strong>8.4.8 @NOMBRE</strong><br>
                     El hechizo irá dirigido al jugador o enemigo que pongas en NOMBRE. Dicho objetivo debe estar en tu
                     grupo o banda.</p>
                 <div class="card p-2 mb-3">
@@ -268,37 +268,37 @@
                 <button class="btn btn-sm btn-outline-danger" onclick="parar()">Parar</button>
             </div>
             <div id="texto8.5" class="fs-5 col-md-10">
-                <p id="FLYABLE"><strong>FLYABLE</strong><br>
+                <p id="FLYABLE"><strong>8.5.1 FLYABLE</strong><br>
                     Comprueba si el mapa donde estás permite volar.</p>
                 <div class="card p-2 mb-3">
                     <code>/cast [flyable] Grifo dorado; Corcel blanco presto;</code>
                 </div><br>
 
-                <p id="FLYING"><strong>FLYING</strong><br>
+                <p id="FLYING"><strong>8.5.2 FLYING</strong><br>
                     Comprueba si estás volando.</p>
                 <div class="card p-2 mb-3">
                     <code>/cast [flying] Levitar; Grifo dorado;</code>
                 </div><br>
 
-                <p id="INDOORS"><strong>INDOORS</strong><br>
+                <p id="INDOORS"><strong>8.5.3 INDOORS</strong><br>
                     Comprueba si estás en interiores.</p>
                 <div class="card p-2 mb-3">
                     <code>/cast [indoors] Sprint; Corcel blanco presto;</code>
                 </div><br>
 
-                <p id="OUTDOORS"><strong>OUTDOORS</strong><br>
+                <p id="OUTDOORS"><strong>8.5.4 OUTDOORS</strong><br>
                     Comprueba si estás en exteriores.</p>
                 <div class="card p-2 mb-3">
                     <code>/cast [outdoors] Corcel blanco presto; Sprint;</code>
                 </div><br>
 
-                <p id="MOUNTED"><strong>MOUNTED</strong><br>
+                <p id="MOUNTED"><strong>8.5.5 MOUNTED</strong><br>
                     Comprueba si estás montado.</p>
                 <div class="card p-2 mb-3">
                     <code>/cast [mounted] Sigilo; Esfumarse</code>
                 </div><br>
 
-                <p id="SWIMMING"><strong>SWIMMING</strong><br>
+                <p id="SWIMMING"><strong>8.5.6 SWIMMING</strong><br>
                     Comprueba si estás nadando.</p>
                 <div class="card p-2 mb-3">
                     <code>/cast [swimming] forma acuática;</code>
@@ -313,7 +313,7 @@
                 <button class="btn btn-sm btn-outline-danger" onclick="parar()">Parar</button>
             </div>
             <div id="texto8.6" class="fs-5 col-md-10">
-                <p id="CHANNELING"><strong>CHANNELING</strong><br>
+                <p id="CHANNELING"><strong>8.6.1 CHANNELING</strong><br>
                     Comprueba si estás canalizando un hechizo. Aquí un ejemplo usando la negación:</p>
                 <div class="card p-2 mb-3">
                     <code>/cast [nochanneling:Tortura mental] Tortura mental;</code>
@@ -322,6 +322,12 @@
 
         </div>
     </section>
+
+    <!-- Páginas -->
+    <div class="d-flex justify-content-center mb-4">
+        <a href="macro7.html" class="btn btn-sm btn-secondary me-2" disabled>Página anterior</a>
+        <a href="macro910.html" class="btn btn-sm btn-info">Siguiente página</a>
+    </div>
 
     <div id="fall-divider"></div>
     <div id="footer"></div>

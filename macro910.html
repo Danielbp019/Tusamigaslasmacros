@@ -40,9 +40,10 @@
 
 <body>
 
-    <nav class="navbar bg-body-tertiary py-3">
-        <div class="container d-flex justify-content-center">
-            <a href="index.html" class="btn btn-outline-secondary d-flex align-items-center gap-2"
+    <nav class="navbar navbar-custom">
+        <div class="container d-flex justify-content-center align-items-center gap-2">
+            <a href="macro8.html" class="btn btn-sm btn-outline-secondary" disabled>Página anterior</a>
+            <a href="index.html" class="btn btn-sm btn-outline-secondary d-flex align-items-center gap-2"
                 aria-label="Menú de aplicación">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-house"
                     viewBox="0 0 16 16">
@@ -51,10 +52,9 @@
                 </svg>
                 Ir al índice
             </a>
+            <button type="button" class="btn btn-sm btn-outline-info" disabled>Página siguiente</button>
         </div>
     </nav>
-
-    <div id="fall-divider"></div>
 
     <section id="contenido">
         <div class="container py-5">
@@ -77,8 +77,11 @@
                 </div>
                 <p>Otro uso es ponerle que use una casilla en concreto de tus bolsas (siendo las bolsas del 0 al 4 y del
                     1 hasta la última casilla empezando siempre por la izquierda arriba):</p>
-                    <img src="assets/img/slotnumber.png" alt="" class="img-fluid">
-                    <br><br>
+                <div class="text-center">
+                    <img src="assets/img/bolsas.png" alt="slot de bolsa" class="img-fluid">
+                    <img src="assets/img/slotnumber.png" alt="slot de equipo" class="img-fluid">
+                </div>
+                <br><br>
                 <div class="card p-2 mb-3">
                     <code>/use [condiciones] numero bolsa número hueco</code>
                 </div>
@@ -90,7 +93,9 @@
                     los usos de nuestro equipo siempre que estén disponibles. Ten en
                     cuenta que esta lista es para usar los posibles "usos" que tengan cada uno de estos
                     objetos:</p>
-                <img src="assets/img/InventorySlots.webp" alt="" class="img-fluid">
+                <div class="text-center">
+                    <img src="assets/img/InventorySlots.webp" alt="" class="img-fluid">
+                </div>
                 <br><br>
 
                 <!-- Sección 9.2 -->
@@ -101,7 +106,7 @@
                 </div><br>
 
                 <!-- Sección 9.3 -->
-                <h2 class="text-body-emphasis" id="EQUiPSLOT">9.3. EQUiPSLOT</h2>
+                <h2 class="text-body-emphasis" id="EQUIPSLOT">9.3. EQUIPSLOT</h2>
                 <p>Te permite equipar un objeto en una casilla de manera específica. Ideal para cuando quieres cambiar
                     un anillo en concreto o armas de 1 mano. La lista de "Casillas" es la misma que en el apartado
                     anterior:</p>
@@ -110,7 +115,7 @@
                 </div><br>
 
                 <!-- Sección 9.4 -->
-                <h2 class="text-body-emphasis" id="EQUiPSET">9.4. EQUiPSET</h2>
+                <h2 class="text-body-emphasis" id="EQUIPSET">9.4. EQUIPSET</h2>
                 <p>Te permite equipar un set que hayas guardado usando el gestor de equipamiento de Blizzard:</p>
                 <div class="card p-2 mb-3">
                     <code>/equipset [condiciones] nombredelset;</code>
@@ -127,12 +132,14 @@
             <div id="texto10" class="fs-5 col-md-10">
                 <p>Estas macros están pensadas para interactuar con tus mascotas mansas.</p>
 
-                <p id="SUMMONPET"><strong>SUMMONPET</strong><br>Invoca una mascota aleatoria de tu lista completa:</p>
+                <p id="SUMMONPET"><strong>10.1 SUMMONPET</strong><br>Invoca una mascota aleatoria de tu lista completa:
+                </p>
                 <div class="card p-2 mb-3">
                     <code>/summonpet [condiciones]</code>
                 </div><br>
 
-                <p id="RANDOMFAVORITEPET"><strong>RANDOMFAVORITEPET</strong><br>Invoca una mascota aleatoria de tu lista
+                <p id="RANDOMFAVORITEPET"><strong>10.2 RANDOMFAVORITEPET</strong><br>Invoca una mascota aleatoria de tu
+                    lista
                     de favoritas:</p>
                 <div class="card p-2 mb-3">
                     <code>/randomfavoritepet [condiciones]</code>
@@ -160,6 +167,12 @@
 
         </div>
     </section>
+
+    <!-- Páginas -->
+    <div class="d-flex justify-content-center mb-4">
+        <a href="macro8.html" class="btn btn-sm btn-secondary me-2" disabled>Página anterior</a>
+        <button type="button" class="btn btn-sm btn-info" disabled>Siguiente página</button>
+    </div>
 
     <div id="fall-divider"></div>
     <div id="footer"></div>
