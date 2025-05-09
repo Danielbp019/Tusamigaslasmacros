@@ -11,6 +11,12 @@ body {
   font-variation-settings: "wdth" 100 !important;
 }
 
+/* Ajuste de parrafos (Esto debe ser un ajuste global para todo proyecto)*/
+p {
+  margin-block: 1em;
+  margin-block: 1lh;
+}
+
 h1,
 h2,
 h3,
