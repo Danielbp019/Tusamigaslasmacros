@@ -18,15 +18,22 @@ p {
 }
 
 /* Ajuste de la nav para la imagen de fondo*/
-.navbar-custom {
+.borde-arriba {
   width: 100%;
-  height: 150px; /* Ajusta según necesites */
-  background: url("../img/TALMbanner1500.png");
+  height: 60px; /* Ajusta según necesites */
+  background: url("../img/TALMbanner1.png");
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: center;
-  padding: 0;
-  margin: 0;
+  background-position: top;
+}
+
+.borde-abajo {
+  width: 100%;
+  height: 50px; /* Ajusta según necesites */
+  background: url("../img/TALMbanner2.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top;
 }
 
 h1,
