@@ -36,6 +36,19 @@ p {
   background-position: top;
 }
 
+/* Estilos para dispositivos móviles, el ancho y alto se toma del css principal */
+@media only screen and (max-width: 768px) {
+  .borde-arriba {
+    background: url("../img/TALMbanner1m.png") no-repeat top;
+    background-size: contain;
+  }
+
+  .borde-abajo {
+    background: url("../img/TALMbanner2m.png") no-repeat top;
+    background-size: contain;
+  }
+}
+
 h1,
 h2,
 h3,
