@@ -117,3 +117,21 @@ function parar() {
 }
 
 window.onload = () => setTimeout(seleccionarVoz, 100);
+
+// Ancla arreglo
+window.addEventListener("load", function () {
+  if (window.location.hash) {
+    // Extrae el id del elemento destino quitando el símbolo '#'
+    var targetId = window.location.hash.substring(1);
+    var targetElement = document.getElementById(targetId);
+    if (targetElement) {
+      // Calcula la posición absoluta del elemento en la página
+      var elementPosition = targetElement.getBoundingClientRect().top;
+      var offsetPosition = elementPosition + window.pageYOffset;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
+  }
+});
