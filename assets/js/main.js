@@ -92,7 +92,20 @@ function seleccionarVoz() {
 
 speechSynthesis.onvoiceschanged = seleccionarVoz;
 
+function showIncompatibleModal() {
+  // Usamos la API de Bootstrap 5 para instanciar el modal
+  const modalElement = document.getElementById("incompatibleModal");
+  const modal = new bootstrap.Modal(modalElement);
+  modal.show();
+}
+
 function leer(id) {
+  // Primero, comprobamos la compatibilidad de SpeechSynthesis
+  if (!("speechSynthesis" in window) || typeof SpeechSynthesisUtterance !== "function") {
+    showIncompatibleModal();
+    return;
+  }
+
   if (synth.speaking) synth.cancel();
   if (elementoLeyendo) {
     elementoLeyendo.classList.remove("leyendo");
