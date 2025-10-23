@@ -105,28 +105,25 @@ import TALMbanner2m from "../assets/img/estructura/TALMbanner2m.png";
 
     <main
       id="contenido"
-      class="container mx-auto px-6 bg-base-100 pt-3 pb-5"
+      class="container mx-auto px-6 bg-base-200 mt-5 mb-12 rounded-lg"
       transition:animate={fade({ duration: "0.5s" })}
     >
       <!-- Banner 1 responsivo -->
-      <div class="hidden sm:block">
+      <div class="hidden sm:block pt-3">
         <Image src={TALMbanner1} alt="Separador en imagen" loading="lazy" />
       </div>
-      <div class="block sm:hidden">
+      <div class="block sm:hidden pt-3">
         <Image src={TALMbanner1m} alt="Separador en imagen" loading="lazy" />
       </div>
       <slot />
-    </main>
-
-    <!-- Banner 2 responsivo (fuera de main para estar siempre al final) -->
-    <div class="container mx-auto px-6 pb-5 pt-2">
-      <div class="hidden sm:block">
+      <!-- Banner 2 responsivo -->
+      <div class="hidden sm:block pt-3 pb-3">
         <Image src={TALMbanner2} alt="Separador en imagen" class="mx-auto" loading="lazy" />
       </div>
-      <div class="block sm:hidden">
+      <div class="block sm:hidden pt-3 pb-3">
         <Image src={TALMbanner2m} alt="Separador en imagen" class="mx-auto" loading="lazy" />
       </div>
-    </div>
+    </main>
 
     <!-- FOOTER -->
     <Footer />

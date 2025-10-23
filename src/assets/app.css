@@ -22,15 +22,6 @@
   font-display: swap;
 }
 
-/* AlexBrush (solo Regular) */
-@font-face {
-  font-family: "AlexBrush";
-  src: url("/fonts/AlexBrush/AlexBrush-Regular.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
 /* AlmendraSC (para Títulos) */
 @font-face {
   font-family: "AlmendraSC";
@@ -42,7 +33,7 @@
 
 body {
   font-family: "Roboto", sans-serif;
-  background-image:url("../assets/img/estructura/TALMfondo.png");
+  background-image: url("../assets/img/estructura/TALMfondo.png");
   background-repeat: repeat;
 }
 
@@ -54,11 +45,6 @@ h4,
 h5,
 h6 {
   font-family: "AlmendraSC", serif;
-}
-
-/* Mi Firma */
-#miFirma {
-  font-family: "AlexBrush", cursive;
 }
 
 /* Ajuste de parrafos (Esto debe ser un ajuste global para todo proyecto)*/
