@@ -9,7 +9,7 @@ https://tusamigaslasmacros.pages.dev/
 # Imágenes del proyecto
 
 - **Inicio:**
-  ![Inicio](./assets/img/readme/inicio.jpg)
+  ![Inicio](imgReadme/inicio.jpg)
 
 - **Indice de la guía:**
-  ![Indiceguia](./assets/img/readme/indicedeguia.jpg)
+  ![Indiceguia](imgReadme/indicedeguia.jpg)

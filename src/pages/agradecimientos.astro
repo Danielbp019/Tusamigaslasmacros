@@ -1,0 +1,31 @@
+---
+import Layout from "../layouts/Layout.astro";
+import TextoAVoz from "../components/TextoAVoz.astro";
+---
+
+<Layout>
+  <section id="contenido" class="p-4 md:p-8">
+    <div class="card w-full bg-base-200 shadow-xl">
+      <div class="card-body">
+        <h2 class="text-4xl mb-4" id="Agradecimientos" aria-label="Sección 11: Agradecimientos">11. Agradecimientos</h2>
+        <TextoAVoz>
+          <div id="texto11" class="text-lg antialiased">
+            <ul class="list-disc list-inside pl-4">
+              <li>A Wowwiki y Google por la ayuda al buscar información cuando surgían dudas.</li>
+              <li>A Aliisza y Habibals por las ayudas esporádicas.</li>
+              <li>A Oxy por comentar el dato que faltaba.</li>
+              <li>A Søyer por informar sobre el comando %f.</li>
+              <li>Al autor original de esta guía: Rea, elfa sacer 85, publicada el 14 de noviembre de 2010.</li>
+              <li>
+                A Danielbp019 en Github por recopilar la información y crear un nuevo documento revisado el 25 de abril
+                de 2020. Actualización a web el 8 de mayo del 2025.
+              </li>
+              <li>A Danielbp019, Actualización a web HTML el 8 de mayo del 2025.</li>
+              <li>A Danielbp019, web con Astro y tema de Script añadidos.</li>
+            </ul>
+          </div>
+        </TextoAVoz>
+      </div>
+    </div>
+  </section>
+</Layout>

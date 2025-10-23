@@ -1,0 +1,84 @@
+---
+import Layout from "../layouts/Layout.astro";
+import TextoAVoz from "../components/TextoAVoz.astro";
+---
+
+<Layout>
+  <section id="contenido" class="p-4 md:p-8">
+    <div class="card w-full bg-base-200 shadow-xl">
+      <div class="card-body">
+        <h1 class="text-5xl mb-6" id="tiposyestructura" aria-label="Sección 5: Tipos y Estructura de macros">
+          5. Tipos y Estructura de macros
+        </h1>
+        <TextoAVoz>
+          <div class="text-lg antialiased">
+            <p class="antialiased">
+              Las macros tienen una estructura estándar que podrás seguir prácticamente siempre.
+            </p>
+            <p class="antialiased">
+              Veamos un ejemplo para una macro con dos hechizos y condiciones distintas para cada hechizo:
+            </p>
+            <div class="card bg-base-300 p-2 my-4">
+              <code>/acción [condición 1, condición 2] habilidad; [condiciones] habilidad;</code>
+            </div>
+            <p class="antialiased">Además, las macros se pueden dividir en 4 tipos:</p>
+            <ul class="list-disc list-inside antialiased">
+              <li>Las macros de texto (como la que viste en el punto 5).</li>
+              <li>Las macros de habilidades (que son las más usuales y donde haremos más hincapié).</li>
+              <li>
+                Las macros hechas con código LUA (que son aquellas macros hechas con código de Addons, que no explicaré
+                en esta guía por su complejidad).
+              </li>
+              <li>Y las macros relacionadas con el equipo.</li>
+            </ul>
+          </div>
+        </TextoAVoz>
+        <div class="divider"></div>
+
+        <h2 class="text-4xl mb-4" id="tipotexto" aria-label="Subsección 5.1: Macros tipo texto">
+          5.1. Macros tipo texto
+        </h2>
+        <TextoAVoz>
+          <div class="text-lg antialiased">
+            <p class="antialiased">
+              Las macros tipo texto son aquellas que tienen como finalidad anunciar algo por algún canal.
+            </p>
+            <div class="card bg-base-300 p-2 my-4">
+              <code>/acción /canal texto</code>
+            </div>
+          </div>
+        </TextoAVoz>
+        <div class="divider"></div>
+
+        <h2 class="text-4xl mb-4" id="habilidades" aria-label="Subsección 5.2: Macros de habilidades">
+          5.2. Macros de habilidades
+        </h2>
+        <TextoAVoz>
+          <div class="text-lg antialiased">
+            <p class="antialiased">
+              Estas macros son aquellas que necesitan un comando que le diga qué hacer y bajo qué condiciones.
+            </p>
+            <p class="antialiased">
+              Cada comando, además, puede tener ciertas estructuras que se explicarán cuando sea necesario.
+            </p>
+            <div class="card bg-base-300 p-2 my-4">
+              <code>/acción [condiciones] habilidad;</code>
+            </div>
+          </div>
+        </TextoAVoz>
+        <div class="divider"></div>
+
+        <h2 class="text-4xl mb-4" id="equipo" aria-label="Subsección 5.3: Macros de equipo">5.3. Macros de equipo</h2>
+        <TextoAVoz>
+          <div class="text-lg antialiased">
+            <p class="antialiased">Hay ciertos macros que nos permiten equiparnos objetos o usarlos.</p>
+            <p class="antialiased">
+              La estructura de las mismas es muy peculiar, así que las obviamos en este punto y se explicará más
+              adelante.
+            </p>
+          </div>
+        </TextoAVoz>
+      </div>
+    </div>
+  </section>
+</Layout>

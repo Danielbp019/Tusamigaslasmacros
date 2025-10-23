@@ -1,0 +1,215 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Buscador from "../components/Buscador.astro";
+import InfoCard from "../components/InfoCard.astro";
+
+const cardsData = [
+  {
+    id: "tarjeta-1",
+    cardIcon: "bi-book",
+    title: "Conceptos básicos",
+    items: [
+      { href: "/macro-definicion/#1", icon: "bi-question-circle-fill", text: "¿Qué es una macro?" },
+      { href: "/macro-definicion/#2", icon: "bi-toggles", text: "¿Qué se puede/no se puede hacer?" },
+      { href: "/macro-definicion/#3", icon: "bi-folder-symlink-fill", text: "¿Dónde se guardan?" },
+      { href: "/macro-definicion/#4", icon: "bi-magic", text: "¿Cómo hacer una macro?" },
+    ],
+  },
+  {
+    id: "tarjeta-2",
+    cardIcon: "bi-diagram-3-fill",
+    title: "Tipos y Estructura de macros",
+    items: [
+      { href: "/macros-tipoestructura/#tiposyestructura", icon: "bi-card-heading", text: "Definición" },
+      { href: "/macros-tipoestructura/#tipotexto", icon: "bi-chat-left-text-fill", text: "Macros tipo texto" },
+      { href: "/macros-tipoestructura/#habilidades", icon: "bi-lightning-charge-fill", text: "Macros de habilidades" },
+      { href: "/macros-tipoestructura/#equipo", icon: "bi-shield-shaded", text: "Macros de equipo" },
+    ],
+  },
+  {
+    id: "tarjeta-3",
+    cardIcon: "bi-chat-left-text-fill",
+    title: "Macros tipo texto",
+    items: [
+      {
+        title: "Acción",
+        icon: "bi-cursor-fill",
+        links: [
+          { href: "/macro-tipotexto/#t", icon: "bi-person-badge", text: "Objetivo %t" },
+          { href: "/macro-tipotexto/#f", icon: "bi-person-bounding-box", text: "Foco %f" },
+        ],
+      },
+      {
+        title: "Canales",
+        icon: "bi-broadcast",
+        links: [
+          { href: "/macro-tipotexto/#utilizacion", text: "Utilización de canales" },
+          { href: "/macro-tipotexto/#listacanales", text: "Ver lista de canales" },
+        ],
+      },
+    ],
+  },
+  {
+    id: "tarjeta-4",
+    cardIcon: "bi-lightning-charge-fill",
+    title: "Macros de habilidades",
+    items: [
+      {
+        title: "Acciones de combate",
+        icon: "bi-hammer",
+        links: [
+          { href: "/macro-habilidades/#CAST", text: "Comando /cast" },
+          { href: "/macro-habilidades/#CASTSEQUENCE", text: "Comando /castsequence" },
+        ],
+      },
+      {
+        title: "Acciones sueltas",
+        icon: "bi-box-arrow-in-down-left",
+        links: [
+          { href: "/macro-habilidades/#STOPCASTING", text: "Comando /stopcasting" },
+          { href: "/macro-habilidades/#CLEARTARGET", text: "Comando /cleartarget" },
+          { href: "/macro-habilidades/#FOCUS", text: "Comando /focus" },
+          { href: "/macro-habilidades/#CLEARFOCUS", text: "Comando /clearfocus" },
+          { href: "/macro-habilidades/#STOPMACRO", text: "Comando /stopmacro" },
+          { href: "/macro-habilidades/#CANCELAURA", text: "Comando /cancelaura" },
+          { href: "/macro-habilidades/#CANCELFORM", text: "Comando /cancelform" },
+          { href: "/macro-habilidades/#STARTATTACK", text: "Comando /startattack" },
+          { href: "/macro-habilidades/#STOPATTACK", text: "Comando /stopattack" },
+        ],
+      },
+      {
+        title: "Acciones de mascotas",
+        icon: "bi-github",
+        links: [
+          { href: "/macro-habilidades/#PETAGGRESSIVE", text: "Comando /petaggressive" },
+          { href: "/macro-habilidades/#PETATTACK", text: "Comando /petattack" },
+          { href: "/macro-habilidades/#PETDEFENSIVE", text: "Comando /petdefensive" },
+          { href: "/macro-habilidades/#PETFOLLOW", text: "Comando /petfollow" },
+          { href: "/macro-habilidades/#PETPASSIVE", text: "Comando /petpassive" },
+          { href: "/macro-habilidades/#PETSTAY", text: "Comando /petstay" },
+        ],
+      },
+      {
+        title: "Acciones generales",
+        icon: "bi-gear-wide-connected",
+        links: [
+          { href: "/macro-habilidades/#SHOW", text: "Comando #show" },
+          { href: "/macro-habilidades/#SHOWCOOLDOWN", text: "Comando #showcooldown" },
+          { href: "/macro-habilidades/#SHOWTOOLTIP", text: "Comando #showtooltip" },
+          { href: "/macro-habilidades/#EXCLAMACION", text: "La ! en los hechizos" },
+        ],
+      },
+    ],
+  },
+  {
+    id: "tarjeta-5",
+    cardIcon: "bi-toggles2",
+    title: "Condiciones",
+    items: [
+      { href: "/macro-condiciones/#definicion8", icon: "bi-card-heading", text: "Definición" },
+      {
+        title: "Condiciones de botón",
+        icon: "bi-hand-index-thumb-fill",
+        links: [
+          { href: "/macro-condiciones/#BUTTON", text: "Condición [button]" },
+          { href: "/macro-condiciones/#MODIFIER", text: "Condición [modifier]" },
+        ],
+      },
+      {
+        title: "Condiciones de estado",
+        icon: "bi-heart-pulse-fill",
+        links: [
+          { href: "/macro-condiciones/#COMBAT", text: "Condición [combat]" },
+          { href: "/macro-condiciones/#DEAD", text: "Condición [dead]" },
+          { href: "/macro-condiciones/#EXISTS", text: "Condición [exists]" },
+          { href: "/macro-condiciones/#STEALTH", text: "Condición [stealth]" },
+          { href: "/macro-condiciones/#STANCEoFORM", text: "Condición [stance] o [form]" },
+        ],
+      },
+      {
+        title: "Condiciones de objetivo",
+        icon: "bi-bullseye",
+        links: [
+          { href: "/macro-condiciones/#HARM", text: "Condición [harm]" },
+          { href: "/macro-condiciones/#HELP", text: "Condición [help]" },
+        ],
+      },
+      {
+        title: "Condiciones de terreno",
+        icon: "bi-geo-alt-fill",
+        links: [
+          { href: "/macro-condiciones/#FLYABLE", text: "Condición [flyable]" },
+          { href: "/macro-condiciones/#FLYING", text: "Condición [flying]" },
+          { href: "/macro-condiciones/#INDOORS", text: "Condición [indoors]" },
+          { href: "/macro-condiciones/#OUTDOORS", text: "Condición [outdoors]" },
+          { href: "/macro-condiciones/#MOUNTED", text: "Condición [mounted]" },
+          { href: "/macro-condiciones/#SWIMMING", text: "Condición [swimming]" },
+        ],
+      },
+      { href: "/macro-condiciones/#CHANNELING", icon: "bi-reception-4", text: "Condición [channeling]" },
+    ],
+  },
+  {
+    id: "tarjeta-6",
+    cardIcon: "bi-shield-shaded",
+    title: "Macros de equipo",
+    items: [
+      { href: "/macros-equipo/#USE", icon: "bi-hand-index-thumb", text: "Comando /use" },
+      { href: "/macros-equipo/#EQUIP", icon: "bi-person-arms-up", text: "Comando /equip" },
+      { href: "/macros-equipo/#EQUIPSLOT", icon: "bi-person-vcard", text: "Comando /equipslot" },
+      { href: "/macros-equipo/#EQUIPSET", icon: "bi-person-check-fill", text: "Comando /equipset" },
+    ],
+  },
+  {
+    id: "tarjeta-7",
+    cardIcon: "bi-twitter",
+    title: "Macros de mascotas mansas",
+    items: [
+      { href: "/macro-mascotas/#SUMMONPET", icon: "bi-plus-circle-dotted", text: "Comando /summonpet" },
+      { href: "/macro-mascotas/#RANDOMFAVORITEPET", icon: "bi-shuffle", text: "Comando /randomfavoritepet" },
+    ],
+  },
+];
+---
+
+<Layout>
+  <div class="flex flex-col items-center mb-6">
+    <h2 class="text-3xl text-center" aria-label="Explorar los diferentes temas de una macro">
+      Explorar los diferentes temas de una macro
+    </h2>
+    <Buscador />
+  </div>
+
+  <!-- GRID 3x3 de tarjetas -->
+  <div id="grid" class="grid-cards grid gap-6">
+    {cardsData.map((card) => <InfoCard {...card} />)}
+
+    <!-- Tarjeta 8 -->
+    <a href="/scripts/" id="tarjeta-8" class="card rounded-lg wow-frame bg-base-200 shadow-xl efectohover">
+      <div class="card-body p-6 items-center">
+        <h3 class="card-title text-xl text-center" aria-label="Scripts avanzados para macros (Próximamente)">
+          Scripts
+        </h3>
+        <p class="text-sm antialiased text-center">
+          Macros complejas con condiciones múltiples y fallback. <br />
+          (Próximamente)
+        </p>
+      </div>
+    </a>
+
+    <!-- Tarjeta 9 -->
+    <article id="tarjeta-9" class="card rounded-lg wow-frame bg-base-200 shadow-xl efectohover">
+      <div class="card-body p-6 items-center">
+        <figure class="mb-4">
+          <i class="bi bi-heart-fill text-5xl text-primary" aria-hidden="true"></i>
+        </figure>
+        <h3 class="card-title text-xl text-center" aria-label="Agradecimientos y enlaces útiles">Agradecimientos</h3>
+        <div class="mt-1 w-full">
+          <a href="/agradecimientos/" class="btn btn-primary w-full">
+            <i class="bi bi-heart-fill" aria-hidden="true"></i> Ir a Agradecimientos
+          </a>
+        </div>
+      </div>
+    </article>
+  </div>
+</Layout>

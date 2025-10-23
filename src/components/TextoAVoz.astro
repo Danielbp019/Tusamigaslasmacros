@@ -1,0 +1,63 @@
+---
+// Este componente no necesita props, ya que el contenido se pasa a través del <slot />.
+---
+
+<div class="texto-a-voz-container">
+  <div class="join mb-2" role="group" aria-label="Controles de texto a voz">
+    <button class="btn btn-sm btn-warning join-item btn-leer">
+      <i class="bi bi-play-fill" aria-hidden="true"></i> Leer
+    </button>
+    <button class="btn btn-sm btn-info join-item btn-pausar">
+      <i class="bi bi-pause-fill" aria-hidden="true"></i> Pausar
+    </button>
+    <button class="btn btn-sm btn-error join-item btn-parar">
+      <i class="bi bi-stop-fill" aria-hidden="true"></i> Parar
+    </button>
+  </div>
+  <div class="contenido-leible" aria-live="off">
+    <slot />
+  </div>
+</div>
+
+<script>
+  // Se ejecuta para cada instancia del componente en la página.
+  document.querySelectorAll(".texto-a-voz-container").forEach((container) => {
+    const btnLeer = container.querySelector(".btn-leer") as HTMLButtonElement;
+    const btnPausar = container.querySelector(".btn-pausar") as HTMLButtonElement;
+    const btnParar = container.querySelector(".btn-parar") as HTMLButtonElement;
+    const contenido = container.querySelector(".contenido-leible") as HTMLElement;
+
+    if (!btnLeer || !btnPausar || !btnParar || !contenido) return;
+
+    const texto = contenido.textContent || "";
+    let utterance = new SpeechSynthesisUtterance(texto);
+    utterance.lang = "es-ES"; // Aseguramos el idioma español.
+
+    btnLeer.addEventListener("click", () => {
+      if (speechSynthesis.paused) {
+        speechSynthesis.resume();
+      } else {
+        // Detenemos cualquier otra locución antes de empezar una nueva.
+        speechSynthesis.cancel();
+        speechSynthesis.speak(utterance);
+      }
+    });
+
+    btnPausar.addEventListener("click", () => {
+      speechSynthesis.pause();
+    });
+
+    btnParar.addEventListener("click", () => {
+      speechSynthesis.cancel();
+    });
+
+    // Limpieza: si el usuario navega fuera, detenemos la voz.
+    document.addEventListener(
+      "astro:page-load",
+      () => {
+        speechSynthesis.cancel();
+      },
+      { once: true }
+    );
+  });
+</script>

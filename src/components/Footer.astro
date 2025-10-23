@@ -1,0 +1,30 @@
+---
+const year = new Date().getFullYear();
+---
+
+<!-- Footer fijo -->
+<footer
+  class="footer footer-center p-6 bg-base-200 text-base-content text-xs"
+  aria-label="Información del sitio"
+>
+  <div class="flex flex-col items-center gap-1">
+    <!-- Línea de créditos -->
+    <div class="flex justify-center items-center gap-2 flex-wrap text-center">
+      <span>© {year} ¡Tús amigas, las macros! - Creado por:</span>
+      <span id="miFirma" class="text-base" style="font-size: 22px;">Daniel Bautista Pradilla</span>
+      <a
+        href="https://github.com/Danielbp019"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Perfil de GitHub de Daniel Bautista Pradilla"
+        class="hover:text-primary transition-colors"
+      >
+        <i class="bi bi-github text-xl align-middle"></i>
+      </a>
+    </div>
+    <!-- Texto adicional debajo -->
+    <div class="text-[10px] opacity-70 text-center">
+      Sitio no oficial, el nombre World of Warcraft pertenece a Blizzard Entertainment.
+    </div>
+  </div>
+</footer>

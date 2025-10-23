@@ -1,0 +1,91 @@
+---
+import Layout from "../layouts/Layout.astro";
+import TextoAVoz from "../components/TextoAVoz.astro";
+---
+
+<Layout>
+  <section id="contenido" class="p-4 md:p-8">
+    <div class="card w-full bg-base-200 shadow-xl">
+      <div class="card-body">
+        <!-- Sección 1 -->
+        <h2 class="text-4xl mb-4" id="1" aria-label="Sección 1: ¿Qué es una macro?">1. ¿Qué es una macro?</h2>
+        <TextoAVoz>
+          <p class="text-lg antialiased">
+            Una macro es una forma de "automatizar" legalmente ciertas acciones en el juego mediante un código hecho por
+            Blizzard exclusivamente para esto (o sea, que estas macros no servirán para otros juegos). Tampoco tengáis
+            miedo en experimentar con las macros, puesto que no es posible hacer macros ilegales.
+          </p>
+        </TextoAVoz>
+        <br />
+
+        <!-- Sección 2 -->
+        <h2 class="text-4xl mb-4" id="2" aria-label="Sección 2: ¿Qué se puede hacer con una macro y qué no?">
+          2. ¿Qué se puede hacer con una macro? ¿Y qué no se puede?
+        </h2>
+        <TextoAVoz>
+          <div class="text-lg antialiased">
+            <p class="antialiased">
+              Las macros permiten hacer aquellas acciones que requieran la presencia de una habilidad, frase, emociones
+              o incluso equipar y desequipar objetos.
+            </p>
+            <p class="antialiased">
+              Lo que nunca hará una macro es jugar por ti. Eso incluye la elección de hechizos automáticamente, caminar
+              o recoger objetos de los cadáveres. Definitivamente no hará nada que requiera tu intervención directa.
+            </p>
+            <p class="antialiased">
+              Si encuentras un programa o addon que haga esto por ti, es ilegal y te banearían la cuenta. Siendo más
+              específicos, esta es la lista de cosas que no puedes hacer con macros:
+            </p>
+            <ol class="list-decimal list-inside pl-4">
+              <li>Una macro NO PUEDE COMPROBAR SI UN HECHIZO ES USABLE.</li>
+              <li>Una macro no podrá comprobar si un hechizo está en tiempo de reutilización.</li>
+              <li>No puede evaluar condiciones como la vida del jefe, el maná, hechizos lanzados, talentos, etc.</li>
+              <li>
+                No puede lanzar dos hechizos simultáneamente, salvo que no compartan tiempo de reutilización global o se
+                anulen entre sí.
+              </li>
+            </ol>
+          </div>
+        </TextoAVoz>
+        <br />
+
+        <!-- Sección 3 -->
+        <h2 class="text-4xl mb-4" id="3" aria-label="Sección 3: ¿Dónde se guardan las macros?">
+          3. ¿Dónde se guardan las macros?
+        </h2>
+        <TextoAVoz>
+          <p class="text-lg antialiased">
+            Un dato interesante a saber es que las macros las guarda el servidor y además se genera una copia en tu
+            propio ordenador. Así si entras al WoW desde varios ordenadores, siempre tendrás a tu disposición tus macros
+            preferidas.
+          </p>
+        </TextoAVoz>
+        <br />
+
+        <!-- Sección 4 -->
+        <h2 class="text-4xl mb-4" id="4" aria-label="Sección 4: ¿Cómo hacer una macro?">4. ¿Cómo hacer una macro?</h2>
+        <TextoAVoz>
+          <div class="text-lg antialiased">
+            <p class="antialiased">
+              La macro más sencilla es la que dice una frase o expresa una emoción y aprenderemos a hacerla en este
+              punto. Sigue la guía paso a paso:
+            </p>
+            <ol class="list-decimal list-inside pl-4">
+              <li>Escribe /macro o /m, o usa el menú principal.</li>
+              <li>Dale a "Nuevo"</li>
+              <li>Ponle un nombre a la macro</li>
+              <li>Elige un icono</li>
+              <li>Dale a Aceptar</li>
+              <li>Escribe /lol en la ventana</li>
+              <li>Arrastra la macro a tu barra de acción</li>
+            </ol>
+            <p class="antialiased">
+              Ahora al pulsar sobre la macro harás directamente /lol lo cual sirve para reírte de tus enemigos
+              rápidamente. Seguro que lo has visto muchas veces.
+            </p>
+          </div>
+        </TextoAVoz>
+      </div>
+    </div>
+  </section>
+</Layout>

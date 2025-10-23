@@ -1,0 +1,238 @@
+---
+import "../assets/app.css";
+import { ClientRouter } from "astro:transitions";
+import { fade } from "astro:transitions";
+import { Image } from "astro:assets";
+import SelectorTema from "../components/SelectorTema.astro";
+import Footer from "../components/Footer.astro";
+import Imgportada from "../assets/img/estructura/portada.png";
+import wowcorto from "../assets/img/estructura/wow.svg";
+import wowlargo from "../assets/img/estructura/worldofwarcraft.svg";
+import TALMbanner1 from "../assets/img/estructura/TALMbanner1.png";
+import TALMbanner2 from "../assets/img/estructura/TALMbanner2.png";
+import TALMbanner1m from "../assets/img/estructura/TALMbanner1m.png";
+import TALMbanner2m from "../assets/img/estructura/TALMbanner2m.png";
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="author" content="Daniel Bautista P." />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/favicon.ico" />
+    <title>¡Tus amigas, las macros!</title>
+    <ClientRouter />
+  </head>
+
+  <body class="leading-relaxed">
+    <!-- NAVBAR -->
+    <header class="navbar bg-black text-white px-6 py-3 wow-frame sticky top-0 z-50">
+      <div class="flex-1">
+        <div class="flex items-center">
+          <span class="inline normal-case">Guía de Macros para</span>
+          <span class="ml-2">
+            <!-- Imagen para pantallas grandes -->
+            <Image priority src={wowlargo} class="hidden sm:block h-8 w-auto" alt="Logo de World of Warcraft" />
+            <!-- Imagen para pantallas pequeñas -->
+            <Image src={wowcorto} class="block sm:hidden h-8 w-auto" alt="Logo de WoW" loading={"lazy"} />
+          </span>
+        </div>
+      </div>
+
+      <!-- Menú para pantallas grandes -->
+      <div class="hidden md:flex flex-none items-center">
+        <!-- Enlaces de navegación principales -->
+        <a href="/" class="btn btn-ghost efectoled">Inicio</a>
+        <!-- Botón que abre el modal de temas -->
+        <button type="button" id="open-modal-desktop" class="btn btn-ghost efectoled">Estilos del sitio</button>
+
+        <div class="flex items-center gap-1 pl-4" role="status" aria-live="polite">
+          <span class="text-sm">Tema activo:</span>
+          <i class="bi bi-stars text-warning" aria-hidden="true"></i>
+          <span id="tema-nombre" class="text-sm"></span>
+        </div>
+      </div>
+
+      <!-- Menú de hamburguesa para pantallas pequeñas -->
+      <div class="flex-none md:hidden">
+        <div class="dropdown dropdown-end">
+          <button type="button" tabindex="0" class="btn btn-ghost btn-circle" aria-label="Abrir menú">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              ><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"
+              ></path></svg
+            >
+          </button>
+          <ul
+            tabindex="0"
+            class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-black text-white rounded-box w-52"
+          >
+            <li><a href="/" class="btn btn-ghost efectoled">Inicio</a></li>
+            <li>
+              <button type="button" id="open-modal-mobile" class="btn btn-ghost efectoled w-full"
+                >Estilos del sitio</button
+              >
+            </li>
+            <li class="mt-2 pt-2 border-t border-base-300">
+              <div class="flex items-center" role="status" aria-live="polite">
+                <span class="text-sm">Tema:</span>
+                <i class="bi bi-stars text-warning" aria-hidden="true"></i>
+                <span id="tema-nombre-movil" class="text-sm"></span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO BANNER -->
+    <section class="hero hero-bg relative">
+      <div class="flex justify-center items-center w-full h-full relative z-10">
+        <Image
+          src={Imgportada}
+          class="w-full max-w-5xl h-auto"
+          alt="Imagen de portada con el título ¡Tus amigas, las macros!"
+          loading={"eager"}
+        />
+      </div>
+    </section>
+
+    <main
+      id="contenido"
+      class="container mx-auto px-6 bg-base-100 pt-3 pb-5"
+      transition:animate={fade({ duration: "0.5s" })}
+    >
+      <!-- Banner 1 responsivo -->
+      <div class="hidden sm:block">
+        <Image src={TALMbanner1} alt="Separador en imagen" loading="lazy" />
+      </div>
+      <div class="block sm:hidden">
+        <Image src={TALMbanner1m} alt="Separador en imagen" loading="lazy" />
+      </div>
+      <slot />
+    </main>
+
+    <!-- Banner 2 responsivo (fuera de main para estar siempre al final) -->
+    <div class="container mx-auto px-6 pb-5 pt-2">
+      <div class="hidden sm:block">
+        <Image src={TALMbanner2} alt="Separador en imagen" class="mx-auto" loading="lazy" />
+      </div>
+      <div class="block sm:hidden">
+        <Image src={TALMbanner2m} alt="Separador en imagen" class="mx-auto" loading="lazy" />
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <Footer />
+
+    <!-- Modal para seleccionar el tema -->
+    <input type="checkbox" id="modal-temas" class="modal-toggle" />
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
+      <div class="modal-box w-11/12 max-w-5xl">
+        <SelectorTema />
+        <div class="modal-action">
+          <label for="modal-temas" class="btn" aria-label="Cerrar modal">Cerrar</label>
+        </div>
+      </div>
+      <!-- Cierra el modal si se hace clic fuera -->
+      <label class="modal-backdrop" for="modal-temas" aria-label="Cerrar modal"></label>
+    </div>
+  </body>
+</html>
+
+<!-- Script para gestionar el tema con Astro View Transitions -->
+<script is:inline>
+  // Función para aplicar el tema y actualizar la UI
+  function applyTheme() {
+    const storedTheme = localStorage.getItem("theme") || "night";
+    const currentTheme = document.documentElement.getAttribute("data-theme");
+
+    // Solo actualiza el atributo si el tema ha cambiado.
+    // Esto es CRUCIAL para evitar el bucle infinito con el MutationObserver.
+    if (storedTheme !== currentTheme) {
+      document.documentElement.setAttribute("data-theme", storedTheme);
+    }
+
+    const themeNameElement = document.getElementById("tema-nombre");
+    if (themeNameElement) {
+      themeNameElement.textContent = storedTheme;
+    }
+    const themeNameElementMobile = document.getElementById("tema-nombre-movil");
+    if (themeNameElementMobile) {
+      themeNameElementMobile.textContent = storedTheme;
+    }
+  }
+  // 1. Aplicar el tema inmediatamente en la carga inicial para evitar FOUC.
+  applyTheme();
+  // 2. Escuchar el evento de Astro para aplicar el tema en cada navegación del cliente.
+  document.addEventListener("astro:page-load", applyTheme);
+
+  // Script para gestionar el selector de temas en el modal
+  document.addEventListener("astro:page-load", () => {
+    const themeSelectors = document.querySelectorAll("[data-set-theme]");
+
+    // Función para actualizar el estado activo
+    const updateActiveState = () => {
+      const currentTheme = document.documentElement.getAttribute("data-theme") || "night";
+      themeSelectors.forEach((selector) => {
+        const themeName = selector.getAttribute("data-set-theme");
+        const activeClass = selector.getAttribute("data-act-class") || "outline-primary";
+        if (themeName === currentTheme) {
+          selector.classList.add(activeClass);
+        } else {
+          selector.classList.remove(activeClass);
+        }
+      });
+    };
+
+    // Añadir listeners de click
+    themeSelectors.forEach((el) => {
+      el.addEventListener("click", function (e) {
+        // Cierra el modal automáticamente al seleccionar un tema
+        const modalToggle = document.getElementById("modal-temas");
+        if (modalToggle && modalToggle.checked) {
+          modalToggle.checked = false;
+        }
+
+        e.preventDefault();
+        const theme = this.getAttribute("data-set-theme");
+        if (theme) {
+          document.documentElement.setAttribute("data-theme", theme);
+          localStorage.setItem("theme", theme); // Guardar en localStorage
+          updateActiveState(); // Actualizar inmediatamente el estado visual
+        }
+      });
+    });
+
+    // Establecer el estado activo inicial al cargar la página
+    updateActiveState();
+  });
+
+  // 3. Observar cambios si el tema se cambia dinámicamente (ej: con un selector de temas).
+  new MutationObserver(applyTheme).observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ["data-theme"],
+  });
+
+  // Script para abrir el modal desde el menú móvil
+  document.addEventListener("astro:page-load", () => {
+    const openModalButton = document.getElementById("open-modal-mobile");
+    const modalCheckbox = document.getElementById("modal-temas");
+    if (openModalButton && modalCheckbox) {
+      openModalButton.addEventListener("click", () => (modalCheckbox.checked = true));
+    }
+
+    // Script para abrir el modal desde el menú de escritorio. DaisyUI no respeta mucho la accesibilidad.
+    const openModalDesktopButton = document.getElementById("open-modal-desktop");
+    if (openModalDesktopButton && modalCheckbox) {
+      // Reutilizamos la variable modalCheckbox del script anterior
+      openModalDesktopButton.addEventListener("click", () => (modalCheckbox.checked = true));
+    }
+  });
+</script>

@@ -1,0 +1,88 @@
+<!-- Buscador -->
+<div class="py-4 max-w-xl mx-auto">
+  <label for="searchInput" class="input flex items-center gap-2 shadow-lg w-80" aria-label="Campo de busqueda">
+    <span class="sr-only">Buscar Tema</span>
+    <i class="bi bi-search opacity-50" aria-hidden="true"></i>
+    <input id="searchInput" type="search" class="grow" placeholder="Buscar Tema" />
+  </label>
+  <div
+    id="no-results-message"
+    class="text-error text-center mt-2"
+    style="display: none;"
+    role="status"
+    aria-live="polite"
+  >
+    No se encontraron resultados.
+  </div>
+</div>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const searchInput = document.getElementById("searchInput") as HTMLInputElement;
+    const grid = document.getElementById("grid");
+    const noResultsMessage = document.getElementById("no-results-message") as HTMLElement;
+
+    if (searchInput && grid && noResultsMessage) {
+      const allCards = Array.from(grid.querySelectorAll(".card")) as HTMLElement[];
+
+      const filterContent = () => {
+        const searchTerm = searchInput.value.toLowerCase().trim();
+        let totalResults = 0;
+
+        // Si la búsqueda es corta, restaurar todo a su estado original.
+        if (searchTerm.length < 2) {
+          allCards.forEach((card) => {
+            card.style.display = ""; // Mostrar la tarjeta
+            // Restaurar todos los items de la lista dentro de la tarjeta
+            card.querySelectorAll("li").forEach((li) => (li.style.display = ""));
+            // Cerrar los desplegables (collapse y details)
+            const collapseCheckbox = card.querySelector<HTMLInputElement>('.collapse input[type="checkbox"]');
+            if (collapseCheckbox) collapseCheckbox.checked = false;
+            card.querySelectorAll("details").forEach((d) => d.removeAttribute("open"));
+          });
+          noResultsMessage.style.display = "none";
+          return;
+        }
+
+        allCards.forEach((card) => {
+          const internalLinks = Array.from(card.querySelectorAll("li"));
+          let cardHasMatch = false;
+
+          internalLinks.forEach((link) => {
+            const linkText = link.textContent?.toLowerCase() || "";
+            const isMatch = linkText.includes(searchTerm);
+
+            if (isMatch) {
+              cardHasMatch = true;
+              link.style.display = ""; // Mostrar el <li> coincidente
+              // Asegurarse de que los padres (submenús) estén visibles y abiertos
+              let parent = link.parentElement;
+              while (parent && !parent.classList.contains("collapse-content")) {
+                if (parent.tagName === "LI") (parent as HTMLElement).style.display = "";
+                const detailsParent = parent.closest("details");
+                if (detailsParent) detailsParent.setAttribute("open", "");
+                parent = parent.parentElement;
+              }
+            } else {
+              link.style.display = "none"; // Ocultar el <li> que no coincide
+            }
+          });
+
+          if (cardHasMatch) {
+            totalResults++;
+            card.style.display = ""; // Mostrar la tarjeta
+            // Abrir el desplegable principal de la tarjeta para ver los resultados
+            const collapseCheckbox = card.querySelector<HTMLInputElement>('.collapse input[type="checkbox"]');
+            if (collapseCheckbox) collapseCheckbox.checked = true;
+          } else {
+            card.style.display = "none"; // Ocultar la tarjeta entera si no hay coincidencias
+          }
+        });
+
+        noResultsMessage.style.display = totalResults === 0 ? "block" : "none";
+      };
+
+      searchInput.addEventListener("input", filterContent);
+    }
+  });
+</script>

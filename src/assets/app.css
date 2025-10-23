@@ -1,0 +1,175 @@
+@import "bootstrap-icons/font/bootstrap-icons.css";
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: all;
+}
+
+/* Roboto Variable - Normal */
+@font-face {
+  font-family: "Roboto";
+  src: url("/fonts/Roboto/Roboto-VariableFont_wdth,wght.ttf") format("truetype");
+  font-weight: 100 900; /* rango completo de pesos */
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Roboto Variable - Italic */
+@font-face {
+  font-family: "Roboto";
+  src: url("/fonts/Roboto/Roboto-Italic-VariableFont_wdth,wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* AlexBrush (solo Regular) */
+@font-face {
+  font-family: "AlexBrush";
+  src: url("/fonts/AlexBrush/AlexBrush-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* AlmendraSC (para Títulos) */
+@font-face {
+  font-family: "AlmendraSC";
+  src: url("/fonts/AlmendraSC/AlmendraSC-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-image:url("../assets/img/estructura/TALMfondo.png");
+  background-repeat: repeat;
+}
+
+/* Títulos con AlmendraSC */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "AlmendraSC", serif;
+}
+
+/* Mi Firma */
+#miFirma {
+  font-family: "AlexBrush", cursive;
+}
+
+/* Ajuste de parrafos (Esto debe ser un ajuste global para todo proyecto)*/
+p {
+  margin-block: 1em;
+  margin-block: 1lh;
+}
+
+.custom-scrollbar {
+  /* Para Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: hsl(var(--p)) transparent; /* Pulgar color primario, fondo transparente */
+}
+
+/* Para navegadores Webkit (Chrome, Safari, Edge, etc.) */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px; /* Ancho de la barra de scroll */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent; /* Fondo de la pista transparente */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: hsl(var(--p)); /* Color del pulgar (usa el color primario de DaisyUI) */
+  border-radius: 10px;
+  border: 2px solid transparent; /* Borde transparente para que el fondo no se vea */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(var(--pf, var(--p))); /* Color al pasar el mouse (primary-focus o primary) */
+}
+
+/* Estética WoW: marco sutil dorado y tipografía con contraste */
+.wow-frame {
+  border: 1px solid rgba(255, 217, 0, 0.5);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.45);
+}
+
+/* Estilo de brillo LED para los botones de navegación del header */
+.efectoled {
+  transition: all 300ms ease;
+}
+
+.efectoled:hover {
+  color: white; /* Texto blanco al pasar el ratón */
+  text-shadow: 0 0 8px #fff; /* Sombra de texto blanca con desenfoque para el efecto brillo */
+}
+
+/* Estilos responsivos para la rejilla de tarjetas */
+@media (min-width: 1024px) {
+  .grid-cards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (min-width: 640px) and (max-width: 1023px) {
+  .grid-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 639px) {
+  .grid-cards {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
+
+/* Efecto hover para las tarjetas */
+.efectohover:hover {
+  transform: translateY(-6px) scale(1.01);
+}
+
+/* Ajuste para anclas con navbar fijo */
+[id] {
+  scroll-margin-top: 6rem; /* Ajusta este valor a la altura exacta de tu navbar */
+}
+
+/* RGB */
+.glow::before,
+glow::after {
+  content: "";
+  position: absolute;
+  left: -5px;
+  top: -5px;
+  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  background-size: 400%;
+  width: calc(100% + 10px);
+  height: calc(100% + 10px);
+  z-index: -1;
+  animation: animate 20s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 400% 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.glow::before {
+  filter: blur(20px);
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.glow:hover::before {
+  opacity: 100;
+}
