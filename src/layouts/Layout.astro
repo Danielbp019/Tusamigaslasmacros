@@ -23,6 +23,10 @@ import TALMbanner2m from "../assets/img/estructura/TALMbanner2m.png";
     <link rel="icon" href="/favicon.ico" sizes="32x32" />
     <link rel="apple-touch-icon" href="/favicon.ico" />
     <title>¡Tus amigas, las macros!</title>
+    <!-- AOS (Animate On Scroll) -->
+    <link rel="stylesheet" href="/aos/aos.css" />
+    <script is:inline src="/aos/aos.js"></script>
+
     <ClientRouter />
   </head>
 
@@ -231,5 +235,13 @@ import TALMbanner2m from "../assets/img/estructura/TALMbanner2m.png";
       // Reutilizamos la variable modalCheckbox del script anterior
       openModalDesktopButton.addEventListener("click", () => (modalCheckbox.checked = true));
     }
+  });
+
+  // Inicializar AOS en la carga de la página
+  document.addEventListener("astro:page-load", () => {
+    // eslint-disable-next-line no-undef
+    AOS.init({
+      once: true, // La animación solo se ejecuta una vez
+    });
   });
 </script>

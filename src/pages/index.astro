@@ -181,35 +181,39 @@ const cardsData = [
   </div>
 
   <!-- GRID 3x3 de tarjetas -->
-  <div id="grid" class="grid-cards grid gap-6">
+  <div id="grid" class="grid-cards grid gap-x-6 gap-y-8">
     {cardsData.map((card) => <InfoCard {...card} />)}
 
     <!-- Tarjeta 8 -->
-    <a href="/scripts/" id="tarjeta-8" class="card rounded-lg wow-frame bg-base-200 shadow-xl efectohover">
-      <div class="card-body p-6 items-center">
-        <h3 class="card-title text-xl text-center" aria-label="Scripts avanzados para macros (Próximamente)">
-          Scripts
-        </h3>
-        <p class="text-sm antialiased text-center">
-          Macros complejas con condiciones múltiples y fallback. <br />
-          (Próximamente)
-        </p>
-      </div>
-    </a>
+    <div data-aos="fade-up">
+      <a href="/scripts/" id="tarjeta-8" class="card rounded-lg wow-frame bg-base-200 shadow-xl efectohover h-full">
+        <div class="card-body p-6 items-center">
+          <h3 class="card-title text-xl text-center" aria-label="Scripts avanzados para macros (Próximamente)">
+            Scripts
+          </h3>
+          <p class="text-sm antialiased text-center">
+            Macros complejas con condiciones múltiples y fallback. <br />
+            (Próximamente)
+          </p>
+        </div>
+      </a>
+    </div>
 
     <!-- Tarjeta 9 -->
-    <article id="tarjeta-9" class="card rounded-lg wow-frame bg-base-200 shadow-xl efectohover">
-      <div class="card-body p-6 items-center">
-        <figure class="mb-4">
-          <i class="bi bi-heart-fill text-5xl text-primary" aria-hidden="true"></i>
-        </figure>
-        <h3 class="card-title text-xl text-center" aria-label="Agradecimientos y enlaces útiles">Agradecimientos</h3>
-        <div class="mt-1 w-full">
-          <a href="/agradecimientos/" class="btn btn-primary w-full">
-            <i class="bi bi-heart-fill" aria-hidden="true"></i> Ir a Agradecimientos
-          </a>
+    <div data-aos="fade-up">
+      <article id="tarjeta-9" class="card rounded-lg wow-frame bg-base-200 shadow-xl efectohover h-full">
+        <div class="card-body p-6 items-center">
+          <figure class="mb-4">
+            <i class="bi bi-heart-fill text-5xl text-primary" aria-hidden="true"></i>
+          </figure>
+          <h3 class="card-title text-xl text-center" aria-label="Agradecimientos y enlaces útiles">Agradecimientos</h3>
+          <div class="mt-1 w-full">
+            <a href="/agradecimientos/" class="btn btn-primary w-full">
+              <i class="bi bi-heart-fill" aria-hidden="true"></i> Ir a Agradecimientos
+            </a>
+          </div>
         </div>
-      </div>
-    </article>
+      </article>
+    </div>
   </div>
 </Layout>

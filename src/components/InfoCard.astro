@@ -21,48 +21,50 @@ interface Props {
 const { id, cardIcon, title, items } = Astro.props;
 ---
 
-<article {id} class="card rounded-lg wow-frame bg-base-200 shadow-xl efectohover">
-  <div class="card-body p-6 items-center">
-    <figure class="mb-4">
-      <i class:list={["text-5xl text-primary", cardIcon]} aria-hidden="true"></i>
-    </figure>
-    <h3 class="card-title text-xl text-center" aria-label={title}>{title}</h3>
-    <div class="collapse collapse-arrow bg-base-100 mt-1">
-      <input type="checkbox" aria-label={`Ver temas de ${title}`} />
-      <div class="collapse-title text-sm font-medium">Ver temas</div>
-      <div class="collapse-content">
-        <ul class="menu menu-md bg-base-100 rounded-box p-0 [&_li>*]:rounded-lg w-full">
-          {
-            items.map((item) =>
-              "links" in item ? (
-                <li>
-                  <details>
-                    <summary>
-                      <i class:list={["bi", item.icon]} aria-hidden="true" /> {item.title}
-                    </summary>
-                    <ul>
-                      {item.links.map((link) => (
-                        <li>
-                          <a href={link.href} aria-label={link.text}>
-                            {link.icon && <i class:list={["bi", link.icon]} aria-hidden="true" />}
-                            {link.text}
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
-                  </details>
-                </li>
-              ) : (
-                <li>
-                  <a href={item.href} aria-label={item.text}>
-                    <i class:list={["bi", item.icon]} aria-hidden="true" /> {item.text}
-                  </a>
-                </li>
+<div data-aos="fade-up">
+  <article {id} class="card rounded-lg wow-frame bg-base-200 shadow-xl efectohover">
+    <div class="card-body p-6 items-center">
+      <figure class="mb-4">
+        <i class:list={["text-5xl text-primary", cardIcon]} aria-hidden="true"></i>
+      </figure>
+      <h3 class="card-title text-xl text-center" aria-label={title}>{title}</h3>
+      <div class="collapse collapse-arrow bg-base-100 mt-1">
+        <input type="checkbox" aria-label={`Ver temas de ${title}`} />
+        <div class="collapse-title text-sm font-medium">Ver temas</div>
+        <div class="collapse-content">
+          <ul class="menu menu-md bg-base-100 rounded-box p-0 [&_li>*]:rounded-lg w-full">
+            {
+              items.map((item) =>
+                "links" in item ? (
+                  <li>
+                    <details>
+                      <summary>
+                        <i class:list={["bi", item.icon]} aria-hidden="true" /> {item.title}
+                      </summary>
+                      <ul>
+                        {item.links.map((link) => (
+                          <li>
+                            <a href={link.href} aria-label={link.text}>
+                              {link.icon && <i class:list={["bi", link.icon]} aria-hidden="true" />}
+                              {link.text}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </details>
+                  </li>
+                ) : (
+                  <li>
+                    <a href={item.href} aria-label={item.text}>
+                      <i class:list={["bi", item.icon]} aria-hidden="true" /> {item.text}
+                    </a>
+                  </li>
+                )
               )
-            )
-          }
-        </ul>
+            }
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-</article>
+  </article>
+</div>
