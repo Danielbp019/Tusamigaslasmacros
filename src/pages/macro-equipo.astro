@@ -11,7 +11,7 @@ import slotnumber from "../assets/img/infoimg/slotnumber.png";
   <section id="contenido" class="p-4 md:p-8">
     <div class="card w-full bg-base-200 shadow-xl">
       <div class="card-body">
-        <h1 class="text-5xl mb-6" id="9" aria-label="Sección 9: Macros de Equipo">9. Macros De Equipo</h1>
+        <h1 class="text-5xl mb-6" id="definicion9" aria-label="Sección 9: Macros de Equipo">9. Macros De Equipo</h1>
         <TextoAVoz>
           <p class="text-lg antialiased">
             Las macros de equipo son aquellas que nos permiten equipar, desequipar o usar objetos.
@@ -23,24 +23,28 @@ import slotnumber from "../assets/img/infoimg/slotnumber.png";
         <TextoAVoz>
           <div class="text-lg antialiased">
             <p class="antialiased">Los "/use" tienen 3 usos. El más común es ponerle al lado el nombre de un objeto:</p>
-            <div class="card bg-base-300 p-2 my-4">
-              <code>/use [condiciones] Nombre Del Objeto;</code>
+            <div class="mockup-code my-4">
+              <pre data-prefix="$"><code>/use [condiciones] Nombre Del Objeto;</code></pre>
             </div>
             <p class="antialiased">
               Otro uso es ponerle que use una casilla en concreto de tus bolsas (siendo las bolsas del 0 al 4 y del 1
               hasta la última casilla empezando siempre por la izquierda arriba):
             </p>
             <div class="text-center my-4">
-              <Image src={bolsas} alt="slot de bolsa" class="inline-block max-w-full h-auto" />
-              <Image src={slotnumber} alt="slot de equipo" class="inline-block max-w-full h-auto" />
+              <Image src={bolsas} alt="Numeración de las bolsas para macros" class="inline-block max-w-full h-auto" />
+              <Image
+                src={slotnumber}
+                alt="Numeración de las casillas de las bolsas para macros"
+                class="inline-block max-w-full h-auto"
+              />
             </div>
 
-            <div class="card bg-base-300 p-2 my-4">
-              <code>/use [condiciones] numero bolsa número hueco</code>
+            <div class="mockup-code my-4">
+              <pre data-prefix="$"><code>/use [condiciones] numero bolsa número hueco</code></pre>
             </div>
             <p class="antialiased">Y finalmente el de usar el objeto equipado dependiendo de la casilla:</p>
-            <div class="card bg-base-300 p-2 my-4">
-              <code>/use [condiciones] casilla</code>
+            <div class="mockup-code my-4">
+              <pre data-prefix="$"><code>/use [condiciones] casilla</code></pre>
             </div>
             <p class="antialiased">
               Este apartado realmente es el más interesante puesto que nos permite, entre otras cosas, automatizar los
@@ -57,8 +61,8 @@ import slotnumber from "../assets/img/infoimg/slotnumber.png";
         <h2 class="text-4xl mb-4" id="EQUIP" aria-label="Subsección 9.2: Comando EQUIP">9.2. EQUIP</h2>
         <TextoAVoz>
           <p class="text-lg antialiased">Te permite equipar un objeto a través de su nombre:</p>
-          <div class="card bg-base-300 p-2 my-4">
-            <code>/equip [condiciones] nombre del objeto;</code>
+          <div class="mockup-code my-4">
+            <pre data-prefix="$"><code>/equip [condiciones] nombre del objeto;</code></pre>
           </div>
         </TextoAVoz>
         <div class="divider"></div>
@@ -69,8 +73,8 @@ import slotnumber from "../assets/img/infoimg/slotnumber.png";
             Te permite equipar un objeto en una casilla de manera específica. Ideal para cuando quieres cambiar un
             anillo en concreto o armas de 1 mano. La lista de "Casillas" es la misma que en el apartado anterior:
           </p>
-          <div class="card bg-base-300 p-2 my-4">
-            <code>/equipslot [condiciones] Casilla nombre del objeto;</code>
+          <div class="mockup-code my-4">
+            <pre data-prefix="$"><code>/equipslot [condiciones] Casilla nombre del objeto;</code></pre>
           </div>
         </TextoAVoz>
         <div class="divider"></div>
@@ -80,8 +84,8 @@ import slotnumber from "../assets/img/infoimg/slotnumber.png";
           <p class="text-lg antialiased">
             Te permite equipar un set que hayas guardado usando el gestor de equipamiento de Blizzard:
           </p>
-          <div class="card bg-base-300 p-2 my-4">
-            <code>/equipset [condiciones] nombredelset;</code>
+          <div class="mockup-code my-4">
+            <pre data-prefix="$"><code>/equipset [condiciones] nombredelset;</code></pre>
           </div>
         </TextoAVoz>
       </div>

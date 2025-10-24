@@ -6,10 +6,11 @@
 
 ## Reglas
 
-- Usar el mcp context7 para buscar documentación.
 - Toma tiempo para pensar.
+- Usar el mcp context7 para buscar documentación.
 - Los parrafos <p> deben contener la clase: class="antialiased".
 - Todos las etiquetas <h1> a <h6> deben contener un aria-label o aria-labelledby segun corresponda.
+- Agrega accesibilidad al código que generes si se puede.
 
 ## Arbol de archivos
 

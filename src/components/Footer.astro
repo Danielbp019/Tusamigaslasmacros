@@ -1,20 +1,18 @@
 ---
 const year = new Date().getFullYear();
 import { Image } from "astro:assets";
-import Firma from "../assets/img/Firma/daniel_firma_w.svg"
+import Firma from "../assets/img/Firma/daniel_firma_w.svg";
 ---
 
 <!-- Footer fijo -->
-<footer
-  class="footer footer-center p-6 bg-black text-white text-xs"
-  aria-label="Información del sitio"
->
+<footer class="footer footer-center p-6 bg-black text-white text-xs" aria-label="Información del sitio">
   <div class="flex flex-col items-center gap-1">
     <!-- Línea de créditos -->
     <div class="flex justify-center items-center gap-2 flex-wrap text-center">
       <span>© {year} ¡Tús amigas, las macros! - Creado por:</span>
       <Image src={Firma} alt="Firma de Daniel Bautista Pradilla" class="h-8 w-auto" loading="lazy" />
       <a
+        id="github-link"
         href="https://github.com/Danielbp019"
         target="_blank"
         rel="noopener noreferrer"
@@ -30,3 +28,37 @@ import Firma from "../assets/img/Firma/daniel_firma_w.svg"
     </div>
   </div>
 </footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const githubLink = document.getElementById("github-link");
+    if (!githubLink) return;
+
+    githubLink.addEventListener("click", (event) => {
+      event.preventDefault(); // Prevenimos la navegación inmediata
+
+      const audio = new Audio("/audio/w3-mas-trabajo.mp3");
+      const url = githubLink.getAttribute("href");
+
+      // Función para navegar
+      const navigate = () => {
+        if (url) {
+          window.open(url, "_blank", "noopener,noreferrer");
+        }
+      };
+
+      // Intentamos reproducir el audio
+      const playPromise = audio.play();
+
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => {
+            audio.addEventListener("ended", navigate);
+          })
+          .catch(() => {
+            navigate();
+          });
+      }
+    });
+  });
+</script>

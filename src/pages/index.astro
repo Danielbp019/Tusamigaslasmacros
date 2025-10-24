@@ -20,10 +20,10 @@ const cardsData = [
     cardIcon: "bi-diagram-3-fill",
     title: "Tipos y Estructura de macros",
     items: [
-      { href: "/macros-tipoestructura/#tiposyestructura", icon: "bi-card-heading", text: "Definición" },
-      { href: "/macros-tipoestructura/#tipotexto", icon: "bi-chat-left-text-fill", text: "Macros tipo texto" },
-      { href: "/macros-tipoestructura/#habilidades", icon: "bi-lightning-charge-fill", text: "Macros de habilidades" },
-      { href: "/macros-tipoestructura/#equipo", icon: "bi-shield-shaded", text: "Macros de equipo" },
+      { href: "/macro-tipoestructura/#tiposyestructura", icon: "bi-card-heading", text: "Definición" },
+      { href: "/macro-tipoestructura/#tipotexto", icon: "bi-chat-left-text-fill", text: "Macros tipo texto" },
+      { href: "/macro-tipoestructura/#habilidades", icon: "bi-lightning-charge-fill", text: "Macros de habilidades" },
+      { href: "/macro-tipoestructura/#equipo", icon: "bi-shield-shaded", text: "Macros de equipo" },
     ],
   },
   {
@@ -54,6 +54,7 @@ const cardsData = [
     cardIcon: "bi-lightning-charge-fill",
     title: "Macros de habilidades",
     items: [
+      { href: "/macro-habilidades/#definicion7", icon: "bi-card-heading", text: "Definición" },
       {
         title: "Acciones de combate",
         icon: "bi-hammer",
@@ -154,10 +155,11 @@ const cardsData = [
     cardIcon: "bi-shield-shaded",
     title: "Macros de equipo",
     items: [
-      { href: "/macros-equipo/#USE", icon: "bi-hand-index-thumb", text: "Comando /use" },
-      { href: "/macros-equipo/#EQUIP", icon: "bi-person-arms-up", text: "Comando /equip" },
-      { href: "/macros-equipo/#EQUIPSLOT", icon: "bi-person-vcard", text: "Comando /equipslot" },
-      { href: "/macros-equipo/#EQUIPSET", icon: "bi-person-check-fill", text: "Comando /equipset" },
+      { href: "/macro-equipo/#definicion9", icon: "bi-card-heading", text: "Definición" },
+      { href: "/macro-equipo/#USE", icon: "bi-hand-index-thumb", text: "Comando /use" },
+      { href: "/macro-equipo/#EQUIP", icon: "bi-person-arms-up", text: "Comando /equip" },
+      { href: "/macro-equipo/#EQUIPSLOT", icon: "bi-person-vcard", text: "Comando /equipslot" },
+      { href: "/macro-equipo/#EQUIPSET", icon: "bi-person-check-fill", text: "Comando /equipset" },
     ],
   },
   {
@@ -165,8 +167,18 @@ const cardsData = [
     cardIcon: "bi-twitter",
     title: "Macros de mascotas mansas",
     items: [
+      { href: "/macro-mascotas/#definicion10", icon: "bi-card-heading", text: "Definición" },
       { href: "/macro-mascotas/#SUMMONPET", icon: "bi-plus-circle-dotted", text: "Comando /summonpet" },
       { href: "/macro-mascotas/#RANDOMFAVORITEPET", icon: "bi-shuffle", text: "Comando /randomfavoritepet" },
+    ],
+  },
+  {
+    id: "tarjeta-8",
+    cardIcon: "bi-code-slash",
+    title: "Scripts",
+    items: [
+      { href: "/macro-script/#macroscript", icon: "bi-card-heading", text: "Definición" },
+      { href: "/macro-script/#scripts-listos", icon: "bi-file-earmark-code-fill", text: "Scripts listos para usar" },
     ],
   },
 ];
@@ -184,21 +196,6 @@ const cardsData = [
   <div id="grid" class="grid-cards grid gap-x-6 gap-y-8">
     {cardsData.map((card) => <InfoCard {...card} />)}
 
-    <!-- Tarjeta 8 -->
-    <div data-aos="fade-up">
-      <a href="/scripts/" id="tarjeta-8" class="card rounded-lg wow-frame bg-base-200 shadow-xl efectohover h-full">
-        <div class="card-body p-6 items-center">
-          <h3 class="card-title text-xl text-center" aria-label="Scripts avanzados para macros (Próximamente)">
-            Scripts
-          </h3>
-          <p class="text-sm antialiased text-center">
-            Macros complejas con condiciones múltiples y fallback. <br />
-            (Próximamente)
-          </p>
-        </div>
-      </a>
-    </div>
-
     <!-- Tarjeta 9 -->
     <div data-aos="fade-up">
       <article id="tarjeta-9" class="card rounded-lg wow-frame bg-base-200 shadow-xl efectohover h-full">
@@ -208,7 +205,7 @@ const cardsData = [
           </figure>
           <h3 class="card-title text-xl text-center" aria-label="Agradecimientos y enlaces útiles">Agradecimientos</h3>
           <div class="mt-1 w-full">
-            <a href="/agradecimientos/" class="btn btn-primary w-full">
+            <a href="/agradecimientos/#agradecimientos" class="btn btn-soft btn-primary w-full">
               <i class="bi bi-heart-fill" aria-hidden="true"></i> Ir a Agradecimientos
             </a>
           </div>

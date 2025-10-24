@@ -49,7 +49,6 @@ import TALMbanner2m from "../assets/img/estructura/TALMbanner2m.png";
       <div class="hidden md:flex flex-none items-center">
         <!-- Enlaces de navegación principales -->
         <a href="/" class="btn btn-ghost efectoled">Inicio</a>
-        <!-- Botón que abre el modal de temas -->
         <button type="button" id="open-modal-desktop" class="btn btn-ghost efectoled">Estilos del sitio</button>
 
         <div class="flex items-center gap-1 pl-4" role="status" aria-live="polite">
@@ -102,6 +101,7 @@ import TALMbanner2m from "../assets/img/estructura/TALMbanner2m.png";
           src={Imgportada}
           class="w-full max-w-5xl h-auto"
           alt="Imagen de portada con el título ¡Tus amigas, las macros!"
+          quality={90}
           loading={"eager"}
         />
       </div>
@@ -114,18 +114,18 @@ import TALMbanner2m from "../assets/img/estructura/TALMbanner2m.png";
     >
       <!-- Banner 1 responsivo -->
       <div class="hidden sm:block pt-3">
-        <Image src={TALMbanner1} alt="Separador en imagen" loading="lazy" />
+        <Image src={TALMbanner1} alt="Separador en imagen" quality={90} loading="eager" />
       </div>
       <div class="block sm:hidden pt-3">
-        <Image src={TALMbanner1m} alt="Separador en imagen" loading="lazy" />
+        <Image src={TALMbanner1m} alt="Separador en imagen" quality={90} loading="lazy" />
       </div>
       <slot />
       <!-- Banner 2 responsivo -->
       <div class="hidden sm:block pt-3 pb-3">
-        <Image src={TALMbanner2} alt="Separador en imagen" class="mx-auto" loading="lazy" />
+        <Image src={TALMbanner2} alt="Separador en imagen" class="mx-auto" quality={90} loading="lazy" />
       </div>
       <div class="block sm:hidden pt-3 pb-3">
-        <Image src={TALMbanner2m} alt="Separador en imagen" class="mx-auto" loading="lazy" />
+        <Image src={TALMbanner2m} alt="Separador en imagen" class="mx-auto" quality={90} loading="lazy" />
       </div>
     </main>
 
