@@ -20,22 +20,23 @@ import TextoAVoz from "../components/TextoAVoz.astro";
             </p>
             <p class="antialiased">Explicado en lenguaje de macros de WoW sería algo así:</p>
             <div class="mockup-code my-4">
-              <pre data-prefix="$"><code>/cast [luz apagada] Encender Luz; Sentarse;</code></pre>
+              <pre data-prefix="$"><code class="select-all">/cast [luz apagada] Encender Luz; Sentarse;</code></pre>
             </div>
             <p class="antialiased">
               Así pues, en esta sección se explicarán esas condiciones que podemos usar para que un comando actúe de una
-              manera o de otra. Ten en cuenta que la mayoría de las opciones admiten un <code>no</code> delante para comprobar
-              lo contrario. Por ejemplo:
+              manera o de otra. Ten en cuenta que la mayoría de las opciones admiten un <code class="select-all"
+                >no</code
+              > delante para comprobar lo contrario. Por ejemplo:
             </p>
             <div class="mockup-code my-4">
-              <pre data-prefix="$"><code>/cast [combat] Esfumarse; Sigilo;</code></pre>
+              <pre data-prefix="$"><code class="select-all">/cast [combat] Esfumarse; Sigilo;</code></pre>
             </div>
             <p class="antialiased">
               Esto haría que si estás en combate usarías Esfumarse y en cualquier otro caso usarías Sigilo.
             </p>
             <div class="card bg-base-300 p-2 my-4">
               <div class="mockup-code my-4">
-                <pre data-prefix="$"><code>/cast [nocombat] Sigilo; Esfumarse;</code></pre>
+                <pre data-prefix="$"><code class="select-all">/cast [nocombat] Sigilo; Esfumarse;</code></pre>
               </div>
               <p class="antialiased">
                 Como puedes ver, el resultado de este ejemplo es el mismo al final, pero puede que en ciertas
@@ -57,20 +58,26 @@ import TextoAVoz from "../components/TextoAVoz.astro";
                 <p class="antialiased">
                   Comprueba si se activa la macro con algún botón en concreto del ratón: 1 es Click izquierdo, 2 click
                   derecho, 3 Click central y a partir de ahí tantos como botones tenga tu ratón. Tendrás que probar a
-                  cuál corresponde cuál. Ten en cuenta que puedes cambiar <code>BUTTON</code> por <code>BTN</code>.
+                  cuál corresponde cuál. Ten en cuenta que puedes cambiar <code class="select-all">BUTTON</code> por <code
+                    class="select-all">BTN</code
+                  >.
                 </p>
                 <div class="mockup-code">
-                  <pre data-prefix="$"><code>/cast [btn:2] Sanación Superior; Sanación relámpago;</code></pre>
+                  <pre
+                    data-prefix="$"><code class="select-all">/cast [btn:2] Sanación Superior; Sanación relámpago;</code></pre>
                 </div>
               </div>
               <div>
                 <h3 class="text-2xl" id="MODIFIER" aria-label="Condición MODIFIER">8.1.2 MODIFIER</h3>
                 <p class="antialiased">
                   Comprueba si mientras se activa la macro estamos pulsando alguna de las siguientes teclas: Alt, Ctrl o
-                  Shift. Ten en cuenta que puedes cambiar <code>MODIFIER</code> por <code>MOD</code>.
+                  Shift. Ten en cuenta que puedes cambiar <code class="select-all">MODIFIER</code> por <code
+                    class="select-all">MOD</code
+                  >.
                 </p>
                 <div class="mockup-code">
-                  <pre data-prefix="$"><code>/cast [mod:ctrl] Sanación Superior; Sanación relámpago</code></pre>
+                  <pre
+                    data-prefix="$"><code class="select-all">/cast [mod:ctrl] Sanación Superior; Sanación relámpago</code></pre>
                 </div>
               </div>
             </div>
@@ -86,13 +93,15 @@ import TextoAVoz from "../components/TextoAVoz.astro";
               <div>
                 <h3 class="text-2xl" id="COMBAT" aria-label="Condición COMBAT">8.2.1 COMBAT</h3>
                 <p class="antialiased">Comprueba si estás con combate.</p>
-                <div class="mockup-code"><pre data-prefix="$"><code>/cast [combat] Esfumarse; Sigilo;</code></pre></div>
+                <div class="mockup-code">
+                  <pre data-prefix="$"><code class="select-all">/cast [combat] Esfumarse; Sigilo;</code></pre>
+                </div>
               </div>
               <div>
                 <h3 class="text-2xl" id="DEAD" aria-label="Condición DEAD">8.2.2 DEAD</h3>
                 <p class="antialiased">Comprueba si el objetivo está muerto.</p>
                 <div class="mockup-code">
-                  <pre data-prefix="$"><code>/cast [dead] Canibalismo; Punición;</code></pre>
+                  <pre data-prefix="$"><code class="select-all">/cast [dead] Canibalismo; Punición;</code></pre>
                 </div>
               </div>
               <div>
@@ -102,14 +111,14 @@ import TextoAVoz from "../components/TextoAVoz.astro";
                   básico).
                 </p>
                 <div class="mockup-code">
-                  <pre data-prefix="$"><code>/cast [exists] Sanación Relámpago;</code></pre>
+                  <pre data-prefix="$"><code class="select-all">/cast [exists] Sanación Relámpago;</code></pre>
                 </div>
               </div>
               <div>
                 <h3 class="text-2xl" id="STEALTH" aria-label="Condición STEALTH">8.2.4 STEALTH</h3>
                 <p class="antialiased">Comprueba si estás en sigilo.</p>
                 <div class="mockup-code">
-                  <pre data-prefix="$"><code>/cast [stealth] Emboscada; Puñalada;</code></pre>
+                  <pre data-prefix="$"><code class="select-all">/cast [stealth] Emboscada; Puñalada;</code></pre>
                 </div>
               </div>
               <div>
@@ -121,8 +130,9 @@ import TextoAVoz from "../components/TextoAVoz.astro";
                 </p>
                 <div class="mockup-code">
                   <pre
-                    data-prefix="$"><code>/cast [Stance:1] Abrumar; [Stance:3] Torbellino; Golpe heroico;</code></pre>
-                  <pre data-prefix="$"><code>/cast [stance:1/3] Golpe heroico; [stance:2] Provocar;</code></pre>
+                    data-prefix="$"><code class="select-all">/cast [Stance:1] Abrumar; [Stance:3] Torbellino; Golpe heroico;</code></pre>
+                  <pre
+                    data-prefix="$"><code class="select-all">/cast [stance:1/3] Golpe heroico; [stance:2] Provocar;</code></pre>
                 </div>
               </div>
             </div>
@@ -142,14 +152,14 @@ import TextoAVoz from "../components/TextoAVoz.astro";
                 <h3 class="text-2xl" id="HARM" aria-label="Condición HARM">8.3.1 HARM</h3>
                 <p class="antialiased">Comprueba si tu objetivo actual es enemigo.</p>
                 <div class="mockup-code">
-                  <pre data-prefix="$"><code>/cast [harm] Punición; Sanación relámpago;</code></pre>
+                  <pre data-prefix="$"><code class="select-all">/cast [harm] Punición; Sanación relámpago;</code></pre>
                 </div>
               </div>
               <div>
                 <h3 class="text-2xl" id="HELP" aria-label="Condición HELP">8.3.2 HELP</h3>
                 <p class="antialiased">Comprueba si tu objetivo actual es amigo.</p>
                 <div class="mockup-code">
-                  <pre data-prefix="$"><code>/cast [help] Sanación relámpago; Punición;</code></pre>
+                  <pre data-prefix="$"><code class="select-all">/cast [help] Sanación relámpago; Punición;</code></pre>
                 </div>
               </div>
             </div>
@@ -169,7 +179,7 @@ import TextoAVoz from "../components/TextoAVoz.astro";
                 <h3 class="text-2xl" id="TARGET" aria-label="Condición @TARGET">8.4.1 @TARGET</h3>
                 <p class="antialiased">El hechizo va dirigido a tu objetivo.</p>
                 <div class="mockup-code">
-                  <pre data-prefix="$"><code>/cast [@target] Sanación relámpago;</code></pre>
+                  <pre data-prefix="$"><code class="select-all">/cast [@target] Sanación relámpago;</code></pre>
                 </div>
               </div>
               <!-- ... y así para las demás subsecciones ... -->
@@ -186,7 +196,8 @@ import TextoAVoz from "../components/TextoAVoz.astro";
                 <h3 class="text-2xl" id="FLYABLE" aria-label="Condición FLYABLE">8.5.1 FLYABLE</h3>
                 <p class="antialiased">Comprueba si el mapa donde estás permite volar.</p>
                 <div class="mockup-code">
-                  <pre data-prefix="$"><code>/cast [flyable] Grifo dorado; Corcel blanco presto;</code></pre>
+                  <pre
+                    data-prefix="$"><code class="select-all">/cast [flyable] Grifo dorado; Corcel blanco presto;</code></pre>
                 </div>
               </div>
               <!-- ... y así para las demás subsecciones ... -->
@@ -205,7 +216,8 @@ import TextoAVoz from "../components/TextoAVoz.astro";
                   Comprueba si estás canalizando un hechizo. Aquí un ejemplo usando la negación:
                 </p>
                 <div class="mockup-code">
-                  <pre data-prefix="$"><code>/cast [nochanneling:Tortura mental] Tortura mental;</code></pre>
+                  <pre
+                    data-prefix="$"><code class="select-all">/cast [nochanneling:Tortura mental] Tortura mental;</code></pre>
                 </div>
               </div>
             </div>

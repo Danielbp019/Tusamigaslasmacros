@@ -30,7 +30,7 @@ import TextoAVoz from "../components/TextoAVoz.astro";
             </p>
             <p class="antialiased">Básicamente sigue la siguiente estructura:</p>
             <div class="mockup-code my-4">
-              <pre data-prefix="$"><code>/cast [condiciones] Habilidad;</code></pre>
+              <pre data-prefix="$"><code class="select-all">/cast [condiciones] Habilidad;</code></pre>
             </div>
 
             <h3 class="text-3xl mb-3 mt-6" id="CASTSEQUENCE" aria-label="Comando CASTSEQUENCE">7.1.2 CASTSEQUENCE</h3>
@@ -43,15 +43,18 @@ import TextoAVoz from "../components/TextoAVoz.astro";
             </p>
             <div class="mockup-code my-4">
               <pre
-                data-prefix="$"><code>/castsequence [condiciones] reset=condiciones Habilidad 1, Habilidad 2, Habilidad 3;</code></pre>
+                data-prefix="$"><code class="select-all">/castsequence [condiciones] reset=condiciones Habilidad 1, Habilidad 2, Habilidad 3;</code></pre>
             </div>
             <p class="antialiased">
-              Después del <code>reset</code>, donde pone condiciones, podemos añadir lo siguiente: un número (que
-              equivaldría a segundos), <code>target</code> (cambio de objetivo), <code>combat</code> (cuando salgas o entres
-              en combate), <code>shift</code>, <code>alt</code>, <code>ctrl</code> (cuando pulses cualquiera de estas teclas).
-              Puedes poner todos los condicionantes que quieras separados con una <code>/</code>. Cuando se cumpla
-              alguna de las condiciones, la macro volverá a su punto de partida. Por supuesto, también volverá a su
-              punto de partida cuando llegue a la última habilidad.
+              Después del <code class="select-all">reset</code>, donde pone condiciones, podemos añadir lo siguiente: un
+              número (que equivaldría a segundos), <code class="select-all">target</code> (cambio de objetivo), <code
+                class="select-all">combat</code
+              > (cuando salgas o entres en combate), <code class="select-all">shift</code>, <code class="select-all"
+                >alt</code
+              >, <code class="select-all">ctrl</code> (cuando pulses cualquiera de estas teclas). Puedes poner todos los
+              condicionantes que quieras separados con una <code class="select-all">/</code>. Cuando se cumpla alguna de
+              las condiciones, la macro volverá a su punto de partida. Por supuesto, también volverá a su punto de
+              partida cuando llegue a la última habilidad.
             </p>
           </div>
         </TextoAVoz>
@@ -63,33 +66,43 @@ import TextoAVoz from "../components/TextoAVoz.astro";
             <div>
               <h3 class="text-2xl" id="STOPCASTING" aria-label="Comando STOPCASTING">7.2.1 STOPCASTING</h3>
               <p class="antialiased">Este comando corta cualquier hechizo que estés lanzando:</p>
-              <div class="mockup-code"><pre data-prefix="$"><code>/stopcast [condiciones]</code></pre></div>
+              <div class="mockup-code">
+                <pre data-prefix="$"><code class="select-all">/stopcast [condiciones]</code></pre>
+              </div>
             </div>
             <div>
               <h3 class="text-2xl" id="CLEARTARGET" aria-label="Comando CLEARTARGET">7.2.2 CLEARTARGET</h3>
               <p class="antialiased">Permite limpiar el objetivo que tengamos:</p>
-              <div class="mockup-code"><pre data-prefix="$"><code>/cleartarget [condiciones]</code></pre></div>
+              <div class="mockup-code">
+                <pre data-prefix="$"><code class="select-all">/cleartarget [condiciones]</code></pre>
+              </div>
             </div>
             <div>
               <h3 class="text-2xl" id="FOCUS" aria-label="Comando FOCUS">7.2.3 FOCUS</h3>
               <p class="antialiased">Permite crear un objetivo "focus":</p>
-              <div class="mockup-code"><pre data-prefix="$"><code>/focus [condiciones]</code></pre></div>
+              <div class="mockup-code">
+                <pre data-prefix="$"><code class="select-all">/focus [condiciones]</code></pre>
+              </div>
             </div>
             <div>
               <h3 class="text-2xl" id="CLEARFOCUS" aria-label="Comando CLEARFOCUS">7.2.4 CLEARFOCUS</h3>
               <p class="antialiased">Permite limpiar nuestro objetivo "focus":</p>
-              <div class="mockup-code"><pre data-prefix="$"><code>/clearfocus [condiciones]</code></pre></div>
+              <div class="mockup-code">
+                <pre data-prefix="$"><code class="select-all">/clearfocus [condiciones]</code></pre>
+              </div>
             </div>
             <div>
               <h3 class="text-2xl" id="STOPMACRO" aria-label="Comando STOPMACRO">7.2.5 STOPMACRO</h3>
               <p class="antialiased">Permite detener una macro:</p>
-              <div class="mockup-code"><pre data-prefix="$"><code>/stopmacro [condiciones]</code></pre></div>
+              <div class="mockup-code">
+                <pre data-prefix="$"><code class="select-all">/stopmacro [condiciones]</code></pre>
+              </div>
             </div>
             <div>
               <h3 class="text-2xl" id="CANCELAURA" aria-label="Comando CANCELAURA">7.2.6 CANCELAURA</h3>
               <p class="antialiased">Permite quitarse un beneficio:</p>
               <div class="mockup-code">
-                <pre data-prefix="$"><code>/cancelaura [condiciones] beneficio;</code></pre>
+                <pre data-prefix="$"><code class="select-all">/cancelaura [condiciones] beneficio;</code></pre>
               </div>
             </div>
             <div>
@@ -99,7 +112,9 @@ import TextoAVoz from "../components/TextoAVoz.astro";
                 (como la "Forma de las sombras" del sacerdote). La excepción a este tipo de formas son los guerreros, ya
                 que tienen que estar en una forma obligatoriamente.
               </p>
-              <div class="mockup-code"><pre data-prefix="$"><code>/cancelform [condiciones]</code></pre></div>
+              <div class="mockup-code">
+                <pre data-prefix="$"><code class="select-all">/cancelform [condiciones]</code></pre>
+              </div>
             </div>
             <div>
               <h3 class="text-2xl" id="STARTATTACK" aria-label="Comando STARTATTACK">7.2.8 STARTATTACK</h3>
@@ -107,12 +122,16 @@ import TextoAVoz from "../components/TextoAVoz.astro";
                 Permite empezar a atacar. La diferencia con "atacar" del libro de hechizos es que ese "atacar" activa o
                 desactiva el ataque según el estado actual. Con este comando atacas sí o sí:
               </p>
-              <div class="mockup-code"><pre data-prefix="$"><code>/startattack [condiciones]</code></pre></div>
+              <div class="mockup-code">
+                <pre data-prefix="$"><code class="select-all">/startattack [condiciones]</code></pre>
+              </div>
             </div>
             <div>
               <h3 class="text-2xl" id="STOPATTACK" aria-label="Comando STOPATTACK">7.2.9 STOPATTACK</h3>
               <p class="antialiased">Mismo caso que el anterior, pero obliga a parar de atacar:</p>
-              <div class="mockup-code"><pre data-prefix="$"><code>/stopattack [condiciones]</code></pre></div>
+              <div class="mockup-code">
+                <pre data-prefix="$"><code class="select-all">/stopattack [condiciones]</code></pre>
+              </div>
             </div>
           </div>
         </TextoAVoz>
@@ -126,32 +145,44 @@ import TextoAVoz from "../components/TextoAVoz.astro";
             <div>
               <h3 class="text-2xl" id="PETAGGRESSIVE" aria-label="Comando PETAGGRESSIVE">7.3.1 PETAGGRESSIVE</h3>
               <p class="antialiased">Pone a tu mascota en agresivo:</p>
-              <div class="mockup-code"><pre data-prefix="$"><code>/petaggressive [condiciones]</code></pre></div>
+              <div class="mockup-code">
+                <pre data-prefix="$"><code class="select-all">/petaggressive [condiciones]</code></pre>
+              </div>
             </div>
             <div>
               <h3 class="text-2xl" id="PETATTACK" aria-label="Comando PETATTACK">7.3.2 PETATTACK</h3>
               <p class="antialiased">Envía a tu mascota a atacar:</p>
-              <div class="mockup-code"><pre data-prefix="$"><code>/petattack [condiciones]</code></pre></div>
+              <div class="mockup-code">
+                <pre data-prefix="$"><code class="select-all">/petattack [condiciones]</code></pre>
+              </div>
             </div>
             <div>
               <h3 class="text-2xl" id="PETDEFENSIVE" aria-label="Comando PETDEFENSIVE">7.3.3 PETDEFENSIVE</h3>
               <p class="antialiased">Pone a tu mascota en defensivo:</p>
-              <div class="mockup-code"><pre data-prefix="$"><code>/petdefensive [condiciones]</code></pre></div>
+              <div class="mockup-code">
+                <pre data-prefix="$"><code class="select-all">/petdefensive [condiciones]</code></pre>
+              </div>
             </div>
             <div>
               <h3 class="text-2xl" id="PETFOLLOW" aria-label="Comando PETFOLLOW">7.3.4 PETFOLLOW</h3>
               <p class="antialiased">Pone a tu mascota en seguirte, contrario a "Petstay":</p>
-              <div class="mockup-code"><pre data-prefix="$"><code>/petfollow [condiciones]</code></pre></div>
+              <div class="mockup-code">
+                <pre data-prefix="$"><code class="select-all">/petfollow [condiciones]</code></pre>
+              </div>
             </div>
             <div>
               <h3 class="text-2xl" id="PETPASSIVE" aria-label="Comando PETPASSIVE">7.3.5 PETPASSIVE</h3>
               <p class="antialiased">Pone a tu mascota en pasivo:</p>
-              <div class="mockup-code"><pre data-prefix="$"><code>/petpassive [condiciones]</code></pre></div>
+              <div class="mockup-code">
+                <pre data-prefix="$"><code class="select-all">/petpassive [condiciones]</code></pre>
+              </div>
             </div>
             <div>
               <h3 class="text-2xl" id="PETSTAY" aria-label="Comando PETSTAY">7.3.6 PETSTAY</h3>
               <p class="antialiased">Deja quieta a tu mascota en el sitio, contrario a "Petfollow":</p>
-              <div class="mockup-code"><pre data-prefix="$"><code>/petstay [condiciones]</code></pre></div>
+              <div class="mockup-code">
+                <pre data-prefix="$"><code class="select-all">/petstay [condiciones]</code></pre>
+              </div>
             </div>
           </div>
         </TextoAVoz>
@@ -173,7 +204,7 @@ import TextoAVoz from "../components/TextoAVoz.astro";
                 todos esos números cambiando también el icono correspondiente.
               </p>
               <div class="mockup-code">
-                <pre data-prefix="$"><code>#show [condiciones] Habilidad/objeto</code></pre>
+                <pre data-prefix="$"><code class="select-all">#show [condiciones] Habilidad/objeto</code></pre>
               </div>
             </div>
             <div>
@@ -184,7 +215,7 @@ import TextoAVoz from "../components/TextoAVoz.astro";
                 "showcooldown":
               </p>
               <div class="mockup-code">
-                <pre data-prefix="$"><code>#showcooldown [condiciones] Habilidad/objeto</code></pre>
+                <pre data-prefix="$"><code class="select-all">#showcooldown [condiciones] Habilidad/objeto</code></pre>
               </div>
             </div>
             <div>
@@ -195,12 +226,12 @@ import TextoAVoz from "../components/TextoAVoz.astro";
               </p>
               <p class="antialiased">NOTA: Para que te muestren los iconos debes escoger como icono el "?" rojo.</p>
               <div class="mockup-code">
-                <pre data-prefix="$"><code>#showtooltip [condiciones] Habilidad/objeto</code></pre>
+                <pre data-prefix="$"><code class="select-all">#showtooltip [condiciones] Habilidad/objeto</code></pre>
               </div>
             </div>
             <div>
               <h3 class="text-2xl" id="EXCLAMACION" aria-label="Uso de la exclamación en hechizos">
-                7.4.4 La <code>!</code> en los hechizos
+                7.4.4 La ! en los hechizos
               </h3>
               <p class="antialiased">
                 Muchos hechizos del World of Warcraft funcionan de distinta manera al pulsarlos una vez o la siguiente.
@@ -208,7 +239,9 @@ import TextoAVoz from "../components/TextoAVoz.astro";
                 desactivará. Con esta acción podemos hacer que un hechizo siempre trate de activarse, en vez de
                 activarse y desactivarse en cada pulsación:
               </p>
-              <div class="mockup-code"><pre data-prefix="$"><code>/cast !Aura de reprensión</code></pre></div>
+              <div class="mockup-code">
+                <pre data-prefix="$"><code class="select-all">/cast !Aura de reprensión</code></pre>
+              </div>
             </div>
           </div>
         </TextoAVoz>
