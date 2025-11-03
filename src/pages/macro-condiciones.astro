@@ -45,183 +45,276 @@ import TextoAVoz from "../components/TextoAVoz.astro";
               </p>
             </div>
           </div>
-          <div class="divider"></div>
+        </TextoAVoz>
+        <div class="divider"></div>
 
-          <h2 class="text-4xl mb-4" id="8.1" aria-label="Subsección 8.1: Condiciones de botón">
-            8.1. Condiciones de botón
-          </h2>
-          <TextoAVoz>
-            <div class="text-lg antialiased space-y-4">
-              <p class="antialiased">Estas condiciones pueden ponerse dentro de los mismos corchetes.</p>
-              <div>
-                <h3 class="text-2xl" id="BUTTON" aria-label="Condición BUTTON">8.1.1 BUTTON</h3>
-                <p class="antialiased">
-                  Comprueba si se activa la macro con algún botón en concreto del ratón: 1 es Click izquierdo, 2 click
-                  derecho, 3 Click central y a partir de ahí tantos como botones tenga tu ratón. Tendrás que probar a
-                  cuál corresponde cuál. Ten en cuenta que puedes cambiar <code class="select-all">BUTTON</code> por <code
-                    class="select-all">BTN</code
-                  >.
-                </p>
-                <div class="mockup-code">
-                  <pre
-                    data-prefix="$"><code class="select-all">/cast [btn:2] Sanación Superior; Sanación relámpago;</code></pre>
-                </div>
-              </div>
-              <div>
-                <h3 class="text-2xl" id="MODIFIER" aria-label="Condición MODIFIER">8.1.2 MODIFIER</h3>
-                <p class="antialiased">
-                  Comprueba si mientras se activa la macro estamos pulsando alguna de las siguientes teclas: Alt, Ctrl o
-                  Shift. Ten en cuenta que puedes cambiar <code class="select-all">MODIFIER</code> por <code
-                    class="select-all">MOD</code
-                  >.
-                </p>
-                <div class="mockup-code">
-                  <pre
-                    data-prefix="$"><code class="select-all">/cast [mod:ctrl] Sanación Superior; Sanación relámpago</code></pre>
-                </div>
-              </div>
-            </div>
-          </TextoAVoz>
-          <div class="divider"></div>
-
-          <h2 class="text-4xl mb-4" id="8.2" aria-label="Subsección 8.2: Condiciones de estado">
-            8.2. Condiciones de estado
-          </h2>
-          <TextoAVoz>
-            <div class="text-lg antialiased space-y-4">
-              <p class="antialiased">Estas condiciones pueden ponerse dentro de los mismos corchetes.</p>
-              <div>
-                <h3 class="text-2xl" id="COMBAT" aria-label="Condición COMBAT">8.2.1 COMBAT</h3>
-                <p class="antialiased">Comprueba si estás con combate.</p>
-                <div class="mockup-code">
-                  <pre data-prefix="$"><code class="select-all">/cast [combat] Esfumarse; Sigilo;</code></pre>
-                </div>
-              </div>
-              <div>
-                <h3 class="text-2xl" id="DEAD" aria-label="Condición DEAD">8.2.2 DEAD</h3>
-                <p class="antialiased">Comprueba si el objetivo está muerto.</p>
-                <div class="mockup-code">
-                  <pre data-prefix="$"><code class="select-all">/cast [dead] Canibalismo; Punición;</code></pre>
-                </div>
-              </div>
-              <div>
-                <h3 class="text-2xl" id="EXISTS" aria-label="Condición EXISTS">8.2.3 EXISTS</h3>
-                <p class="antialiased">
-                  Comprueba si el objetivo existe. (No se me ocurre ningún ejemplo simple realista, así que dejo lo
-                  básico).
-                </p>
-                <div class="mockup-code">
-                  <pre data-prefix="$"><code class="select-all">/cast [exists] Sanación Relámpago;</code></pre>
-                </div>
-              </div>
-              <div>
-                <h3 class="text-2xl" id="STEALTH" aria-label="Condición STEALTH">8.2.4 STEALTH</h3>
-                <p class="antialiased">Comprueba si estás en sigilo.</p>
-                <div class="mockup-code">
-                  <pre data-prefix="$"><code class="select-all">/cast [stealth] Emboscada; Puñalada;</code></pre>
-                </div>
-              </div>
-              <div>
-                <h3 class="text-2xl" id="STANCEoFORM" aria-label="Condición STANCE o FORM">8.2.5 STANCE o FORM</h3>
-                <p class="antialiased">
-                  Comprueba la estancia en la que estás. Por estancia hablamos de aquellos estados que activan barras
-                  distintas al usarlas (como las transformaciones de druida o las actitudes de guerrero). Las
-                  excepciones son el Ángel del Sacerdote, lobo del chamán y la forma de demonio del brujo.
-                </p>
-                <div class="mockup-code">
-                  <pre
-                    data-prefix="$"><code class="select-all">/cast [Stance:1] Abrumar; [Stance:3] Torbellino; Golpe heroico;</code></pre>
-                  <pre
-                    data-prefix="$"><code class="select-all">/cast [stance:1/3] Golpe heroico; [stance:2] Provocar;</code></pre>
-                </div>
-              </div>
-            </div>
-          </TextoAVoz>
-          <div class="divider"></div>
-
-          <h2 class="text-4xl mb-4" id="8.3" aria-label="Subsección 8.3: Condiciones de objetivo">
-            8.3. Condiciones de objetivo
-          </h2>
-          <TextoAVoz>
-            <div class="text-lg antialiased space-y-4">
+        <h2 class="text-4xl mb-4" id="8.1" aria-label="Subsección 8.1: Condiciones de botón">
+          8.1. Condiciones de botón
+        </h2>
+        <TextoAVoz>
+          <div class="text-lg antialiased space-y-4">
+            <p class="antialiased">Estas condiciones pueden ponerse dentro de los mismos corchetes.</p>
+            <div>
+              <h3 class="text-2xl" id="BUTTON" aria-label="Condición BUTTON">8.1.1 BUTTON</h3>
               <p class="antialiased">
-                Puedes poner estas condiciones en los mismos corchetes, pero no tendría ninguna lógica ya que son
-                antónimas entre sí:
+                Comprueba si se activa la macro con algún botón en concreto del ratón: 1 es Click izquierdo, 2 click
+                derecho, 3 Click central y a partir de ahí tantos como botones tenga tu ratón. Tendrás que probar a cuál
+                corresponde cuál. Ten en cuenta que puedes cambiar <code class="select-all">BUTTON</code> por <code
+                  class="select-all">BTN</code
+                >.
               </p>
-              <div>
-                <h3 class="text-2xl" id="HARM" aria-label="Condición HARM">8.3.1 HARM</h3>
-                <p class="antialiased">Comprueba si tu objetivo actual es enemigo.</p>
-                <div class="mockup-code">
-                  <pre data-prefix="$"><code class="select-all">/cast [harm] Punición; Sanación relámpago;</code></pre>
-                </div>
-              </div>
-              <div>
-                <h3 class="text-2xl" id="HELP" aria-label="Condición HELP">8.3.2 HELP</h3>
-                <p class="antialiased">Comprueba si tu objetivo actual es amigo.</p>
-                <div class="mockup-code">
-                  <pre data-prefix="$"><code class="select-all">/cast [help] Sanación relámpago; Punición;</code></pre>
-                </div>
+              <div class="mockup-code">
+                <pre
+                  data-prefix="$"><code class="select-all">/cast [btn:2] Sanación Superior; Sanación relámpago;</code></pre>
               </div>
             </div>
-          </TextoAVoz>
-          <div class="divider"></div>
-
-          <h2 class="text-4xl mb-4" id="8.4" aria-label="Subsección 8.4: Condiciones de destino específico">
-            8.4. Condiciones de destino específico
-          </h2>
-          <TextoAVoz>
-            <div class="text-lg antialiased space-y-4">
+            <div>
+              <h3 class="text-2xl" id="MODIFIER" aria-label="Condición MODIFIER">8.1.2 MODIFIER</h3>
               <p class="antialiased">
-                Estas condiciones son algo extrañas. Realmente no comprueban nada, simplemente es la aclaración de a
-                quién va dirigido el hechizo resultante de la macro.
+                Comprueba si mientras se activa la macro estamos pulsando alguna de las siguientes teclas: Alt, Ctrl o
+                Shift. Ten en cuenta que puedes cambiar <code class="select-all">MODIFIER</code> por <code
+                  class="select-all">MOD</code
+                >.
               </p>
-              <div>
-                <h3 class="text-2xl" id="TARGET" aria-label="Condición @TARGET">8.4.1 @TARGET</h3>
-                <p class="antialiased">El hechizo va dirigido a tu objetivo.</p>
-                <div class="mockup-code">
-                  <pre data-prefix="$"><code class="select-all">/cast [@target] Sanación relámpago;</code></pre>
-                </div>
+              <div class="mockup-code">
+                <pre
+                  data-prefix="$"><code class="select-all">/cast [mod:ctrl] Sanación Superior; Sanación relámpago</code></pre>
               </div>
-              <!-- ... y así para las demás subsecciones ... -->
             </div>
-          </TextoAVoz>
-          <div class="divider"></div>
+          </div>
+        </TextoAVoz>
+        <div class="divider"></div>
 
-          <h2 class="text-4xl mb-4" id="8.5" aria-label="Subsección 8.5: Condiciones de terreno">
-            8.5. Condiciones de terreno
-          </h2>
-          <TextoAVoz>
-            <div class="text-lg antialiased space-y-4">
-              <div>
-                <h3 class="text-2xl" id="FLYABLE" aria-label="Condición FLYABLE">8.5.1 FLYABLE</h3>
-                <p class="antialiased">Comprueba si el mapa donde estás permite volar.</p>
-                <div class="mockup-code">
-                  <pre
-                    data-prefix="$"><code class="select-all">/cast [flyable] Grifo dorado; Corcel blanco presto;</code></pre>
-                </div>
+        <h2 class="text-4xl mb-4" id="8.2" aria-label="Subsección 8.2: Condiciones de estado">
+          8.2. Condiciones de estado
+        </h2>
+        <TextoAVoz>
+          <div class="text-lg antialiased space-y-4">
+            <p class="antialiased">Estas condiciones pueden ponerse dentro de los mismos corchetes.</p>
+            <div>
+              <h3 class="text-2xl" id="COMBAT" aria-label="Condición COMBAT">8.2.1 COMBAT</h3>
+              <p class="antialiased">Comprueba si estás con combate.</p>
+              <div class="mockup-code">
+                <pre data-prefix="$"><code class="select-all">/cast [combat] Esfumarse; Sigilo;</code></pre>
               </div>
-              <!-- ... y así para las demás subsecciones ... -->
             </div>
-          </TextoAVoz>
-          <div class="divider"></div>
+            <div>
+              <h3 class="text-2xl" id="DEAD" aria-label="Condición DEAD">8.2.2 DEAD</h3>
+              <p class="antialiased">Comprueba si el objetivo está muerto.</p>
+              <div class="mockup-code">
+                <pre data-prefix="$"><code class="select-all">/cast [dead] Canibalismo; Punición;</code></pre>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-2xl" id="EXISTS" aria-label="Condición EXISTS">8.2.3 EXISTS</h3>
+              <p class="antialiased">
+                Comprueba si el objetivo existe. (No se me ocurre ningún ejemplo simple realista, así que dejo lo
+                básico).
+              </p>
+              <div class="mockup-code">
+                <pre data-prefix="$"><code class="select-all">/cast [exists] Sanación Relámpago;</code></pre>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-2xl" id="STEALTH" aria-label="Condición STEALTH">8.2.4 STEALTH</h3>
+              <p class="antialiased">Comprueba si estás en sigilo.</p>
+              <div class="mockup-code">
+                <pre data-prefix="$"><code class="select-all">/cast [stealth] Emboscada; Puñalada;</code></pre>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-2xl" id="STANCEoFORM" aria-label="Condición STANCE o FORM">8.2.5 STANCE o FORM</h3>
+              <p class="antialiased">
+                Comprueba la estancia en la que estás. Por estancia hablamos de aquellos estados que activan barras
+                distintas al usarlas (como las transformaciones de druida o las actitudes de guerrero). Las excepciones
+                son el Ángel del Sacerdote, lobo del chamán y la forma de demonio del brujo.
+              </p>
+              <div class="mockup-code">
+                <pre
+                  data-prefix="$"><code class="select-all">/cast [Stance:1] Abrumar; [Stance:3] Torbellino; Golpe heroico;</code></pre>
+                <pre
+                  data-prefix="$"><code class="select-all">/cast [stance:1/3] Golpe heroico; [stance:2] Provocar;</code></pre>
+              </div>
+            </div>
+          </div>
+        </TextoAVoz>
+        <div class="divider"></div>
 
-          <h2 class="text-4xl mb-4" id="8.6" aria-label="Subsección 8.6: Condiciones de hechizo">
-            8.6. Condiciones de hechizo
-          </h2>
-          <TextoAVoz>
-            <div class="text-lg antialiased space-y-4">
-              <div>
-                <h3 class="text-2xl" id="CHANNELING" aria-label="Condición CHANNELING">8.6.1 CHANNELING</h3>
-                <p class="antialiased">
-                  Comprueba si estás canalizando un hechizo. Aquí un ejemplo usando la negación:
-                </p>
-                <div class="mockup-code">
-                  <pre
-                    data-prefix="$"><code class="select-all">/cast [nochanneling:Tortura mental] Tortura mental;</code></pre>
-                </div>
+        <h2 class="text-4xl mb-4" id="8.3" aria-label="Subsección 8.3: Condiciones de objetivo">
+          8.3. Condiciones de objetivo
+        </h2>
+        <TextoAVoz>
+          <div class="text-lg antialiased space-y-4">
+            <p class="antialiased">
+              Puedes poner estas condiciones en los mismos corchetes, pero no tendría ninguna lógica ya que son
+              antónimas entre sí:
+            </p>
+            <div>
+              <h3 class="text-2xl" id="HARM" aria-label="Condición HARM">8.3.1 HARM</h3>
+              <p class="antialiased">Comprueba si tu objetivo actual es enemigo.</p>
+              <div class="mockup-code">
+                <pre data-prefix="$"><code class="select-all">/cast [harm] Punición; Sanación relámpago;</code></pre>
               </div>
             </div>
-          </TextoAVoz>
+            <div>
+              <h3 class="text-2xl" id="HELP" aria-label="Condición HELP">8.3.2 HELP</h3>
+              <p class="antialiased">Comprueba si tu objetivo actual es amigo.</p>
+              <div class="mockup-code">
+                <pre data-prefix="$"><code class="select-all">/cast [help] Sanación relámpago; Punición;</code></pre>
+              </div>
+            </div>
+          </div>
+        </TextoAVoz>
+        <div class="divider"></div>
+
+        <h2 class="text-4xl mb-4" id="8.4" aria-label="Subsección 8.4: Condiciones de destino específico">
+          8.4. Condiciones de destino específico
+        </h2>
+        <TextoAVoz>
+          <div class="text-lg antialiased space-y-4">
+            <p class="antialiased">
+              Estas condiciones son algo extrañas. Realmente no comprueban nada, simplemente es la aclaración de a quién
+              va dirigido el hechizo resultante de la macro.
+            </p>
+            <div>
+              <h3 class="text-2xl" id="TARGET" aria-label="Condición @TARGET">8.4.1 @TARGET</h3>
+              <p class="antialiased">El hechizo va dirigido a tu objetivo.</p>
+              <div class="mockup-code">
+                <pre data-prefix="$"><code class="select-all">/cast [@target] Sanación relámpago;</code></pre>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-2xl" id="TARGETTARGET" aria-label="Condición @TARGETTARGET">8.4.2 @TARGETTARGET</h3>
+              <p class="antialiased">El hechizo va dirigido al objetivo de tu objetivo.</p>
+              <div class="mockup-code">
+                <pre data-prefix="$"><code class="select-all">/cast [@targettarget] Sanación relámpago;</code></pre>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-2xl" id="FOCUS" aria-label="Condición @FOCUS">8.4.3 @FOCUS</h3>
+              <p class="antialiased">El hechizo va dirigido a tu foco.</p>
+              <div class="mockup-code">
+                <pre data-prefix="$"><code class="select-all">/cast [@focus] Sanación relámpago;</code></pre>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-2xl" id="FOCUSTARGET" aria-label="Condición @FOCUSTARGET">8.4.4 @FOCUSTARGET</h3>
+              <p class="antialiased">El hechizo va dirigido al objetivo de tu foco.</p>
+              <div class="mockup-code">
+                <pre data-prefix="$"><code class="select-all">/cast [@focustarget] Sanación relámpago;</code></pre>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-2xl" id="PLAYER" aria-label="Condición @PLAYER">8.4.5 @PLAYER</h3>
+              <p class="antialiased">El hechizo va dirigido a ti mismo.</p>
+              <div class="mockup-code">
+                <pre data-prefix="$"><code class="select-all">/cast [@player] Sanación relámpago;</code></pre>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-2xl" id="MOUSEOVER" aria-label="Condición @MOUSEOVER">8.4.6 @MOUSEOVER</h3>
+              <p class="antialiased">
+                El hechizo va dirigido al personaje que esté debajo de tu puntero que no seas tú. Sirve con las
+                interfaces de banda tanto del propio WoW como el Grid o similares. También sirve, por supuesto, a los
+                personajes en pantalla directamente.
+              </p>
+              <div class="mockup-code">
+                <pre data-prefix="$"><code class="select-all">/cast [@mouseover] Sanación relámpago;</code></pre>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-2xl" id="MOUSEOVERTARGET" aria-label="Condición @MOUSEOVERTARGET">
+                8.4.7 @MOUSEOVERTARGET
+              </h3>
+              <p class="antialiased">El hechizo va dirigido al objetivo del personaje que esté debajo de tu puntero.</p>
+              <div class="mockup-code">
+                <pre data-prefix="$"><code class="select-all">/cast [@mouseovertarget] Sanación relámpago;</code></pre>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-2xl" id="NOMBRE" aria-label="Condición @NOMBRE">8.4.8 @NOMBRE</h3>
+              <p class="antialiased">
+                El hechizo irá dirigido al jugador o enemigo que pongas en NOMBRE. Dicho objetivo debe estar en tu grupo
+                o banda.
+              </p>
+              <div class="mockup-code">
+                <pre data-prefix="$"><code class="select-all">/cast [@Menganito] Secretos del oficio;</code></pre>
+              </div>
+            </div>
+          </div>
+        </TextoAVoz>
+        <div class="divider"></div>
+
+        <h2 class="text-4xl mb-4" id="8.5" aria-label="Subsección 8.5: Condiciones de terreno">
+          8.5. Condiciones de terreno
+        </h2>
+        <TextoAVoz>
+          <div class="text-lg antialiased space-y-4">
+            <div>
+              <h3 class="text-2xl" id="FLYABLE" aria-label="Condición FLYABLE">8.5.1 FLYABLE</h3>
+              <p class="antialiased">Comprueba si el mapa donde estás permite volar.</p>
+              <div class="mockup-code">
+                <pre
+                  data-prefix="$"><code class="select-all">/cast [flyable] Grifo dorado; Corcel blanco presto;</code></pre>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-2xl" id="FLYING" aria-label="Condición FLYING">8.5.2 FLYING</h3>
+              <p class="antialiased">Comprueba si estás volando.</p>
+              <div class="mockup-code">
+                <pre data-prefix="$"><code class="select-all">/cast [flying] Levitar; Grifo dorado;</code></pre>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-2xl" id="INDOORS" aria-label="Condición INDOORS">8.5.3 INDOORS</h3>
+              <p class="antialiased">Comprueba si estás en interiores.</p>
+              <div class="mockup-code">
+                <pre data-prefix="$"><code class="select-all">/cast [indoors] Sprint; Corcel blanco presto;</code></pre>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-2xl" id="OUTDOORS" aria-label="Condición OUTDOORS">8.5.4 OUTDOORS</h3>
+              <p class="antialiased">Comprueba si estás en exteriores.</p>
+              <div class="mockup-code">
+                <pre
+                  data-prefix="$"><code class="select-all">/cast [outdoors] Corcel blanco presto; Sprint;</code></pre>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-2xl" id="MOUNTED" aria-label="Condición MOUNTED">8.5.5 MOUNTED</h3>
+              <p class="antialiased">
+                Comprueba si estás montado. No se me ocurre ningún ejemplo simple que sea útil, así que pongo un ejemplo
+                sin utilidad real:
+              </p>
+              <div class="mockup-code">
+                <pre data-prefix="$"><code class="select-all">/cast [mounted] Sigilo; Esfumarse;</code></pre>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-2xl" id="SWIMMING" aria-label="Condición SWIMMING">8.5.6 SWIMMING</h3>
+              <p class="antialiased">Comprueba si estás nadando.</p>
+              <div class="mockup-code">
+                <pre data-prefix="$"><code class="select-all">/cast [swimming] forma acuática;</code></pre>
+              </div>
+            </div>
+          </div>
+        </TextoAVoz>
+        <div class="divider"></div>
+
+        <h2 class="text-4xl mb-4" id="8.6" aria-label="Subsección 8.6: Condiciones de hechizo">
+          8.6. Condiciones de hechizo
+        </h2>
+        <TextoAVoz>
+          <div class="text-lg antialiased space-y-4">
+            <div>
+              <h3 class="text-2xl" id="CHANNELING" aria-label="Condición CHANNELING">8.6.1 CHANNELING</h3>
+              <p class="antialiased">Comprueba si estás canalizando un hechizo. Aquí un ejemplo usando la negación:</p>
+              <div class="mockup-code">
+                <pre
+                  data-prefix="$"><code class="select-all">/cast [nochanneling:Tortura mental] Tortura mental;</code></pre>
+              </div>
+            </div>
+          </div>
         </TextoAVoz>
       </div>
     </div>
