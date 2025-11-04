@@ -7,10 +7,15 @@ import { cardsData } from "../data/indiceData";
 
 <Layout>
   <div class="flex flex-col items-center mb-6">
-    <h2 class="text-3xl text-center" aria-label="Explorar los diferentes temas de una macro">
+    <h2 class="text-3xl text-center mb-4" aria-label="Explorar los diferentes temas de una macro">
       Explorar los diferentes temas de una macro
     </h2>
-    <Buscador />
+    <div class="flex items-center gap-2">
+      <Buscador />
+      <div class="tooltip tooltip-right" data-tip="La búsqueda se realiza sobre las tarjetas visibles.">
+        <i class="bi bi-info-circle text-xl" aria-hidden="true"></i>
+      </div>
+    </div>
   </div>
 
   <!-- GRID 3x3 de tarjetas -->
