@@ -1,3 +1,8 @@
+# Agents.md
+
+Este documento define las reglas que deben seguir las IA al generar código para este proyecto.  
+El objetivo es mantener consistencia en estilos, accesibilidad y uso de tecnologías.
+
 ## Tecnologías Usadas
 
 - **Frontend**: HTML, CSS, JavaScript.
@@ -8,10 +13,19 @@
 
 - Toma tiempo para pensar.
 - Usar el mcp context7 para buscar documentación.
-- Los parrafos <p> deben contener la clase: class="antialiased".
-- Todos las etiquetas <h1> a <h6> deben contener un aria-label o aria-labelledby segun corresponda.
+- Los parrafos p deben contener la clase: class="antialiased".
+- Todos las etiquetas h1 a h6 deben contener un aria-label o aria-labelledby segun corresponda.
 - Agrega accesibilidad al código si se puede.
 - Al usar componentes de DaisyUI, nunca se usan códigos legacy.
+
+## Escala tipográfica:
+
+- h1: text-5xl font-bold mb-6
+- h2: text-4xl font-semibold mb-5
+- h3: text-3xl font-semibold mb-4
+- h4: text-2xl font-medium mb-3
+- h5: text-xl font-medium mb-2
+- h6: text-lg font-medium mb-2
 
 ## Arbol de archivos
 

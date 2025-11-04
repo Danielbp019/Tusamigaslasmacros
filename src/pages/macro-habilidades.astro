@@ -7,7 +7,7 @@ import TextoAVoz from "../components/TextoAVoz.astro";
   <section id="contenido" class="p-4 md:p-8">
     <div class="card w-full bg-base-200 shadow-xl">
       <div class="card-body">
-        <h1 class="text-5xl mb-6" id="definicion7" aria-label="Sección: Macros de habilidades">
+        <h1 class="text-5xl font-bold mb-6" id="definicion7" aria-label="Sección: Macros de habilidades">
           Macros de habilidades
         </h1>
         <TextoAVoz>
@@ -18,10 +18,12 @@ import TextoAVoz from "../components/TextoAVoz.astro";
         </TextoAVoz>
         <div class="divider"></div>
 
-        <h2 class="text-4xl mb-4" id="7.1" aria-label="Subsección: Acciones de combate">Acciones de combate</h2>
+        <h2 class="text-4xl font-semibold mb-5" id="7.1" aria-label="Subsección: Acciones de combate">
+          Acciones de combate
+        </h2>
         <TextoAVoz>
           <div class="text-lg antialiased">
-            <h3 class="text-3xl mb-3" id="cast" aria-label="Comando CAST">CAST</h3>
+            <h3 class="text-3xl font-semibold mb-4" id="cast" aria-label="Comando CAST">CAST</h3>
             <p class="antialiased">
               Esta es la macro principal, la que más usarás (se puede cambiar "cast" por "lanzar" si juegas en
               castellano. Pero no se recomienda, ya que "cast" no falla y ocupa menos caracteres).
@@ -31,7 +33,9 @@ import TextoAVoz from "../components/TextoAVoz.astro";
               <pre data-prefix="$"><code class="select-all">/cast [condiciones] Habilidad;</code></pre>
             </div>
 
-            <h3 class="text-3xl mb-3 mt-6" id="castsequence" aria-label="Comando CASTSEQUENCE">CASTSEQUENCE</h3>
+            <h3 class="text-3xl font-semibold mb-4 mt-6" id="castsequence" aria-label="Comando CASTSEQUENCE">
+              CASTSEQUENCE
+            </h3>
             <p class="antialiased">
               En esencia funciona igual que el CAST pero tiene otra finalidad. Su función no es la de lanzar un hechizo,
               sino la de concatenar varios hechizos bajo las mismas condiciones.
@@ -58,53 +62,53 @@ import TextoAVoz from "../components/TextoAVoz.astro";
         </TextoAVoz>
         <div class="divider"></div>
 
-        <h2 class="text-4xl mb-4" id="7.2" aria-label="Subsección: Acciones sueltas">Acciones sueltas</h2>
+        <h2 class="text-4xl font-semibold mb-5" id="7.2" aria-label="Subsección: Acciones sueltas">Acciones sueltas</h2>
         <TextoAVoz>
           <div class="text-lg antialiased space-y-4">
             <div>
-              <h3 class="text-2xl" id="stopcasting" aria-label="Comando STOPCASTING">STOPCASTING</h3>
+              <h4 class="text-2xl font-medium mb-3" id="stopcasting" aria-label="Comando STOPCASTING">STOPCASTING</h4>
               <p class="antialiased">Este comando corta cualquier hechizo que estés lanzando:</p>
               <div class="mockup-code">
                 <pre data-prefix="$"><code class="select-all">/stopcast [condiciones]</code></pre>
               </div>
             </div>
             <div>
-              <h3 class="text-2xl" id="cleartarget" aria-label="Comando CLEARTARGET">CLEARTARGET</h3>
+              <h4 class="text-2xl font-medium mb-3" id="cleartarget" aria-label="Comando CLEARTARGET">CLEARTARGET</h4>
               <p class="antialiased">Permite limpiar el objetivo que tengamos:</p>
               <div class="mockup-code">
                 <pre data-prefix="$"><code class="select-all">/cleartarget [condiciones]</code></pre>
               </div>
             </div>
             <div>
-              <h3 class="text-2xl" id="focus" aria-label="Comando FOCUS">FOCUS</h3>
+              <h4 class="text-2xl font-medium mb-3" id="focus" aria-label="Comando FOCUS">FOCUS</h4>
               <p class="antialiased">Permite crear un objetivo "focus":</p>
               <div class="mockup-code">
                 <pre data-prefix="$"><code class="select-all">/focus [condiciones]</code></pre>
               </div>
             </div>
             <div>
-              <h3 class="text-2xl" id="clearfocus" aria-label="Comando CLEARFOCUS">CLEARFOCUS</h3>
+              <h4 class="text-2xl font-medium mb-3" id="clearfocus" aria-label="Comando CLEARFOCUS">CLEARFOCUS</h4>
               <p class="antialiased">Permite limpiar nuestro objetivo "focus":</p>
               <div class="mockup-code">
                 <pre data-prefix="$"><code class="select-all">/clearfocus [condiciones]</code></pre>
               </div>
             </div>
             <div>
-              <h3 class="text-2xl" id="stopmacro" aria-label="Comando STOPMACRO">STOPMACRO</h3>
+              <h4 class="text-2xl font-medium mb-3" id="stopmacro" aria-label="Comando STOPMACRO">STOPMACRO</h4>
               <p class="antialiased">Permite detener una macro:</p>
               <div class="mockup-code">
                 <pre data-prefix="$"><code class="select-all">/stopmacro [condiciones]</code></pre>
               </div>
             </div>
             <div>
-              <h3 class="text-2xl" id="cancelaura" aria-label="Comando CANCELAURA">CANCELAURA</h3>
+              <h4 class="text-2xl font-medium mb-3" id="cancelaura" aria-label="Comando CANCELAURA">CANCELAURA</h4>
               <p class="antialiased">Permite quitarse un beneficio:</p>
               <div class="mockup-code">
                 <pre data-prefix="$"><code class="select-all">/cancelaura [condiciones] beneficio;</code></pre>
               </div>
             </div>
             <div>
-              <h3 class="text-2xl" id="cancelform" aria-label="Comando CANCELFORM">CANCELFORM</h3>
+              <h4 class="text-2xl font-medium mb-3" id="cancelform" aria-label="Comando CANCELFORM">CANCELFORM</h4>
               <p class="antialiased">
                 Permite quitarse una forma. Las "formas" son aquellas habilidades que te habilitan una barra alternativa
                 (como la "Forma de las sombras" del sacerdote). La excepción a este tipo de formas son los guerreros, ya
@@ -115,7 +119,7 @@ import TextoAVoz from "../components/TextoAVoz.astro";
               </div>
             </div>
             <div>
-              <h3 class="text-2xl" id="startattack" aria-label="Comando STARTATTACK">STARTATTACK</h3>
+              <h4 class="text-2xl font-medium mb-3" id="startattack" aria-label="Comando STARTATTACK">STARTATTACK</h4>
               <p class="antialiased">
                 Permite empezar a atacar. La diferencia con "atacar" del libro de hechizos es que ese "atacar" activa o
                 desactiva el ataque según el estado actual. Con este comando atacas sí o sí:
@@ -125,7 +129,7 @@ import TextoAVoz from "../components/TextoAVoz.astro";
               </div>
             </div>
             <div>
-              <h3 class="text-2xl" id="stopattack" aria-label="Comando STOPATTACK">STOPATTACK</h3>
+              <h4 class="text-2xl font-medium mb-3" id="stopattack" aria-label="Comando STOPATTACK">STOPATTACK</h4>
               <p class="antialiased">Mismo caso que el anterior, pero obliga a parar de atacar:</p>
               <div class="mockup-code">
                 <pre data-prefix="$"><code class="select-all">/stopattack [condiciones]</code></pre>
@@ -135,46 +139,52 @@ import TextoAVoz from "../components/TextoAVoz.astro";
         </TextoAVoz>
         <div class="divider"></div>
 
-        <h2 class="text-4xl mb-4" id="7.3" aria-label="Subsección: Acciones de mascotas">Acciones de mascotas</h2>
+        <h2 class="text-4xl font-semibold mb-5" id="7.3" aria-label="Subsección: Acciones de mascotas">
+          Acciones de mascotas
+        </h2>
         <TextoAVoz>
           <div class="text-lg antialiased space-y-4">
             <div>
-              <h3 class="text-2xl" id="petaggressive" aria-label="Comando PETAGGRESSIVE">PETAGGRESSIVE</h3>
+              <h4 class="text-2xl font-medium mb-3" id="petaggressive" aria-label="Comando PETAGGRESSIVE">
+                PETAGGRESSIVE
+              </h4>
               <p class="antialiased">Pone a tu mascota en agresivo:</p>
               <div class="mockup-code">
                 <pre data-prefix="$"><code class="select-all">/petaggressive [condiciones]</code></pre>
               </div>
             </div>
             <div>
-              <h3 class="text-2xl" id="petattack" aria-label="Comando PETATTACK">PETATTACK</h3>
+              <h4 class="text-2xl font-medium mb-3" id="petattack" aria-label="Comando PETATTACK">PETATTACK</h4>
               <p class="antialiased">Envía a tu mascota a atacar:</p>
               <div class="mockup-code">
                 <pre data-prefix="$"><code class="select-all">/petattack [condiciones]</code></pre>
               </div>
             </div>
             <div>
-              <h3 class="text-2xl" id="petdefensive" aria-label="Comando PETDEFENSIVE">PETDEFENSIVE</h3>
+              <h4 class="text-2xl font-medium mb-3" id="petdefensive" aria-label="Comando PETDEFENSIVE">
+                PETDEFENSIVE
+              </h4>
               <p class="antialiased">Pone a tu mascota en defensivo:</p>
               <div class="mockup-code">
                 <pre data-prefix="$"><code class="select-all">/petdefensive [condiciones]</code></pre>
               </div>
             </div>
             <div>
-              <h3 class="text-2xl" id="petfollow" aria-label="Comando PETFOLLOW">PETFOLLOW</h3>
+              <h4 class="text-2xl font-medium mb-3" id="petfollow" aria-label="Comando PETFOLLOW">PETFOLLOW</h4>
               <p class="antialiased">Pone a tu mascota en seguirte, contrario a "Petstay":</p>
               <div class="mockup-code">
                 <pre data-prefix="$"><code class="select-all">/petfollow [condiciones]</code></pre>
               </div>
             </div>
             <div>
-              <h3 class="text-2xl" id="petpassive" aria-label="Comando PETPASSIVE">PETPASSIVE</h3>
+              <h4 class="text-2xl font-medium mb-3" id="petpassive" aria-label="Comando PETPASSIVE">PETPASSIVE</h4>
               <p class="antialiased">Pone a tu mascota en pasivo:</p>
               <div class="mockup-code">
                 <pre data-prefix="$"><code class="select-all">/petpassive [condiciones]</code></pre>
               </div>
             </div>
             <div>
-              <h3 class="text-2xl" id="petstay" aria-label="Comando PETSTAY">PETSTAY</h3>
+              <h4 class="text-2xl font-medium mb-3" id="petstay" aria-label="Comando PETSTAY">PETSTAY</h4>
               <p class="antialiased">Deja quieta a tu mascota en el sitio, contrario a "Petfollow":</p>
               <div class="mockup-code">
                 <pre data-prefix="$"><code class="select-all">/petstay [condiciones]</code></pre>
@@ -184,11 +194,13 @@ import TextoAVoz from "../components/TextoAVoz.astro";
         </TextoAVoz>
         <div class="divider"></div>
 
-        <h2 class="text-4xl mb-4" id="7.4" aria-label="Subsección: Acciones generales">Acciones generales</h2>
+        <h2 class="text-4xl font-semibold mb-5" id="7.4" aria-label="Subsección: Acciones generales">
+          Acciones generales
+        </h2>
         <TextoAVoz>
           <div class="text-lg antialiased space-y-4">
             <div>
-              <h3 class="text-2xl" id="show" aria-label="Comando #SHOW">#SHOW</h3>
+              <h4 class="text-2xl font-medium mb-3" id="show" aria-label="Comando #SHOW">#SHOW</h4>
               <p class="antialiased">
                 Muestra el icono de la primera habilidad de la macro. Puedes añadirle después del "show" el nombre de un
                 hechizo, el nombre de un objeto, la "Bagid Slot" o la "InvSlot". En cualquiera de los casos mostrará el
@@ -204,7 +216,9 @@ import TextoAVoz from "../components/TextoAVoz.astro";
               </div>
             </div>
             <div>
-              <h3 class="text-2xl" id="showcooldown" aria-label="Comando #SHOWCOOLDOWN">#SHOWCOOLDOWN</h3>
+              <h4 class="text-2xl font-medium mb-3" id="showcooldown" aria-label="Comando #SHOWCOOLDOWN">
+                #SHOWCOOLDOWN
+              </h4>
               <p class="antialiased">
                 Es igual que el "Show" pero además muestra el tiempo de reutilización de la primera habilidad después
                 del "showcooldown" o bien de la primera habilidad de la macro en caso de no tener nada el
@@ -215,7 +229,7 @@ import TextoAVoz from "../components/TextoAVoz.astro";
               </div>
             </div>
             <div>
-              <h3 class="text-2xl" id="showtooltip" aria-label="Comando #SHOWTOOLTIP">#SHOWTOOLTIP</h3>
+              <h4 class="text-2xl font-medium mb-3" id="showtooltip" aria-label="Comando #SHOWTOOLTIP">#SHOWTOOLTIP</h4>
               <p class="antialiased">
                 Es igual que el "Showcooldown" pero además muestra la descripción de la habilidad que muestra el
                 "showtooltip".
@@ -226,9 +240,9 @@ import TextoAVoz from "../components/TextoAVoz.astro";
               </div>
             </div>
             <div>
-              <h3 class="text-2xl" id="exclamacion" aria-label="Uso de la exclamación en hechizos">
+              <h4 class="text-2xl font-medium mb-3" id="exclamacion" aria-label="Uso de la exclamación en hechizos">
                 La ! en los hechizos
-              </h3>
+              </h4>
               <p class="antialiased">
                 Muchos hechizos del World of Warcraft funcionan de distinta manera al pulsarlos una vez o la siguiente.
                 Por ejemplo, las auras del paladín: la primera vez que pulses se activará, y la siguiente se

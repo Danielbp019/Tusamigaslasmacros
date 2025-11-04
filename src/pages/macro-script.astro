@@ -7,7 +7,9 @@ import TextoAVoz from "../components/TextoAVoz.astro";
   <section id="contenido" class="p-4 md:p-8">
     <div class="card w-full bg-base-200 shadow-xl">
       <div class="card-body">
-        <h1 class="text-4xl mb-4" id="macroscript" aria-label="Sección 11: Macros tipo scripts">Macros tipo Script</h1>
+        <h1 class="text-5xl font-bold mb-6" id="macroscript" aria-label="Sección 11: Macros tipo scripts">
+          Macros tipo Script
+        </h1>
 
         <TextoAVoz>
           <div class="text-lg antialiased">
@@ -16,7 +18,9 @@ import TextoAVoz from "../components/TextoAVoz.astro";
               de scripting que utiliza World of Warcraft. Permiten realizar acciones más complejas que no son posibles
               con los comandos de macro estándar.
             </p>
-            <h4 class="text-2xl mt-6 mb-2" aria-label="Notas importantes sobre los scripts">Notas importantes:</h4>
+            <h4 class="text-2xl font-medium mb-3 mt-6" aria-label="Notas importantes sobre los scripts">
+              Notas importantes:
+            </h4>
             <ul class="list-disc list-inside pl-4 antialiased">
               <li>El código no puede contener saltos de línea (debes escribirlo todo en una sola línea).</li>
               <li>
@@ -31,15 +35,17 @@ import TextoAVoz from "../components/TextoAVoz.astro";
             </ul>
           </div>
         </TextoAVoz>
-
+        <div class="divider"></div>
         <br />
 
-        <h1 class="text-3xl mb-4" id="scripts-listos" aria-label="Scripts listos para usar">
+        <h2 class="text-4xl font-semibold mb-5" id="scripts-listos" aria-label="Scripts listos para usar">
           Scripts listos para usar
-        </h1>
+        </h2>
         <TextoAVoz>
           <div class="text-lg antialiased">
-            <h2 class="text-2xl mt-6 mb-2" aria-label="Comprar objeto de mercader">Comprar objeto de mercader</h2>
+            <h3 class="text-3xl font-semibold mb-4" aria-label="Comprar objeto de mercader">
+              Comprar objeto de mercader
+            </h3>
             <p class="antialiased">
               Esta macro comprará un objeto de un vendedor sin necesidad de confirmación. ¡Útil para compras masivas!
             </p>
@@ -52,6 +58,24 @@ import TextoAVoz from "../components/TextoAVoz.astro";
             </p>
           </div>
         </TextoAVoz>
+
+        <br />
+
+        <div class="text-lg antialiased">
+          <h3 class="text-3xl font-semibold mb-4" aria-label="Anunciar ubicación de Piedra de Hogar">
+            Anunciar ubicación de Piedra de Hogar
+          </h3>
+          <TextoAVoz>
+            <p class="antialiased">
+              Usa la función <code>GetBindLocation()</code> para obtener el nombre de la zona donde tienes vinculada tu Piedra
+              de Hogar y lo anuncia por el chat.
+            </p>
+            <div class="mockup-code my-4">
+              <pre
+                data-prefix="$"><code class="select-all">/run SendChatMessage("Mi piedra está en: "..GetBindLocation())</code></pre>
+            </div>
+          </TextoAVoz>
+        </div>
       </div>
     </div>
   </section>
