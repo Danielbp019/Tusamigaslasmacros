@@ -11,6 +11,7 @@
 - Los parrafos <p> deben contener la clase: class="antialiased".
 - Todos las etiquetas <h1> a <h6> deben contener un aria-label o aria-labelledby segun corresponda.
 - Agrega accesibilidad al código si se puede.
+- Al usar componentes de DaisyUI, nunca se usan códigos legacy.
 
 ## Arbol de archivos
 

@@ -18,8 +18,12 @@ import TALMbanner2m from "../assets/img/estructura/TALMbanner2m.png";
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Daniel Bautista P." />
+    <meta
+      name="description"
+      content="La guía definitiva para crear y utilizar macros en World of Warcraft. Aprende a optimizar tu juego con comandos, condiciones y scripts, desde lo más básico hasta lo avanzado."
+    />
     <link rel="icon" href="/favicon.ico" sizes="32x32" />
     <link rel="apple-touch-icon" href="/favicon.ico" />
     <title>¡Tus amigas, las macros!</title>
@@ -133,17 +137,18 @@ import TALMbanner2m from "../assets/img/estructura/TALMbanner2m.png";
     <Footer />
 
     <!-- Modal para seleccionar el tema -->
-    <input type="checkbox" id="modal-temas" class="modal-toggle" />
-    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
+    <dialog id="modal_temas" class="modal">
       <div class="modal-box w-11/12 max-w-5xl">
+        <form method="dialog">
+          <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" aria-label="Cerrar modal">✕</button>
+        </form>
         <SelectorTema />
-        <div class="modal-action">
-          <label for="modal-temas" class="btn" aria-label="Cerrar modal">Cerrar</label>
-        </div>
       </div>
       <!-- Cierra el modal si se hace clic fuera -->
-      <label class="modal-backdrop" for="modal-temas" aria-label="Cerrar modal"></label>
-    </div>
+      <form method="dialog" class="modal-backdrop">
+        <button>Cerrar</button>
+      </form>
+    </dialog>
   </body>
 </html>
 
@@ -155,93 +160,92 @@ import TALMbanner2m from "../assets/img/estructura/TALMbanner2m.png";
     const currentTheme = document.documentElement.getAttribute("data-theme");
 
     // Solo actualiza el atributo si el tema ha cambiado.
-    // Esto es CRUCIAL para evitar el bucle infinito con el MutationObserver.
     if (storedTheme !== currentTheme) {
       document.documentElement.setAttribute("data-theme", storedTheme);
     }
 
+    // Actualizar los nombres del tema en las interfaces
+    updateThemeDisplay(storedTheme);
+  }
+
+  // Función para actualizar la visualización del nombre del tema
+  function updateThemeDisplay(theme) {
     const themeNameElement = document.getElementById("tema-nombre");
-    if (themeNameElement) {
-      themeNameElement.textContent = storedTheme;
-    }
     const themeNameElementMobile = document.getElementById("tema-nombre-movil");
+
+    if (themeNameElement) {
+      themeNameElement.textContent = theme;
+    }
     if (themeNameElementMobile) {
-      themeNameElementMobile.textContent = storedTheme;
+      themeNameElementMobile.textContent = theme;
     }
   }
-  // 1. Aplicar el tema inmediatamente en la carga inicial para evitar FOUC.
-  applyTheme();
-  // 2. Escuchar el evento de Astro para aplicar el tema en cada navegación del cliente.
-  document.addEventListener("astro:page-load", applyTheme);
 
-  // Script para gestionar el selector de temas en el modal
-  document.addEventListener("astro:page-load", () => {
+  // Función para manejar la lógica del selector de tema
+  function handleThemeSelection() {
     const themeSelectors = document.querySelectorAll("[data-set-theme]");
 
-    // Función para actualizar el estado activo
-    const updateActiveState = () => {
-      const currentTheme = document.documentElement.getAttribute("data-theme") || "night";
-      themeSelectors.forEach((selector) => {
-        const themeName = selector.getAttribute("data-set-theme");
-        const activeClass = selector.getAttribute("data-act-class") || "outline-primary";
-        if (themeName === currentTheme) {
-          selector.classList.add(activeClass);
-        } else {
-          selector.classList.remove(activeClass);
-        }
-      });
-    };
-
-    // Añadir listeners de click
     themeSelectors.forEach((el) => {
       el.addEventListener("click", function (e) {
-        // Cierra el modal automáticamente al seleccionar un tema
-        const modalToggle = document.getElementById("modal-temas");
-        if (modalToggle && modalToggle.checked) {
-          modalToggle.checked = false;
-        }
-
         e.preventDefault();
         const theme = this.getAttribute("data-set-theme");
         if (theme) {
+          // Cerrar modal y aplicar tema
+          const modal = document.getElementById("modal_temas");
+          modal?.close();
           document.documentElement.setAttribute("data-theme", theme);
           localStorage.setItem("theme", theme); // Guardar en localStorage
-          updateActiveState(); // Actualizar inmediatamente el estado visual
+          updateThemeDisplay(theme); // Actualizar inmediatamente el estado visual
         }
       });
     });
+  }
 
-    // Establecer el estado activo inicial al cargar la página
-    updateActiveState();
+  // Función para abrir el modal de temas
+  function handleModalOpening() {
+    const openModalButton = document.getElementById("open-modal-mobile");
+    const openModalDesktopButton = document.getElementById("open-modal-desktop");
+    const modal = document.getElementById("modal_temas");
+
+    if (openModalButton && modal) {
+      openModalButton.addEventListener("click", () => modal.showModal());
+    }
+
+    if (openModalDesktopButton && modal) {
+      openModalDesktopButton.addEventListener("click", () => modal.showModal());
+    }
+  }
+
+  // Función para inicializar AOS
+  function initializeAOS() {
+    // eslint-disable-next-line no-undef
+    AOS.init({ once: true }); // La animación solo se ejecuta una vez
+  }
+
+  // Aplicar el tema en la carga inicial y configurar los eventos
+  document.addEventListener("astro:page-load", () => {
+    applyTheme(); // Aplicar tema en la carga
+    handleThemeSelection(); // Configurar la selección de tema
+    handleModalOpening(); // Configurar la apertura del modal
+    initializeAOS(); // Inicializar AOS
+
+    // Asegurarnos de que el estado del selector de tema esté actualizado
+    const themeSelectors = document.querySelectorAll("[data-set-theme]");
+    const currentTheme = document.documentElement.getAttribute("data-theme") || "night";
+    themeSelectors.forEach((selector) => {
+      const themeName = selector.getAttribute("data-set-theme");
+      const activeClass = selector.getAttribute("data-act-class") || "outline-primary";
+      if (themeName === currentTheme) {
+        selector.classList.add(activeClass);
+      } else {
+        selector.classList.remove(activeClass);
+      }
+    });
   });
 
-  // 3. Observar cambios si el tema se cambia dinámicamente (ej: con un selector de temas).
-  new MutationObserver(applyTheme).observe(document.documentElement, {
+  // Usamos MutationObserver solo si es necesario para escuchar cambios en el atributo `data-theme`.
+  new MutationObserver(() => applyTheme()).observe(document.documentElement, {
     attributes: true,
     attributeFilter: ["data-theme"],
-  });
-
-  // Script para abrir el modal desde el menú móvil
-  document.addEventListener("astro:page-load", () => {
-    const openModalButton = document.getElementById("open-modal-mobile");
-    const modalCheckbox = document.getElementById("modal-temas");
-    if (openModalButton && modalCheckbox) {
-      openModalButton.addEventListener("click", () => (modalCheckbox.checked = true));
-    }
-
-    // Script para abrir el modal desde el menú de escritorio. DaisyUI no respeta mucho la accesibilidad.
-    const openModalDesktopButton = document.getElementById("open-modal-desktop");
-    if (openModalDesktopButton && modalCheckbox) {
-      // Reutilizamos la variable modalCheckbox del script anterior
-      openModalDesktopButton.addEventListener("click", () => (modalCheckbox.checked = true));
-    }
-  });
-
-  // Inicializar AOS en la carga de la página
-  document.addEventListener("astro:page-load", () => {
-    // eslint-disable-next-line no-undef
-    AOS.init({
-      once: true, // La animación solo se ejecuta una vez
-    });
   });
 </script>
