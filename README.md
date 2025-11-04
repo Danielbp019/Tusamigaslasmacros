@@ -13,3 +13,6 @@ https://tusamigaslasmacros.pages.dev/
 
 - **Indice de la guía:**
   ![Indiceguia](imgReadme/indicedeguia.png)
+
+- **Optimización**
+  ![optimización](imgReadme/optimizacion.png)
