@@ -1,5 +1,0 @@
-# Indica a todos los rastreadores web que pueden acceder a todo el contenido.
-user-agent: *
-
-# Ubicación del mapa del sitio para ayudar a los rastreadores a encontrar todas tus páginas.
-sitemap: https://tusamigaslasmacros.pages.dev/sitemap-index.xml
